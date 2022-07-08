@@ -9,6 +9,7 @@ public class Spider : MonoBehaviour
     [SerializeField] float offsetY = 0.2f;
     [SerializeField] private List<ProceduralAnimationScript> legs;
     private Rigidbody _rigidbody;
+    private Vector3 _bodyTarget;
 
     private void Awake()
     {
@@ -27,10 +28,16 @@ public class Spider : MonoBehaviour
         Vector3 moveForce = Vector3.forward *1f;
         
         //if body too far from average leg position add force to center it
-        if ((GetMeanLegPosition() - transform.position).magnitude > 0.02f)
+        _bodyTarget = GetMeanLegPosition();
+        Vector3 centerDistance = GetMeanLegPosition() - transform.position;
+        if ((centerDistance).magnitude > 0.1f)
         {
-            Vector3 legForce = (GetMeanLegPosition() - transform.position).normalized * 6f;
+            Vector3 legForce = (centerDistance).normalized * 5f;
             _rigidbody.AddForce(legForce);
+        }
+        else
+        {
+            _rigidbody.AddForce(Vector3.zero);
         }
 
         _rigidbody.velocity = moveForce;
@@ -59,6 +66,6 @@ public class Spider : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawSphere(transform.position, 0.1f);
         Gizmos.color = Color.red;
-        Gizmos.DrawSphere(GetMeanLegPosition(), 0.1f);
+        Gizmos.DrawSphere(_bodyTarget, 0.1f);
     }
 }

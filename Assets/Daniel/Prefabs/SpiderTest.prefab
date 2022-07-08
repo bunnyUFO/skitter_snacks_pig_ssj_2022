@@ -215,8 +215,9 @@ GameObject:
   - component: {fileID: 2200835502550968100}
   - component: {fileID: 8728345302015530856}
   - component: {fileID: 8728345302015530857}
-  - component: {fileID: 538330447}
   - component: {fileID: 538330446}
+  - component: {fileID: 538330447}
+  - component: {fileID: 7707335235902473941}
   m_Layer: 8
   m_Name: SpiderTest
   m_TagString: Player
@@ -278,6 +279,31 @@ MonoBehaviour:
   - m_Rig: {fileID: 2922047021335439336}
     m_Active: 1
   m_Effectors: []
+--- !u!114 &538330446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567569974861381022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7caf825b08a949908ed41e8dba8b9b41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  raycastLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  offsetY: 0.1
+  legs:
+  - {fileID: 7080496781340610865}
+  - {fileID: 7080496780412374523}
+  - {fileID: 7080496780083948622}
+  - {fileID: 7080496780847361891}
+  - {fileID: 7080496780666771951}
+  - {fileID: 7080496781123847960}
+  - {fileID: 7080496779923420797}
+  - {fileID: 7080496780573743004}
 --- !u!54 &538330447
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -294,7 +320,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &538330446
+--- !u!114 &7707335235902473941
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -733,7 +759,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   offsetZ: 0.2
-  stepDistance: 0.4
+  stepDistance: 0.5
   stepHeight: 0.05
   stepDuration: 0.2
   oppositeLeg: {fileID: 7080496780412374523}
@@ -1589,7 +1615,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7080496779332489675}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.41052848, y: 0.5, z: 0.39583564}
+  m_LocalPosition: {x: 0.25, y: 0.5, z: 0.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1644,7 +1670,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   offsetZ: 0.2
-  stepDistance: 0.4
+  stepDistance: 0.5
   stepHeight: 0.05
   stepDuration: 0.2
   oppositeLeg: {fileID: 7080496779923420797}
@@ -1672,7 +1698,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7080496779585452155}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5562331, y: 0.5, z: 0.036948442}
+  m_LocalPosition: {x: -0.5562331, y: 0.5, z: 0.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1762,7 +1788,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7080496779710705968}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5194219, y: 0.5, z: -0.23972225}
+  m_LocalPosition: {x: 0.5194219, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1793,7 +1819,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7080496779715125190}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.52297705, y: 0.5, z: 0.2339921}
+  m_LocalPosition: {x: -0.52297705, y: 0.5, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1907,7 +1933,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   offsetZ: 0
-  stepDistance: 0.4
+  stepDistance: 0.5
   stepHeight: 0.05
   stepDuration: 0.2
   oppositeLeg: {fileID: 7080496780847361891}
@@ -1935,7 +1961,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7080496780144097486}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.41053122, y: 0.5, z: 0.39583898}
+  m_LocalPosition: {x: -0.25, y: 0.5, z: 0.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1990,7 +2016,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   offsetZ: 0
-  stepDistance: 0.4
+  stepDistance: 0.5
   stepHeight: 0.05
   stepDuration: 0.2
   oppositeLeg: {fileID: 7080496780666771951}
@@ -2101,7 +2127,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   offsetZ: 0.2
-  stepDistance: 0.4
+  stepDistance: 0.5
   stepHeight: 0.05
   stepDuration: 0.2
   oppositeLeg: {fileID: 7080496781123847960}
@@ -2184,7 +2210,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   offsetZ: 0
-  stepDistance: 0.4
+  stepDistance: 0.5
   stepHeight: 0.05
   stepDuration: 0.2
   oppositeLeg: {fileID: 7080496781340610865}
@@ -2274,7 +2300,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7080496780620663595}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5479067, y: 0.5, z: 0.036948442}
+  m_LocalPosition: {x: 0.5479067, y: 0.5, z: 0.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2454,7 +2480,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7080496780955779715}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.53075427, y: 0.5, z: -0.23972559}
+  m_LocalPosition: {x: -0.53075427, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2540,7 +2566,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   offsetZ: 0
-  stepDistance: 0.4
+  stepDistance: 0.5
   stepHeight: 0.05
   stepDuration: 0.2
   oppositeLeg: {fileID: 7080496780573743004}
@@ -2568,7 +2594,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7080496781076168838}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.52295667, y: 0.5, z: 0.23399448}
+  m_LocalPosition: {x: 0.52295667, y: 0.5, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2682,7 +2708,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   offsetZ: 0.2
-  stepDistance: 0.4
+  stepDistance: 0.5
   stepHeight: 0.05
   stepDuration: 0.2
   oppositeLeg: {fileID: 7080496780083948622}
