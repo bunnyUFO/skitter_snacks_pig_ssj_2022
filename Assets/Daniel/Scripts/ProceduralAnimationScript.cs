@@ -15,7 +15,7 @@ public class ProceduralAnimationScript : MonoBehaviour
     private float lerp, lerpTime;
 
     //Set initial IK target position to ground at z offset from source
-    private void Start()
+    private void Awake()
     {
         lerp = 1;
         lerpTime = stepDuration;
@@ -25,11 +25,11 @@ public class ProceduralAnimationScript : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit info, 10, raycastLayer.value))
         {
-            _oldPosition = _currentPosition = info.point + Vector3.forward*offsetZ;
+            _oldPosition = _currentPosition =_targetPosition = info.point + Vector3.forward*offsetZ;
         }
     }
     
-    void Update()
+    public void UpdatePosition(float deltaTime)
     {
         transform.position = _currentPosition;
         Ray ray = new Ray(rayCastSource.position, Vector3.down);
@@ -52,12 +52,17 @@ public class ProceduralAnimationScript : MonoBehaviour
             tempPosition.y += Mathf.Sin(lerp * Mathf.PI) * stepHeight;
             
             _currentPosition = tempPosition;
-            lerpTime += Time.deltaTime;
+            lerpTime += deltaTime;
         }
         else
         {
             _oldPosition = _currentPosition;
         }
+    }
+
+    public Vector3 GetOldPosition()
+    {
+        return _oldPosition;
     }
 
     private void OnDrawGizmos()
