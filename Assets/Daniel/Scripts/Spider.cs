@@ -23,14 +23,14 @@ public class Spider : MonoBehaviour
 
     void Update()
     {
-        //update all leg positions
+        // update all leg positions
         foreach(ProceduralAnimationScript leg in legs)
         {
             leg.UpdatePosition(Time.deltaTime);
         }
 
         // _moveVelocity = Vector3.zero;
-        _moveVelocity = Vector3.forward *1f;
+        _moveVelocity = transform.forward *1f;
         _bodyTarget = GetMeanLegPosition() + Vector3.up*offsetY;
         CalculateOrientation();
         // setBodyBalanceVelocity();
@@ -55,6 +55,7 @@ public class Spider : MonoBehaviour
         return new Vector3(x / legs.Count, y / legs.Count, z / legs.Count);
     }
 
+    
     private void setBodyBalanceVelocity()
     {
         //if body too far from average leg position add force to center it
@@ -101,9 +102,6 @@ public class Spider : MonoBehaviour
         up /= legs.Count;
         avgSurfaceDist /= legs.Count;
         
-        print(up);
-        // print(Quaternion.LookRotation(Vector3.ProjectOnPlane(transform.forward, up), up));
-        // print(transform.position);
         Debug.DrawRay(transform.position, up, Color.green, 0);
 
         // Asigns Up Using Vector3.ProjectOnPlane To Preserve Forward Orientation

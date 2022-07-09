@@ -290,25 +290,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7caf825b08a949908ed41e8dba8b9b41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offsetY: 0.25
+  offsetY: 0.1
   sensitivityCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
-      tangentMode: 34
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
+      time: 0.63211757
+      value: 0.06276929
+      inSlope: 0.5196286
+      outSlope: 0.5196286
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.0023499
+      value: 0.52451324
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0
@@ -754,7 +763,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   offsetZ: 0.2
-  stepDistance: 0.15
+  stepDistance: 0.1
   stepHeight: 0.05
   stepDuration: 0.2
   oppositeLeg: {fileID: 7080496780412374523}
@@ -1611,7 +1620,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7080496779332489675}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.25, y: 0.5, z: 0.8}
+  m_LocalPosition: {x: 0.25, y: 0.5, z: 0.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1666,7 +1675,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   offsetZ: 0.2
-  stepDistance: 0.3
+  stepDistance: 0.15
   stepHeight: 0.05
   stepDuration: 0.2
   oppositeLeg: {fileID: 7080496779923420797}
@@ -1930,7 +1939,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   offsetZ: 0
-  stepDistance: 0.2
+  stepDistance: 0.15
   stepHeight: 0.05
   stepDuration: 0.2
   oppositeLeg: {fileID: 7080496780847361891}
@@ -1959,7 +1968,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7080496780144097486}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.25, y: 0.5, z: 0.9}
+  m_LocalPosition: {x: -0.25, y: 0.5, z: 0.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2014,7 +2023,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   offsetZ: 0
-  stepDistance: 0.25
+  stepDistance: 0.15
   stepHeight: 0.05
   stepDuration: 0.2
   oppositeLeg: {fileID: 7080496780666771951}
@@ -2126,7 +2135,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   offsetZ: 0.2
-  stepDistance: 0.25
+  stepDistance: 0.15
   stepHeight: 0.05
   stepDuration: 0.2
   oppositeLeg: {fileID: 7080496781123847960}
@@ -2210,7 +2219,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   offsetZ: 0
-  stepDistance: 0.15
+  stepDistance: 0.1
   stepHeight: 0.05
   stepDuration: 0.2
   oppositeLeg: {fileID: 7080496781340610865}
@@ -2567,7 +2576,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   offsetZ: 0
-  stepDistance: 0.3
+  stepDistance: 0.15
   stepHeight: 0.05
   stepDuration: 0.2
   oppositeLeg: {fileID: 7080496780573743004}
@@ -2710,7 +2719,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   offsetZ: 0.2
-  stepDistance: 0.2
+  stepDistance: 0.15
   stepHeight: 0.05
   stepDuration: 0.2
   oppositeLeg: {fileID: 7080496780083948622}
