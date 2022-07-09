@@ -14,7 +14,7 @@ TagManager:
   - Special
   - Water
   - UI
-  - 
+  - Sphere(NavmeshTest)
   - Enemy
   - Character
   - Ground
