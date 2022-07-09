@@ -9,11 +9,12 @@ public class Spider : MonoBehaviour
     [SerializeField] float offsetY = 0.2f;
     [SerializeField] private List<ProceduralAnimationScript> legs;
     private Rigidbody _rigidbody;
-    private Vector3 _bodyTarget;
+    private Vector3 _bodyTarget,_moveVelocity;
 
     private void Awake()
     {
         _rigidbody = transform.GetComponent<Rigidbody>();
+        _moveVelocity = Vector3.zero;
     }
 
     void Update()
@@ -24,23 +25,12 @@ public class Spider : MonoBehaviour
             leg.UpdatePosition(Time.deltaTime);
         }
         
-        //force to move spider, will be set by controller later
-        Vector3 moveForce = Vector3.forward *1f;
+        _moveVelocity = Vector3.forward *1f;
+        _bodyTarget = GetMeanLegPosition() + Vector3.up*offsetY;
+        setBodyVerticalVelocity();
         
-        //if body too far from average leg position add force to center it
-        _bodyTarget = GetMeanLegPosition();
-        Vector3 centerDistance = GetMeanLegPosition() - transform.position;
-        if ((centerDistance).magnitude > 0.1f)
-        {
-            Vector3 legForce = (centerDistance).normalized * 5f;
-            _rigidbody.AddForce(legForce);
-        }
-        else
-        {
-            _rigidbody.AddForce(Vector3.zero);
-        }
 
-        _rigidbody.velocity = moveForce;
+        _rigidbody.velocity = _moveVelocity;
     }
     
     private Vector3 GetMeanLegPosition(){
@@ -60,7 +50,18 @@ public class Spider : MonoBehaviour
         }
         return new Vector3(x / legs.Count, y / legs.Count, z / legs.Count);
     }
-    
+
+    private void setBodyVerticalVelocity()
+    {
+        //if body too far from average leg position add force to center it
+        Vector3 centerDistance = GetMeanLegPosition() - transform.position;
+        Vector3 legForce = (centerDistance).normalized * 5f;
+        if ((centerDistance.y) is > 0.01f or < -0.01f)
+        {
+            _moveVelocity += Vector3.up * (legForce.y/5);
+        }
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
