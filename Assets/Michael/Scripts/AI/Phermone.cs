@@ -8,17 +8,16 @@ public class Phermone : MonoBehaviour
 
     public float expansionSpeed = 2.0f;
     public float maxScale = 10.0f;
-    float timer;
-    float reset;
+    public float timer;
+    public float reset;
 
     void Start()
     {
-        maxScale--;
-
         GetComponent<MeshRenderer>().enabled = false;
 
         timer = maxScale / expansionSpeed;
         reset = timer;
+        maxScale = maxScale - 0.5f;
     }
 
     void Update()
@@ -26,14 +25,13 @@ public class Phermone : MonoBehaviour
         if (Expand && timer >= 0)
         {
             timer -= Time.deltaTime;
-            Debug.Log("Expansion time:" + timer);
             transform.localScale += Vector3.one * expansionSpeed * Time.deltaTime;
         }
         else
         {
             GetComponent<MeshRenderer>().enabled = false;
             Expand = false;
-            transform.localScale = Vector3.one;
+            transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         }
     }
 

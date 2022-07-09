@@ -5,15 +5,17 @@ TagManager:
   serializedVersion: 2
   tags:
   - CinemachineTarget
+  - Phermone
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Special
   - Water
   - UI
   - 
-  - 
+  - Enemy
   - Character
   - Ground
   - Walkable

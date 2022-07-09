@@ -8,8 +8,10 @@ public class AI : MonoBehaviour
     public List<GameObject> Patrol_Points = new List<GameObject>();
     public State _state;
     public Transform player;
+    public Transform rotationTarget;
     public Material green;
     public Material red;
+    public Material blue;
 
     public Material closeRange;
     public Material mediumRange;
@@ -18,19 +20,24 @@ public class AI : MonoBehaviour
     Spotbar spotbar;
     NavMeshAgent agent;
     Vector3 v_targetVector;
+    Vector3 v_phermoneVector;
     AIFOV aifov;
     Phermone phermone;
 
     public float pointRange = 1.0f;
     public float timer = 5.0f;
+    public float phermoneTimer = 3.0f;
 
-    float reset;
-    float range;
+    public float reset;
+    public float phermoneTimerReset;
+    public float range;
     int tPN = 0;
 
     void Start()
     {
         reset = timer;
+        phermoneTimerReset = phermoneTimer;
+
         spotbar = GetComponentInChildren<Spotbar>();
         agent = GetComponent<NavMeshAgent>();
         aifov = GetComponent<AIFOV>();
@@ -87,6 +94,8 @@ public class AI : MonoBehaviour
 
             case State.Returning:
 
+                GetComponent<MeshRenderer>().material = red;
+
                 spotbar.decreaseSpot();
 
                 v_targetVector = Patrol_Points[tPN].transform.position - this.transform.position;
@@ -108,13 +117,15 @@ public class AI : MonoBehaviour
                 agent.isStopped = true;
 
                 agent.destination = player.position;
+                // use rotationTarget.position to work for making a specific location that the enemy should look towards
 
                 v_targetVector = player.position - this.transform.position;
 
                 Vector3 turnTowardNavSteeringTarget = agent.steeringTarget;
 
                 Vector3 direction = (turnTowardNavSteeringTarget - transform.position).normalized;
-                Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+                // Change direction.y to 0 look appropriately on completely flat surface
+                Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, direction.y, direction.z));
                 transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5);
 
                 IncreaseSpottingValue();
@@ -130,12 +141,34 @@ public class AI : MonoBehaviour
                 {
                     _state = State.Returning;
                     agent.isStopped = false;
-                    GetComponent<MeshRenderer>().material = red;
-                }    
+                }
+
+                break;
+
+            case State.Phermone:
+
+                v_targetVector = v_phermoneVector - this.transform.position;
+
+                if (v_targetVector.sqrMagnitude < pointRange)
+                {
+                    phermoneTimer -= Time.deltaTime;
+                    if (phermoneTimer <= 0)
+                    {
+                        _state = State.Returning;
+                        phermoneTimer = phermoneTimerReset;
+                    }
+                }
+
+                spotbar.maxSpot();
+                spotbar.reveal(false);
+
+                GetComponent<MeshRenderer>().material = blue;
+                agent.destination = v_phermoneVector;
 
                 break;
 
             case State.Stationary:
+
                 break;
         }
     }
@@ -146,6 +179,7 @@ public class AI : MonoBehaviour
         Chasing,
         Returning,
         Spotting,
+        Phermone,
         Stationary
     }
 
@@ -164,22 +198,18 @@ public class AI : MonoBehaviour
 
     void IncreaseSpottingValue()
     {
-        //Debug.Log("Distance is " + v_targetVector.magnitude);
         if (v_targetVector.magnitude <= range/4)
         {
-            //Debug.Log("In short range");
             spotbar.increaseSpot(3);
             GetComponent<MeshRenderer>().material = closeRange;
         }
         else if (v_targetVector.magnitude <= range/2 && v_targetVector.magnitude > range/4)
         {
-            //Debug.Log("In medium range");
             spotbar.increaseSpot(2);
             GetComponent<MeshRenderer>().material = mediumRange;
         }
         else if (v_targetVector.magnitude > range/2)
         {
-            //Debug.Log("In far range");
             spotbar.increaseSpot(1);
             GetComponent<MeshRenderer>().material = farRange;
         }
@@ -199,6 +229,15 @@ public class AI : MonoBehaviour
         else
         {
             return false;
+        }
+    }
+
+    private void OnTriggerStay(Collider touchedObject)
+    {
+        if (touchedObject.gameObject.CompareTag("Phermone") && _state != State.Chasing && _state != State.Returning)
+        {
+            v_phermoneVector = touchedObject.transform.position;
+            _state = State.Phermone;
         }
     }
 }

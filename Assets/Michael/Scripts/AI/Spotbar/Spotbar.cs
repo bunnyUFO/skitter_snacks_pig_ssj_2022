@@ -13,9 +13,6 @@ public class Spotbar : MonoBehaviour
     public float mediumSpotValue = 2;
     public float farSpotValue = 1;
 
-    Image image1;
-    Image image2;
-
     GameObject imageObject1;
     GameObject imageObject2;
 
@@ -92,5 +89,10 @@ public class Spotbar : MonoBehaviour
         {
             spotbarValue = 0;
         }
+    }
+
+    public void maxSpot()
+    {
+        spotbarValue = spotbarSize;
     }
 }
