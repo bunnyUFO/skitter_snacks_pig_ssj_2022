@@ -10,40 +10,40 @@ public class ProceduralAnimationScript : MonoBehaviour
     [SerializeField] float stepHeight = 0.2f;
     [SerializeField] float stepDuration = 0.2f;
     [SerializeField] ProceduralAnimationScript oppositeLeg = null;
+    public Vector3 stepNormal;
     private Transform rayCastSource;
     private Vector3 _oldPosition, _currentPosition, _targetPosition;
     private float lerp, lerpTime;
 
     //Set initial IK target position to ground at z offset from source
-    private void Start()
+    private void Awake()
     {
         lerp = 1;
         lerpTime = stepDuration;
         rayCastSource = transform.parent.transform.Find("raycast_source").transform;
-        Vector3 initalRayCastSource = new Vector3(transform.position.x, 0.08f, transform.position.z);
-        Ray ray = new Ray(initalRayCastSource, Vector3.down);
+        Vector3 initalRayCastSource = transform.position + transform.up.normalized*0.08f;
+        Ray ray = new Ray(initalRayCastSource, -transform.up.normalized);
 
-        if (Physics.Raycast(ray, out RaycastHit info, 10, raycastLayer.value))
+        if (Physics.Raycast(ray, out RaycastHit info, 1, raycastLayer.value))
         {
-            _oldPosition = _currentPosition = info.point + Vector3.forward*offsetZ;
+            _oldPosition = _currentPosition =_targetPosition = info.point + Vector3.forward*offsetZ;
         }
     }
     
-    void Update()
+    public void UpdatePosition(float deltaTime)
     {
         transform.position = _currentPosition;
-        Ray ray = new Ray(rayCastSource.position, Vector3.down);
+        
+        if (Physics.SphereCast(rayCastSource.position, stepDistance, -transform.up.normalized, out RaycastHit hit, 1f, raycastLayer.value)) {
+            _targetPosition = hit.point;
+            stepNormal = hit.normal;
 
-        if (Physics.Raycast(ray, out RaycastHit info, 10, raycastLayer.value))
-        {
-            _targetPosition = info.point;
-            
-            if (Vector3.Distance(_currentPosition, _targetPosition) > stepDistance && lerp >= 1 && oppositeLeg.isGrounded())
+            if (Vector3.Distance(_currentPosition, _targetPosition) > stepDistance && lerp >= 1 && oppositeLeg.IsGrounded())
             {
                 lerpTime = 0f;
             }
         }
-        
+
         lerp = lerpTime/stepDuration;
         
         if (lerp < 1)
@@ -52,12 +52,17 @@ public class ProceduralAnimationScript : MonoBehaviour
             tempPosition.y += Mathf.Sin(lerp * Mathf.PI) * stepHeight;
             
             _currentPosition = tempPosition;
-            lerpTime += Time.deltaTime;
+            lerpTime += deltaTime;
         }
         else
         {
             _oldPosition = _currentPosition;
         }
+    }
+
+    public Vector3 GetOldPosition()
+    {
+        return _oldPosition;
     }
 
     private void OnDrawGizmos()
@@ -66,7 +71,7 @@ public class ProceduralAnimationScript : MonoBehaviour
         Gizmos.DrawSphere(_targetPosition, 0.02f);
         Gizmos.DrawLine(_oldPosition, _targetPosition);
     }
-    private bool isGrounded()
+    public bool IsGrounded()
     {
         return lerp >= 1;
     }
