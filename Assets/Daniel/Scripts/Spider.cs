@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Spider : MonoBehaviour
 {
-    [SerializeField] LayerMask raycastLayer = default;
+    [LabelOverride( "body vertical offset" )]
     [SerializeField] float offsetY = 0.2f;
     [SerializeField] private List<ProceduralAnimationScript> legs;
     private Rigidbody _rigidbody;
@@ -24,7 +24,8 @@ public class Spider : MonoBehaviour
         {
             leg.UpdatePosition(Time.deltaTime);
         }
-        
+
+        _moveVelocity = Vector3.zero;
         _moveVelocity = Vector3.forward *1f;
         _bodyTarget = GetMeanLegPosition() + Vector3.up*offsetY;
         setBodyVerticalVelocity();
@@ -60,6 +61,15 @@ public class Spider : MonoBehaviour
         {
             _moveVelocity += Vector3.up * (legForce.y/5);
         }
+        if ((centerDistance.x) is > 0.01f or < -0.01f)
+        {
+            _moveVelocity += Vector3.right * (legForce.x/5);
+        }
+        if ((centerDistance.z) is > 0.2f or < -0.2f)
+        {
+            _moveVelocity += Vector3.forward * (legForce.z/5);
+        }
+        
     }
 
     private void OnDrawGizmos()
@@ -67,6 +77,6 @@ public class Spider : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawSphere(transform.position, 0.1f);
         Gizmos.color = Color.red;
-        Gizmos.DrawSphere(_bodyTarget, 0.1f);
+        Gizmos.DrawSphere(_bodyTarget, 0.2f);
     }
 }

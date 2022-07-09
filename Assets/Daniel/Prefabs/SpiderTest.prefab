@@ -217,7 +217,6 @@ GameObject:
   - component: {fileID: 8728345302015530857}
   - component: {fileID: 538330446}
   - component: {fileID: 538330447}
-  - component: {fileID: 7707335235902473941}
   m_Layer: 8
   m_Name: SpiderTest
   m_TagString: Player
@@ -291,10 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7caf825b08a949908ed41e8dba8b9b41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raycastLayer:
-    serializedVersion: 2
-    m_Bits: 1024
-  offsetY: 0.1
+  offsetY: 0.2
   legs:
   - {fileID: 7080496781340610865}
   - {fileID: 7080496780412374523}
@@ -320,31 +316,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7707335235902473941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1567569974861381022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7caf825b08a949908ed41e8dba8b9b41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  raycastLayer:
-    serializedVersion: 2
-    m_Bits: 1024
-  offsetY: 0.1
-  legs:
-  - {fileID: 7080496781340610865}
-  - {fileID: 7080496780412374523}
-  - {fileID: 7080496780083948622}
-  - {fileID: 7080496780847361891}
-  - {fileID: 7080496780666771951}
-  - {fileID: 7080496781123847960}
-  - {fileID: 7080496779923420797}
-  - {fileID: 7080496780573743004}
 --- !u!1 &1569833163258140332
 GameObject:
   m_ObjectHideFlags: 0
