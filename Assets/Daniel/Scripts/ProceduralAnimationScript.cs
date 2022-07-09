@@ -10,6 +10,7 @@ public class ProceduralAnimationScript : MonoBehaviour
     [SerializeField] float stepHeight = 0.2f;
     [SerializeField] float stepDuration = 0.2f;
     [SerializeField] ProceduralAnimationScript oppositeLeg = null;
+    public Vector3 stepNormal;
     private Transform rayCastSource;
     private Vector3 _oldPosition, _currentPosition, _targetPosition;
     private float lerp, lerpTime;
@@ -37,8 +38,10 @@ public class ProceduralAnimationScript : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit info, 10, raycastLayer.value))
         {
             _targetPosition = info.point;
+            stepNormal = info.normal;
             
-            if (Vector3.Distance(_currentPosition, _targetPosition) > stepDistance && lerp >= 1 && oppositeLeg.isGrounded())
+            
+            if (Vector3.Distance(_currentPosition, _targetPosition) > stepDistance && lerp >= 1 && oppositeLeg.IsGrounded())
             {
                 lerpTime = 0f;
             }
@@ -71,7 +74,7 @@ public class ProceduralAnimationScript : MonoBehaviour
         Gizmos.DrawSphere(_targetPosition, 0.02f);
         Gizmos.DrawLine(_oldPosition, _targetPosition);
     }
-    private bool isGrounded()
+    public bool IsGrounded()
     {
         return lerp >= 1;
     }
