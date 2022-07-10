@@ -40,4 +40,16 @@ public class AIFOV : MonoBehaviour
             }
         }
     }
+
+    public bool RaycastHit()
+    {
+        if (!Physics.Raycast(this.transform.position, targetDirection, Distance, layermask))
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
 }

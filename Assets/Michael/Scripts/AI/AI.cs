@@ -33,6 +33,8 @@ public class AI : MonoBehaviour
     public float range;
     int tPN = 0;
 
+    Vector3 v_navmeshLinkEndPos;
+
     void Start()
     {
         reset = timer;
@@ -54,6 +56,11 @@ public class AI : MonoBehaviour
 
     void Update()
     {
+        if (agent.isOnOffMeshLink)
+        {
+            Debug.Log("I'm on navmesh link");
+        }
+
         switch (_state)
         {
             case State.Patroling:
@@ -137,10 +144,11 @@ public class AI : MonoBehaviour
                     phermone.ReleasePhermones();
                 }
                 
-                if (v_targetVector.magnitude > range)
+                if (v_targetVector.magnitude > range || aifov.RaycastHit())
                 {
                     _state = State.Returning;
                     agent.isStopped = false;
+                    Debug.Log("Made it to destination");
                 }
 
                 break;
@@ -171,6 +179,8 @@ public class AI : MonoBehaviour
 
                 break;
         }
+
+        
     }
 
     public enum State
