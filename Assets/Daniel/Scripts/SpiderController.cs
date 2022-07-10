@@ -76,6 +76,9 @@ namespace StarterAssets
 
         private void Move()
         {
+            //Commented code block is to set speed acceleration
+            //Currently move speed it just a normalized vector (speed of 1)
+            /*
             // set target speed based on move speed, sprint speed and if sprint is pressed
             float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
 
@@ -90,7 +93,7 @@ namespace StarterAssets
 
             float speedOffset = 0.1f;
             float inputMagnitude = _input.analogMovement ? _input.move.magnitude : 1f;
-
+            
             // accelerate or decelerate to target speed
             if (currentHorizontalSpeed < targetSpeed - speedOffset ||
                 currentHorizontalSpeed > targetSpeed + speedOffset)
@@ -107,32 +110,29 @@ namespace StarterAssets
             {
                 _speed = targetSpeed;
             }
+            */
             
-            // normalise input direction
             Vector3 inputDirection = new Vector3(_input.move.x, 0.0f, _input.move.y).normalized;
-
-            // note: Vector2's != operator uses approximation so is not floating point error prone, and is cheaper than magnitude
+            
+            /*
+             // note: Vector2's != operator uses approximation so is not floating point error prone, and is cheaper than magnitude
             // if there is a move input rotate player when the player is moving
-            // if (_input.move != Vector2.zero)
-            // {
-            //     _targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg +
-            //                       _mainCamera.transform.eulerAngles.y;
-            //     float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetRotation, ref _rotationVelocity,
-            //         RotationSmoothTime);
-            //
-            //     // rotate to face input direction relative to camera position
-            //     transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
-            // }
+            if (_input.move != Vector2.zero)
+            {
+                _targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg +
+                                  _mainCamera.transform.eulerAngles.y;
+                float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetRotation, ref _rotationVelocity,
+                    RotationSmoothTime);
+            
+                // rotate to face input direction relative to camera position
+                transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
+            }
+            */
             
 
             // move the player
-            // print("X: " + inputDirection.x + " Z: " + inputDirection.z);
             Vector3 targetDirection = transform.forward * inputDirection.z + transform.right * inputDirection.x;
-            print(targetDirection.normalized);
-            Debug.DrawRay(transform.position, targetDirection, Color.green, 0);
-            // _rigidbody.velocity = (targetDirection.normalized * (_speed * Time.deltaTime));
             _rigidbody.velocity = (targetDirection.normalized);
-            // _rigidbody.velocity = (transform.forward + transform.right).normalized;
         }
     }
 }
