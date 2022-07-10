@@ -6,25 +6,27 @@ using UnityEngine.UIElements;
 public class ProceduralAnimationScript : MonoBehaviour
 {
     [Header ("Step Configurations")]
-    [SerializeField] float offsetZ = 0;
+    [SerializeField] float legStaggerOffset = 0;
     [SerializeField] float stepDistance = 0.2f;
     [SerializeField] float stepHeight = 0.2f;
     [SerializeField] float stepDuration = 0.2f;
     [SerializeField] ProceduralAnimationScript oppositeLeg = null;
     
-    [Header ("Shared Configurations")]
+    [Header ("Shared Raycast Configurations")]
     [SerializeField] Transform body;
-    [SerializeField] float offsetY = 1f;
     [SerializeField] LayerMask raycastLayer = default;
     
     [Header ("forward Raycast Configurations")]
     [SerializeField] float forwardRayCastDistance = 2f;
     [SerializeField] float forwardRayCastRadius = 2f;
+    [SerializeField] float forwardRayCastOffsetZ = 1f;
+    [SerializeField] float forwardRayCastOffsetY = 1f;
     [SerializeField] bool debugBodyForward = false;
 
     [Header ("Leg Down Raycast Configurations")]
     [SerializeField] float downRayCastDistance = 1f;
     [SerializeField] float downRayCastRadius = 1f;
+    [SerializeField] float downRayCastOffsetY = 1f;
     [SerializeField] bool debugLegDown = false;
     
     [Header ("Body Down Raycast Configurations")]
@@ -45,12 +47,12 @@ public class ProceduralAnimationScript : MonoBehaviour
         _oldPosition = _currentPosition = _targetPosition = transform.position;
         
         rayCastSource = transform.parent.transform.Find("raycast_source").transform;
-        Vector3 initalRayCastSource = transform.position + transform.up.normalized*offsetY;
+        Vector3 initalRayCastSource = transform.position + transform.up.normalized*downRayCastOffsetY;
         Ray ray = new Ray(initalRayCastSource, -transform.up.normalized);
         
         if (Physics.Raycast(ray, out RaycastHit info, downRayCastDistance, raycastLayer.value))
         {
-            _oldPosition = _currentPosition =_targetPosition = info.point + transform.forward*offsetZ;
+            _oldPosition = _currentPosition =_targetPosition = info.point + transform.forward*legStaggerOffset;
         }
     }
     
@@ -60,12 +62,13 @@ public class ProceduralAnimationScript : MonoBehaviour
         _raycastPosition = rayCastSource.position;
         _bodyPosition = body.position;
         
-        Vector3 legDownRaySource = _raycastPosition + transform.up * offsetY;
+        Vector3 legDownRaySource = _raycastPosition + transform.up * downRayCastOffsetY;
         
         Vector3 bodyDownBodySource = _raycastPosition;
-        Vector3 bodyDownCastDirection = new Vector3(_bodyPosition.x, _bodyPosition.y, _raycastPosition.z) - _raycastPosition;
+        Vector3 bodyDownCastDirection = (rayCastSource.right*(-rayCastSource.localPosition.x)).normalized;
+        // Vector3 bodyDownCastDirection = new Vector3(_bodyPosition.x, _bodyPosition.y, _raycastPosition.z) - _raycastPosition;
 
-        Vector3 bodyForwardBodySource = _bodyPosition + transform.up * offsetY/2 + transform.forward*(_raycastPosition.z - _bodyPosition.z);
+        Vector3 bodyForwardBodySource = _bodyPosition + transform.up*forwardRayCastOffsetY + transform.forward*(_raycastPosition.z - _bodyPosition.z  - forwardRayCastOffsetZ);
         /*
          * Ray cast and set target move position
          * Ray cast forward from body first
@@ -129,11 +132,14 @@ public class ProceduralAnimationScript : MonoBehaviour
         Gizmos.DrawSphere(_targetPosition, 0.02f);
         Gizmos.DrawLine(_oldPosition, _targetPosition);
         
-        Vector3 castSource = transform.parent.transform.Find("raycast_source").transform.position;
+        Transform castTransform = transform.parent.transform.Find("raycast_source").transform;
+        Vector3 castSource = castTransform.position;
+        
+        Vector3 castTransformRight = transform.parent.transform.Find("raycast_source").transform.right;
 
         if (debugLegDown)
         {
-            Vector3 source = castSource + transform.up * offsetY;
+            Vector3 source = castSource + transform.up * downRayCastOffsetY;
             Gizmos.color = Color.yellow;
             Gizmos.DrawWireSphere(source, downRayCastRadius);
             Gizmos.DrawLine(source, source + -transform.up.normalized*downRayCastDistance);
@@ -143,7 +149,7 @@ public class ProceduralAnimationScript : MonoBehaviour
         if (debugBodyDown)
         {
             Vector3 source = castSource;
-            Vector3 bodyDownCastDirection = new Vector3(body.position.x, body.position.y, source.z) - source;
+            Vector3 bodyDownCastDirection = (castTransformRight*(-castTransform.localPosition.x)).normalized;
             Gizmos.color = Color.magenta;
             Gizmos.DrawWireSphere(source, centerRayCastRadius);
             Gizmos.DrawLine(source, source + bodyDownCastDirection.normalized*centerRayCastDistance);
@@ -152,7 +158,7 @@ public class ProceduralAnimationScript : MonoBehaviour
         
         if (debugBodyForward)
         {
-            Vector3 source = body.position + transform.up *(offsetY/2);
+            Vector3 source = body.position + transform.up*forwardRayCastOffsetY + transform.forward*(castSource.z - body.position.z  - forwardRayCastOffsetZ);
             Gizmos.DrawWireSphere(source, forwardRayCastRadius);
             Gizmos.DrawLine(source, source + transform.forward.normalized*forwardRayCastDistance);
             Gizmos.DrawWireSphere(source + transform.forward.normalized*forwardRayCastDistance, forwardRayCastRadius);

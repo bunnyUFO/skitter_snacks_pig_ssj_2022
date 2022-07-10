@@ -58,6 +58,15 @@ namespace StarterAssets
             }
         }
 
+        private void Awake()
+        {
+            // get a reference to our main camera
+            if (_mainCamera == null)
+            {
+                _mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+            }
+        }
+        
         private void Start()
         {
             _rigidbody = GetComponent<Rigidbody>();
@@ -71,14 +80,14 @@ namespace StarterAssets
 
         private void Update()
         {
-            Move();
+            Move(Time.deltaTime);
         }
 
-        private void Move()
+        private void Move(float time)
         {
             //Commented code block is to set speed acceleration
             //Currently move speed it just a normalized vector (speed of 1)
-            /*
+            
             // set target speed based on move speed, sprint speed and if sprint is pressed
             float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
 
@@ -110,11 +119,11 @@ namespace StarterAssets
             {
                 _speed = targetSpeed;
             }
-            */
+            
             
             Vector3 inputDirection = new Vector3(_input.move.x, 0.0f, _input.move.y).normalized;
             
-            /*
+            
              // note: Vector2's != operator uses approximation so is not floating point error prone, and is cheaper than magnitude
             // if there is a move input rotate player when the player is moving
             if (_input.move != Vector2.zero)
@@ -125,10 +134,19 @@ namespace StarterAssets
                     RotationSmoothTime);
             
                 // rotate to face input direction relative to camera position
-                transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
+                // TODO fix rotation to not override rotation from Spider.cs
+                // transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
             }
-            */
             
+            if (Keyboard.current.qKey.isPressed)
+            {
+                transform.Rotate(0f, -360f*time, 0f);
+            }
+            if (Keyboard.current.eKey.isPressed)
+            {
+                transform.Rotate(0f, 360*time, 0f);
+            }
+
 
             // move the player
             Vector3 targetDirection = transform.forward * inputDirection.z + transform.right * inputDirection.x;
