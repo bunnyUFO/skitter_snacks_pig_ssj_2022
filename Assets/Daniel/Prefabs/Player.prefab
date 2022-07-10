@@ -924,6 +924,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7080496779923420797, guid: 60c7b87bac9738145ad61caa3e4d9e15,
         type: 3}
+      propertyPath: raycastLayer.m_Bits
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7080496779923420797, guid: 60c7b87bac9738145ad61caa3e4d9e15,
+        type: 3}
       propertyPath: forwardRayCastRadius
       value: 0.2
       objectReference: {fileID: 0}
@@ -964,6 +969,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7080496780083948622, guid: 60c7b87bac9738145ad61caa3e4d9e15,
         type: 3}
+      propertyPath: raycastLayer.m_Bits
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7080496780083948622, guid: 60c7b87bac9738145ad61caa3e4d9e15,
+        type: 3}
       propertyPath: forwardRayCastRadius
       value: 0.2
       objectReference: {fileID: 0}
@@ -1004,6 +1014,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7080496780412374523, guid: 60c7b87bac9738145ad61caa3e4d9e15,
         type: 3}
+      propertyPath: raycastLayer.m_Bits
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7080496780412374523, guid: 60c7b87bac9738145ad61caa3e4d9e15,
+        type: 3}
       propertyPath: forwardRayCastRadius
       value: 0.2
       objectReference: {fileID: 0}
@@ -1041,6 +1056,11 @@ PrefabInstance:
         type: 3}
       propertyPath: centerRayCastRadius
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7080496780573743004, guid: 60c7b87bac9738145ad61caa3e4d9e15,
+        type: 3}
+      propertyPath: raycastLayer.m_Bits
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7080496780573743004, guid: 60c7b87bac9738145ad61caa3e4d9e15,
         type: 3}
@@ -1081,6 +1101,11 @@ PrefabInstance:
         type: 3}
       propertyPath: centerRayCastRadius
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7080496780666771951, guid: 60c7b87bac9738145ad61caa3e4d9e15,
+        type: 3}
+      propertyPath: raycastLayer.m_Bits
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7080496780666771951, guid: 60c7b87bac9738145ad61caa3e4d9e15,
         type: 3}
@@ -1121,6 +1146,11 @@ PrefabInstance:
         type: 3}
       propertyPath: centerRayCastRadius
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7080496780847361891, guid: 60c7b87bac9738145ad61caa3e4d9e15,
+        type: 3}
+      propertyPath: raycastLayer.m_Bits
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7080496780847361891, guid: 60c7b87bac9738145ad61caa3e4d9e15,
         type: 3}
@@ -1161,6 +1191,11 @@ PrefabInstance:
         type: 3}
       propertyPath: centerRayCastRadius
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7080496781123847960, guid: 60c7b87bac9738145ad61caa3e4d9e15,
+        type: 3}
+      propertyPath: raycastLayer.m_Bits
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7080496781123847960, guid: 60c7b87bac9738145ad61caa3e4d9e15,
         type: 3}
@@ -1201,6 +1236,11 @@ PrefabInstance:
         type: 3}
       propertyPath: centerRayCastRadius
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7080496781340610865, guid: 60c7b87bac9738145ad61caa3e4d9e15,
+        type: 3}
+      propertyPath: raycastLayer.m_Bits
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7080496781340610865, guid: 60c7b87bac9738145ad61caa3e4d9e15,
         type: 3}

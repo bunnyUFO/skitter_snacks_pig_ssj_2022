@@ -66,9 +66,9 @@ public class ProceduralAnimationScript : MonoBehaviour
         
         Vector3 bodyDownBodySource = _raycastPosition;
         Vector3 bodyDownCastDirection = (rayCastSource.right*(-rayCastSource.localPosition.x)).normalized;
-        // Vector3 bodyDownCastDirection = new Vector3(_bodyPosition.x, _bodyPosition.y, _raycastPosition.z) - _raycastPosition;
-
-        Vector3 bodyForwardBodySource = _bodyPosition + transform.up*forwardRayCastOffsetY + transform.forward*(_raycastPosition.z - _bodyPosition.z  - forwardRayCastOffsetZ);
+        Vector3 bodyForwardBodySource = _bodyPosition + transform.up*forwardRayCastOffsetY + transform.forward*(rayCastSource.localPosition.z - forwardRayCastOffsetZ);
+        
+        
         /*
          * Ray cast and set target move position
          * Ray cast forward from body first
@@ -158,7 +158,7 @@ public class ProceduralAnimationScript : MonoBehaviour
         
         if (debugBodyForward)
         {
-            Vector3 source = body.position + transform.up*forwardRayCastOffsetY + transform.forward*(castSource.z - body.position.z  - forwardRayCastOffsetZ);
+            Vector3 source = body.position + transform.up*forwardRayCastOffsetY + transform.forward*(castTransform.localPosition.z - forwardRayCastOffsetZ);
             Gizmos.DrawWireSphere(source, forwardRayCastRadius);
             Gizmos.DrawLine(source, source + transform.forward.normalized*forwardRayCastDistance);
             Gizmos.DrawWireSphere(source + transform.forward.normalized*forwardRayCastDistance, forwardRayCastRadius);
