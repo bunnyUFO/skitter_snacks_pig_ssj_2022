@@ -5,12 +5,10 @@ public class Spider : MonoBehaviour
 {
     [Header("Body Positioning")] [LabelOverride("Body Y Offset")] [SerializeField]
     float offsetY = 0.2f;
-
     [LabelOverride("Rotation Speed Curve")] [SerializeField]
     AnimationCurve sensitivityCurve;
-
-    [SerializeField]
-    List<ProceduralAnimationScript> legs;
+    [SerializeField] List<ProceduralAnimationScript> legs;
+    [SerializeField] bool debug= false;
     private bool _grounded = false;
 
     void Update()
@@ -44,19 +42,27 @@ public class Spider : MonoBehaviour
             // Calculate product of adjacent leg distance from body
             c = Vector3.Cross(a, b);
             
-            // Use lge surface normal vectors and leg distance cross products to calculate body up vector
+            // Use leg surface normal vectors and leg distance cross products to calculate body up vector
+            // up += (legs[i].stepNormal == Vector3.zero ? transform.forward : legs[i].stepNormal);
             up += c * sensitivityCurve.Evaluate(c.magnitude) +
                   (legs[i].stepNormal == Vector3.zero ? transform.forward : legs[i].stepNormal);
+
             _grounded |= legs[i].IsGrounded();
 
-            Debug.DrawRay(point, c, Color.yellow, 0);
-            Debug.DrawRay(point, legs[i].stepNormal, Color.magenta, 0);
+            if (debug)
+            {
+                Debug.DrawRay(point, c, Color.yellow, 0);
+                Debug.DrawRay(point, legs[i].stepNormal, Color.magenta, 0);
+            }
         }
 
         // Scale up vector and surface vertical distance
         up /= legs.Count;
         avgSurfaceDist /= legs.Count;
-        Debug.DrawRay(transform.position, up, Color.green, 0);
+        if (debug)
+        {
+            Debug.DrawRay(transform.position, up, Color.green, 0);
+        }
 
         // Rotate body to match up vector
         transform.rotation = Quaternion.Slerp(transform.rotation,
