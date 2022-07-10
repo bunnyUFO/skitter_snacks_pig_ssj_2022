@@ -78,9 +78,9 @@ public class Ant : MonoBehaviour
         Debug.DrawRay(transform.position, up, Color.green, 0);
 
         // Asigns Up Using Vector3.ProjectOnPlane To Preserve Forward Orientation
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Vector3.ProjectOnPlane(transform.forward, up), up), 22.5f * Time.deltaTime);
+        //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Vector3.ProjectOnPlane(transform.forward, up), up), 22.5f * Time.deltaTime);
         // Asigns Up Using Vector3.ProjectOnPlane To Preserve Forward Orientation
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Vector3.ProjectOnPlane(transform.forward, up), up), 22.5f * Time.deltaTime);
+        //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Vector3.ProjectOnPlane(transform.forward, up), up), 22.5f * Time.deltaTime);
         if (_grounded) {
             transform.Translate(0, -(-avgSurfaceDist + -offsetY) * 0.5f, 0, Space.Self);
         }
@@ -92,4 +92,6 @@ public class Ant : MonoBehaviour
         Gizmos.DrawSphere(transform.position, 0.1f);
         Gizmos.color = Color.red;
     }
+
+
 }
