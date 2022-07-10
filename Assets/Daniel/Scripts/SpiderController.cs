@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
 #endif
@@ -17,6 +18,7 @@ namespace StarterAssets
         [Header("Player")]
         [Tooltip("Move speed of the character in m/s")]
         public float MoveSpeed = 2.0f;
+        private Spider _spider;
 
 
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
@@ -34,6 +36,11 @@ namespace StarterAssets
 				    return false;
                 #endif
             }
+        }
+
+        private void Awake()
+        {
+            _spider = transform.GetComponent<Spider>();
         }
 
         private void Start()
@@ -66,8 +73,12 @@ namespace StarterAssets
             }
 
             // move the player
-            Vector3 targetDirection = transform.forward * inputDirection.z + transform.right * inputDirection.x;
-            _rigidbody.velocity = (targetDirection.normalized)*MoveSpeed;
+            // if (_spider.grounded)
+            if (true)
+            {
+                Vector3 targetDirection = transform.forward * inputDirection.z + transform.right * inputDirection.x; 
+                _rigidbody.velocity = (targetDirection.normalized)*MoveSpeed;
+            }
         }
     }
 }

@@ -10,7 +10,7 @@ public class ProceduralAnimationScript : MonoBehaviour
     [SerializeField] float stepDistance = 0.2f;
     [SerializeField] float stepHeight = 0.2f;
     [SerializeField] float stepDuration = 0.2f;
-    [SerializeField] ProceduralAnimationScript oppositeLeg = null;
+    [SerializeField] List<ProceduralAnimationScript> LegConstraints = null;
     
     [Header ("Shared Raycast Configurations")]
     [SerializeField] Transform body;
@@ -38,6 +38,7 @@ public class ProceduralAnimationScript : MonoBehaviour
     private Transform rayCastSource;
     private Vector3 _oldPosition, _currentPosition, _targetPosition, _raycastPosition,_bodyPosition;
     private float lerp, lerpTime;
+    private bool _previouslyGrounded, _grounded = false;
 
     //Set initial IK target position to ground at z offset from source
     private void Awake()
@@ -45,6 +46,7 @@ public class ProceduralAnimationScript : MonoBehaviour
         lerp = 1;
         lerpTime = stepDuration;
         _oldPosition = _currentPosition = _targetPosition = transform.position;
+        _previouslyGrounded = _grounded;
         
         rayCastSource = transform.parent.transform.Find("raycast_source").transform;
         Vector3 initalRayCastSource = transform.position + transform.up.normalized*downRayCastOffsetY;
@@ -68,7 +70,7 @@ public class ProceduralAnimationScript : MonoBehaviour
         Vector3 bodyDownCastDirection = (rayCastSource.right*(-rayCastSource.localPosition.x)).normalized;
         Vector3 bodyForwardBodySource = _bodyPosition + transform.up*forwardRayCastOffsetY + transform.forward*(rayCastSource.localPosition.z - forwardRayCastOffsetZ);
         
-        
+        _grounded = lerp < 1;
         /*
          * Ray cast and set target move position
          * Ray cast forward from body first
@@ -79,8 +81,9 @@ public class ProceduralAnimationScript : MonoBehaviour
         {
             _targetPosition = forwardHit.point;
             stepNormal = forwardHit.normal;
+            _grounded = _currentPosition.y - forwardHit.point.y < forwardRayCastOffsetY;
 
-            if (Vector3.Distance(_currentPosition, _targetPosition) > stepDistance && lerp >= 1 && oppositeLeg.IsGrounded())
+            if (Vector3.Distance(_currentPosition, _targetPosition) > stepDistance && lerp >= 1 && otherLegsGrounded())
             {
                 lerpTime = 0f;
             }
@@ -88,8 +91,10 @@ public class ProceduralAnimationScript : MonoBehaviour
         else if (Physics.SphereCast(legDownRaySource , downRayCastRadius, -transform.up.normalized, out RaycastHit downHit, downRayCastDistance, raycastLayer.value)) {
             _targetPosition = downHit.point;
             stepNormal = downHit.normal;
+            _grounded = _currentPosition.y - downHit.point.y < downRayCastOffsetY;
+            
 
-            if (Vector3.Distance(_currentPosition, _targetPosition) > stepDistance && lerp >= 1 && oppositeLeg.IsGrounded())
+            if (Vector3.Distance(_currentPosition, _targetPosition) > stepDistance && lerp >= 1 && otherLegsGrounded())
             {
                 lerpTime = 0f;
             }
@@ -98,8 +103,9 @@ public class ProceduralAnimationScript : MonoBehaviour
         {
             _targetPosition = centerHit.point;
             stepNormal = centerHit.normal;
+            _grounded = true;
 
-            if (Vector3.Distance(_currentPosition, _targetPosition) > stepDistance && lerp >= 1 && oppositeLeg.IsGrounded())
+            if (Vector3.Distance(_currentPosition, _targetPosition) > stepDistance && lerp >= 1 && otherLegsGrounded())
             {
                 lerpTime = 0f;
             }
@@ -117,7 +123,15 @@ public class ProceduralAnimationScript : MonoBehaviour
         }
         else
         {
-            _oldPosition = _currentPosition;
+            // if (_grounded)
+            if (true)
+            {
+                _oldPosition = _currentPosition;
+            }
+            // else
+            // {
+            //     transform.position = _oldPosition = _currentPosition = rayCastSource.position + transform.forward * legStaggerOffset;
+            // }
         }
     }
 
@@ -166,6 +180,11 @@ public class ProceduralAnimationScript : MonoBehaviour
     }
     public bool IsGrounded()
     {
-        return lerp >= 1;
+        return _grounded;
+    }
+
+    private bool otherLegsGrounded()
+    {
+        return LegConstraints.TrueForAll(leg => leg.IsGrounded());
     }
 }

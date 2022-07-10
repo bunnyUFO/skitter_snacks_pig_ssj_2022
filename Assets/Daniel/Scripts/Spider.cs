@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +10,13 @@ public class Spider : MonoBehaviour
     AnimationCurve sensitivityCurve;
     [SerializeField] List<ProceduralAnimationScript> legs;
     [SerializeField] bool debug= false;
-    private bool _grounded = false;
+    public bool grounded = false;
+    private Rigidbody _rigidbody;
+
+    private void Awake()
+    {
+        _rigidbody = transform.GetComponent<Rigidbody>();
+    }
 
     void Update()
     {
@@ -26,7 +33,7 @@ public class Spider : MonoBehaviour
         Vector3 up = Vector3.zero;
         float avgSurfaceDist = 0;
 
-        _grounded = false;
+        grounded = false;
 
         Vector3 point, a, b, c;
 
@@ -46,15 +53,15 @@ public class Spider : MonoBehaviour
             // up += (legs[i].stepNormal == Vector3.zero ? transform.forward : legs[i].stepNormal);
             up += c * sensitivityCurve.Evaluate(c.magnitude) +
                   (legs[i].stepNormal == Vector3.zero ? transform.forward : legs[i].stepNormal);
-
-            _grounded |= legs[i].IsGrounded();
-
+            
             if (debug)
             {
                 Debug.DrawRay(point, c, Color.yellow, 0);
                 Debug.DrawRay(point, legs[i].stepNormal, Color.magenta, 0);
             }
         }
+
+        grounded = legs.TrueForAll(leg => leg.IsGrounded());
 
         // Scale up vector and surface vertical distance
         up /= legs.Count;
@@ -64,14 +71,19 @@ public class Spider : MonoBehaviour
             Debug.DrawRay(transform.position, up, Color.green, 0);
         }
 
-        // Rotate body to match up vector
-        transform.rotation = Quaternion.Slerp(transform.rotation,
-            Quaternion.LookRotation(Vector3.ProjectOnPlane(transform.forward, up), up), 22.5f * Time.deltaTime);
-        
         // I grounded move body to Y offset
-        if (_grounded)
+        // if (grounded)
+        if (true)
         {
+            // _rigidbody.AddForce(Vector3.zero);
+            transform.rotation = Quaternion.Slerp(transform.rotation,
+                Quaternion.LookRotation(Vector3.ProjectOnPlane(transform.forward, up), up), 22.5f * Time.deltaTime);
             transform.Translate(0, -(-avgSurfaceDist + -offsetY) * 0.5f, 0, Space.Self);
+        }
+        else
+        {
+            //rotate body to nearest surface??
+            // _rigidbody.AddForce(Vector3.down);
         }
     }
 }
