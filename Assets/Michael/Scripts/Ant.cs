@@ -12,13 +12,11 @@ public class Ant : MonoBehaviour
     [SerializeField] AnimationCurve sensitivityCurve;
     [SerializeField] private List<ProceduralAnimationScript> legs;
     private Rigidbody _rigidbody;
-    private Vector3 _bodyTarget,_moveVelocity;
     private bool _grounded = false;
 
     private void Awake()
     {
         _rigidbody = transform.GetComponent<Rigidbody>();
-        _moveVelocity = Vector3.zero;
     }
 
     void Update()
@@ -29,10 +27,7 @@ public class Ant : MonoBehaviour
             leg.UpdatePosition(Time.deltaTime);
         }
 
-        _moveVelocity = Vector3.zero;
-        // _moveVelocity = transform.forward *1f;
         CalculateOrientation();
-        // _rigidbody.velocity = _moveVelocity;
     }
     
     private Vector3 GetMeanLegPosition(){
@@ -88,9 +83,6 @@ public class Ant : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Vector3.ProjectOnPlane(transform.forward, up), up), 22.5f * Time.deltaTime);
         if (_grounded) {
             transform.Translate(0, -(-avgSurfaceDist + -offsetY) * 0.5f, 0, Space.Self);
-        } else {
-            // Simple Gravity
-            _moveVelocity += Vector3.down;
         }
     }
 
