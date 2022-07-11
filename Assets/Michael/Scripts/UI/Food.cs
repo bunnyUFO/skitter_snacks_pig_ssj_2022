@@ -5,6 +5,7 @@ using UnityEngine;
 public class Food : MonoBehaviour
 {
     public bool Collected = false;
+    public bool Sent = false;
 
     void Start()
     {
