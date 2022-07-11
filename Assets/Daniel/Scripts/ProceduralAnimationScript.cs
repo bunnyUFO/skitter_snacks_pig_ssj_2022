@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 public class ProceduralAnimationScript : MonoBehaviour
 {
     [Header ("Step Configurations")]
-    [SerializeField] float legStaggerOffset = 0;
+    [SerializeField] bool stagger = false;
     [SerializeField] float stepDistance = 0.2f;
     [SerializeField] float stepHeight = 0.2f;
     [SerializeField] float stepDuration = 0.2f;
@@ -38,23 +38,27 @@ public class ProceduralAnimationScript : MonoBehaviour
     private Transform rayCastSource;
     private Vector3 _oldPosition, _currentPosition, _targetPosition, _raycastPosition,_bodyPosition;
     private float lerp, lerpTime;
-    private bool _previouslyGrounded, _grounded = false;
+    private bool _canMove, _previouslyGrounded, _grounded = false;
 
     //Set initial IK target position to ground at z offset from source
     private void Awake()
     {
+        rayCastSource = transform.parent.transform.Find("raycast_source").transform;
         lerp = 1;
         lerpTime = stepDuration;
         _oldPosition = _currentPosition = _targetPosition = transform.position;
         _previouslyGrounded = _grounded;
-        
-        rayCastSource = transform.parent.transform.Find("raycast_source").transform;
-        Vector3 initalRayCastSource = transform.position + transform.up.normalized*downRayCastOffsetY;
-        Ray ray = new Ray(initalRayCastSource, -transform.up.normalized);
-        
-        if (Physics.Raycast(ray, out RaycastHit info, downRayCastDistance, raycastLayer.value))
+        _raycastPosition = rayCastSource.position;
+        _canMove = true;
+
+        Vector3 legDownRaySource = _raycastPosition + transform.up * downRayCastOffsetY;
+        if (stagger)
         {
-            _oldPosition = _currentPosition =_targetPosition = info.point + transform.forward*legStaggerOffset;
+            staggerLeg();
+        }
+
+        if (stagger && Physics.SphereCast(legDownRaySource , downRayCastRadius, -transform.up.normalized, out RaycastHit downHit, downRayCastDistance, raycastLayer.value)) {
+            _oldPosition = _currentPosition =_targetPosition = downHit.point + transform.forward*stepDistance/2;
         }
     }
     
@@ -63,6 +67,7 @@ public class ProceduralAnimationScript : MonoBehaviour
         transform.position = _currentPosition;
         _raycastPosition = rayCastSource.position;
         _bodyPosition = body.position;
+        updateCanMove();
         
         Vector3 legDownRaySource = _raycastPosition + transform.up * downRayCastOffsetY;
         
@@ -83,7 +88,7 @@ public class ProceduralAnimationScript : MonoBehaviour
             stepNormal = forwardHit.normal;
             _grounded = _currentPosition.y - forwardHit.point.y < forwardRayCastOffsetY;
 
-            if (Vector3.Distance(_currentPosition, _targetPosition) > stepDistance && lerp >= 1 && otherLegsGrounded())
+            if (Vector3.Distance(_currentPosition, _targetPosition) > stepDistance && lerp >= 1 && _canMove)
             {
                 lerpTime = 0f;
             }
@@ -94,7 +99,7 @@ public class ProceduralAnimationScript : MonoBehaviour
             _grounded = _currentPosition.y - downHit.point.y < downRayCastOffsetY;
             
 
-            if (Vector3.Distance(_currentPosition, _targetPosition) > stepDistance && lerp >= 1 && otherLegsGrounded())
+            if (Vector3.Distance(_currentPosition, _targetPosition) > stepDistance && lerp >= 1 && _canMove)
             {
                 lerpTime = 0f;
             }
@@ -105,7 +110,7 @@ public class ProceduralAnimationScript : MonoBehaviour
             stepNormal = centerHit.normal;
             _grounded = true;
 
-            if (Vector3.Distance(_currentPosition, _targetPosition) > stepDistance && lerp >= 1 && otherLegsGrounded())
+            if (Vector3.Distance(_currentPosition, _targetPosition) > stepDistance && lerp >= 1 && _canMove)
             {
                 lerpTime = 0f;
             }
@@ -116,7 +121,7 @@ public class ProceduralAnimationScript : MonoBehaviour
         if (lerp < 1)
         {
             Vector3 tempPosition = Vector3.Lerp(_oldPosition, _targetPosition, lerp);
-            tempPosition.y += Mathf.Sin(lerp * Mathf.PI) * stepHeight;
+            tempPosition += transform.up * Mathf.Sin(lerp * Mathf.PI) * stepHeight;
             
             _currentPosition = tempPosition;
             lerpTime += deltaTime;
@@ -182,9 +187,38 @@ public class ProceduralAnimationScript : MonoBehaviour
     {
         return _grounded;
     }
-
-    private bool otherLegsGrounded()
+    
+    public bool IsMoving()
     {
-        return LegConstraints.TrueForAll(leg => leg.IsGrounded());
+        return lerp < 1;
+    }
+
+    private bool otherLegsMoving()
+    {
+        return LegConstraints.TrueForAll(leg => leg.IsMoving());
+    }
+    
+    private void updateCanMove()
+    {
+        if (otherLegsMoving())
+        {
+            _canMove = false;
+        }
+        else
+        {
+            _canMove = true;
+        }
+    }
+
+
+    public void staggerLeg()
+    {
+        if (!stagger) { return; }
+
+        Vector3 legDownRaySource = _raycastPosition + transform.up * downRayCastOffsetY;
+        
+        if (Physics.SphereCast(legDownRaySource , downRayCastRadius, -transform.up.normalized, out RaycastHit downHit, downRayCastDistance, raycastLayer.value)) {
+            _currentPosition = downHit.point + transform.forward*stepDistance/2;
+        }
     }
 }

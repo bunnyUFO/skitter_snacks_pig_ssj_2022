@@ -26,6 +26,7 @@ public class Spider : MonoBehaviour
         }
 
         CalculateOrientation();
+        StaggerLegs();
     }
 
     private void CalculateOrientation()
@@ -84,6 +85,17 @@ public class Spider : MonoBehaviour
         {
             //rotate body to nearest surface??
             // _rigidbody.AddForce(Vector3.down);
+        }
+    }
+
+    public void StaggerLegs()
+    {
+        if (_rigidbody.velocity.magnitude == 0)
+        {
+            foreach (var leg in legs)
+            {
+                leg.staggerLeg();
+            }
         }
     }
 }
