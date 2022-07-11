@@ -8,6 +8,7 @@ TagManager:
   - Phermone
   - Enemy
   - Ground
+  - Food
   layers:
   - Default
   - TransparentFX
