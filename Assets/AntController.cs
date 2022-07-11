@@ -17,7 +17,7 @@ public class AntController : MonoBehaviour
 
     void Update()
     {
-        targetDirection = transform.forward;
-        _rigidbody.velocity = targetDirection * MoveSpeed;
+        // targetDirection = transform.forward;
+        // _rigidbody.velocity = targetDirection * MoveSpeed;
     }
 }

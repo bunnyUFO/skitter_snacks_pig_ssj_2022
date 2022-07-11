@@ -88,7 +88,7 @@ public class ProceduralAnimationScript : MonoBehaviour
             stepNormal = forwardHit.normal;
             _grounded = _currentPosition.y - forwardHit.point.y < forwardRayCastOffsetY;
 
-            if (Vector3.Distance(_currentPosition, _targetPosition) > stepDistance && lerp >= 1 && _canMove)
+            if (Vector3.Distance(_currentPosition, _targetPosition) > stepDistance && lerp >= 1 && !otherLegsMoving())
             {
                 lerpTime = 0f;
             }
@@ -99,7 +99,7 @@ public class ProceduralAnimationScript : MonoBehaviour
             _grounded = _currentPosition.y - downHit.point.y < downRayCastOffsetY;
             
 
-            if (Vector3.Distance(_currentPosition, _targetPosition) > stepDistance && lerp >= 1 && _canMove)
+            if (Vector3.Distance(_currentPosition, _targetPosition) > stepDistance && lerp >= 1 && !otherLegsMoving())
             {
                 lerpTime = 0f;
             }
@@ -110,7 +110,7 @@ public class ProceduralAnimationScript : MonoBehaviour
             stepNormal = centerHit.normal;
             _grounded = true;
 
-            if (Vector3.Distance(_currentPosition, _targetPosition) > stepDistance && lerp >= 1 && _canMove)
+            if (Vector3.Distance(_currentPosition, _targetPosition) > stepDistance && lerp >= 1 && !otherLegsMoving())
             {
                 lerpTime = 0f;
             }
