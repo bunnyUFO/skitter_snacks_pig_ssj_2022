@@ -56,10 +56,12 @@ public class AI : MonoBehaviour
 
     void Update()
     {
+        /*
         if (agent.isOnOffMeshLink)
         {
             Debug.Log("I'm on navmesh link");
         }
+        */
 
         switch (_state)
         {

@@ -61,7 +61,7 @@ public class Ant : MonoBehaviour
             Debug.DrawRay(transform.position, up, Color.green, 0);
         }
 
-
+        // CHANGED
         transform.rotation = Quaternion.Slerp(transform.rotation,
             Quaternion.LookRotation(Vector3.ProjectOnPlane(transform.forward, up), up), 22.5f * Time.deltaTime);
         transform.Translate(0, -(-avgSurfaceDist + -offsetY) * 0.5f, 0, Space.Self);
