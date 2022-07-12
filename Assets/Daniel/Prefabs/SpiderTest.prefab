@@ -242,6 +242,8 @@ Transform:
   - {fileID: 5676511242226525021}
   - {fileID: 1786846578562727129}
   - {fileID: 2922047021335439337}
+  - {fileID: 2162337365253799191}
+  - {fileID: 2692573997567221267}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -347,11 +349,11 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &1737414977
 MonoBehaviour:
@@ -366,9 +368,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 2
-  SprintSpeed: 5.335
-  RotationSmoothTime: 0.12
-  SpeedChangeRate: 10
 --- !u!114 &1737414978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -614,6 +613,52 @@ Transform:
   m_Father: {fileID: 3759574069368231987}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2174646813808236595
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2692573997567221267}
+  - component: {fileID: 108207550693135922}
+  m_Layer: 8
+  m_Name: Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2692573997567221267
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2174646813808236595}
+  m_LocalRotation: {x: 0.12429418, y: 0, z: 0, w: 0.99224544}
+  m_LocalPosition: {x: 0, y: 0.318, z: -0.095}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2200835502550968100}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 14.28, y: 0, z: 0}
+--- !u!136 &108207550693135922
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2174646813808236595}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.2
+  m_Height: 1
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2219167455749558504
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,25 +942,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20cb9b589b42a6343acf1a908eecc947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offsetZ: 0.2
+  _stagger: 1
+  staggerDistance: -0.09
   stepDistance: 0.1
-  stepHeight: 0.05
-  stepDuration: 0.2
-  oppositeLeg: {fileID: 7080496780412374523}
-  body: {fileID: 5676511242226525021}
-  offsetY: 0.55
+  stepHeight: 0.08
+  stepDuration: 0.3
+  LegConstraints:
+  - {fileID: 7080496780412374523}
+  - {fileID: 7080496780083948622}
+  body: {fileID: 2200835502550968100}
   raycastLayer:
     serializedVersion: 2
     m_Bits: 1024
-  forwardRayCastDistance: 0.5
-  forwardRayCastRadius: 0.3
+  forwardRayCastDistance: 0.4
+  forwardRayCastRadius: 0.35
+  forwardRayCastOffsetZ: 0.3
+  forwardRayCastOffsetY: 0.35
   debugBodyForward: 0
   downRayCastDistance: 1.2
-  downRayCastRadius: 0.3
+  downRayCastRadius: 0.5
+  downRayCastOffsetY: 0.65
   debugLegDown: 0
   centerRayCastDistance: 0.8
-  centerRayCastRadius: 0.4
-  debugBodyDown: 0
+  centerRayCastOffsetY: -0.15
+  centerRayCastRadius: 0.5
+  debuglegSideways: 0
+  debugBodySideways: 0
   stepNormal: {x: 0, y: 0, z: 0}
 --- !u!1 &2922047022123252113
 GameObject:
@@ -1820,25 +1872,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20cb9b589b42a6343acf1a908eecc947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offsetZ: 0.2
+  _stagger: 1
+  staggerDistance: -0.14
   stepDistance: 0.15
-  stepHeight: 0.05
-  stepDuration: 0.2
-  oppositeLeg: {fileID: 7080496779923420797}
-  body: {fileID: 5676511242226525021}
-  offsetY: 0.55
+  stepHeight: 0.08
+  stepDuration: 0.3
+  LegConstraints:
+  - {fileID: 7080496779923420797}
+  - {fileID: 7080496780412374523}
+  body: {fileID: 2200835502550968100}
   raycastLayer:
     serializedVersion: 2
     m_Bits: 1024
-  forwardRayCastDistance: 0.5
-  forwardRayCastRadius: 0.3
+  forwardRayCastDistance: 0.4
+  forwardRayCastRadius: 0.35
+  forwardRayCastOffsetZ: 0.3
+  forwardRayCastOffsetY: 0.35
   debugBodyForward: 0
   downRayCastDistance: 1.2
-  downRayCastRadius: 0.3
+  downRayCastRadius: 0.5
+  downRayCastOffsetY: 0.65
   debugLegDown: 0
   centerRayCastDistance: 0.8
-  centerRayCastRadius: 0.4
-  debugBodyDown: 0
+  centerRayCastOffsetY: -0.15
+  centerRayCastRadius: 0.5
+  debuglegSideways: 0
+  debugBodySideways: 0
   stepNormal: {x: 0, y: 0, z: 0}
 --- !u!1 &7080496779585452155
 GameObject:
@@ -2095,25 +2154,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20cb9b589b42a6343acf1a908eecc947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offsetZ: 0
+  _stagger: 1
+  staggerDistance: 0.1
   stepDistance: 0.15
-  stepHeight: 0.05
-  stepDuration: 0.2
-  oppositeLeg: {fileID: 7080496780847361891}
-  body: {fileID: 5676511242226525021}
-  offsetY: 0.55
+  stepHeight: 0.08
+  stepDuration: 0.3
+  LegConstraints:
+  - {fileID: 7080496780847361891}
+  - {fileID: 7080496780666771951}
+  body: {fileID: 2200835502550968100}
   raycastLayer:
     serializedVersion: 2
     m_Bits: 1024
-  forwardRayCastDistance: 0.5
-  forwardRayCastRadius: 0.3
+  forwardRayCastDistance: 0.4
+  forwardRayCastRadius: 0.35
+  forwardRayCastOffsetZ: 0.3
+  forwardRayCastOffsetY: 0.35
   debugBodyForward: 0
   downRayCastDistance: 1.2
-  downRayCastRadius: 0.3
+  downRayCastRadius: 0.5
+  downRayCastOffsetY: 0.65
   debugLegDown: 0
   centerRayCastDistance: 0.8
-  centerRayCastRadius: 0.4
-  debugBodyDown: 0
+  centerRayCastOffsetY: -0.15
+  centerRayCastRadius: 0.5
+  debuglegSideways: 0
+  debugBodySideways: 0
   stepNormal: {x: 0, y: 0, z: 0}
 --- !u!1 &7080496780144097486
 GameObject:
@@ -2190,25 +2256,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20cb9b589b42a6343acf1a908eecc947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offsetZ: 0
+  _stagger: 1
+  staggerDistance: 0.14
   stepDistance: 0.15
-  stepHeight: 0.05
-  stepDuration: 0.2
-  oppositeLeg: {fileID: 7080496780666771951}
-  body: {fileID: 5676511242226525021}
-  offsetY: 0.55
+  stepHeight: 0.08
+  stepDuration: 0.3
+  LegConstraints:
+  - {fileID: 7080496780666771951}
+  - {fileID: 7080496780573743004}
+  body: {fileID: 2200835502550968100}
   raycastLayer:
     serializedVersion: 2
     m_Bits: 1024
-  forwardRayCastDistance: 0.5
-  forwardRayCastRadius: 0.3
+  forwardRayCastDistance: 0.4
+  forwardRayCastRadius: 0.35
+  forwardRayCastOffsetZ: 0.3
+  forwardRayCastOffsetY: 0.35
   debugBodyForward: 0
   downRayCastDistance: 1.2
-  downRayCastRadius: 0.3
+  downRayCastRadius: 0.5
+  downRayCastOffsetY: 0.65
   debugLegDown: 0
   centerRayCastDistance: 0.8
-  centerRayCastRadius: 0.4
-  debugBodyDown: 0
+  centerRayCastOffsetY: -0.15
+  centerRayCastRadius: 0.5
+  debuglegSideways: 0
+  debugBodySideways: 0
   stepNormal: {x: 0, y: 0, z: 0}
 --- !u!1 &7080496780292439377
 GameObject:
@@ -2313,25 +2386,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20cb9b589b42a6343acf1a908eecc947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offsetZ: 0.2
+  _stagger: 1
+  staggerDistance: -0.14
   stepDistance: 0.15
-  stepHeight: 0.05
-  stepDuration: 0.2
-  oppositeLeg: {fileID: 7080496781123847960}
-  body: {fileID: 5676511242226525021}
-  offsetY: 0.55
+  stepHeight: 0.08
+  stepDuration: 0.3
+  LegConstraints:
+  - {fileID: 7080496781123847960}
+  - {fileID: 7080496779923420797}
+  body: {fileID: 2200835502550968100}
   raycastLayer:
     serializedVersion: 2
     m_Bits: 1024
-  forwardRayCastDistance: 0.5
-  forwardRayCastRadius: 0.3
+  forwardRayCastDistance: 0.4
+  forwardRayCastRadius: 0.35
+  forwardRayCastOffsetZ: 0.3
+  forwardRayCastOffsetY: 0.35
   debugBodyForward: 0
   downRayCastDistance: 1.2
-  downRayCastRadius: 0.3
+  downRayCastRadius: 0.5
+  downRayCastOffsetY: 0.65
   debugLegDown: 0
   centerRayCastDistance: 0.8
-  centerRayCastRadius: 0.4
-  debugBodyDown: 0
+  centerRayCastOffsetY: -0.15
+  centerRayCastRadius: 0.5
+  debuglegSideways: 0
+  debugBodySideways: 0
   stepNormal: {x: 0, y: 0, z: 0}
 --- !u!1 &7080496780375680594
 GameObject:
@@ -2408,25 +2488,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20cb9b589b42a6343acf1a908eecc947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offsetZ: 0
+  _stagger: 1
+  staggerDistance: 0.09
   stepDistance: 0.1
-  stepHeight: 0.05
-  stepDuration: 0.2
-  oppositeLeg: {fileID: 7080496781340610865}
-  body: {fileID: 5676511242226525021}
-  offsetY: 0.55
+  stepHeight: 0.08
+  stepDuration: 0.3
+  LegConstraints:
+  - {fileID: 7080496781340610865}
+  - {fileID: 7080496780847361891}
+  body: {fileID: 2200835502550968100}
   raycastLayer:
     serializedVersion: 2
     m_Bits: 1024
-  forwardRayCastDistance: 0.5
-  forwardRayCastRadius: 0.3
+  forwardRayCastDistance: 0.4
+  forwardRayCastRadius: 0.35
+  forwardRayCastOffsetZ: 0.3
+  forwardRayCastOffsetY: 0.35
   debugBodyForward: 0
   downRayCastDistance: 1.2
-  downRayCastRadius: 0.3
+  downRayCastRadius: 0.5
+  downRayCastOffsetY: 0.65
   debugLegDown: 0
   centerRayCastDistance: 0.8
-  centerRayCastRadius: 0.4
-  debugBodyDown: 0
+  centerRayCastOffsetY: -0.15
+  centerRayCastRadius: 0.5
+  debuglegSideways: 0
+  debugBodySideways: 0
   stepNormal: {x: 0, y: 0, z: 0}
 --- !u!1 &7080496780536219471
 GameObject:
@@ -2776,25 +2863,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20cb9b589b42a6343acf1a908eecc947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offsetZ: 0
+  _stagger: 1
+  staggerDistance: 0.1
   stepDistance: 0.15
-  stepHeight: 0.05
-  stepDuration: 0.2
-  oppositeLeg: {fileID: 7080496780573743004}
-  body: {fileID: 5676511242226525021}
-  offsetY: 0.55
+  stepHeight: 0.08
+  stepDuration: 0.3
+  LegConstraints:
+  - {fileID: 7080496780573743004}
+  - {fileID: 7080496781340610865}
+  body: {fileID: 2200835502550968100}
   raycastLayer:
     serializedVersion: 2
     m_Bits: 1024
-  forwardRayCastDistance: 0.5
-  forwardRayCastRadius: 0.3
+  forwardRayCastDistance: 0.4
+  forwardRayCastRadius: 0.35
+  forwardRayCastOffsetZ: 0.3
+  forwardRayCastOffsetY: 0.35
   debugBodyForward: 0
   downRayCastDistance: 1.2
-  downRayCastRadius: 0.3
+  downRayCastRadius: 0.5
+  downRayCastOffsetY: 0.65
   debugLegDown: 0
   centerRayCastDistance: 0.8
-  centerRayCastRadius: 0.4
-  debugBodyDown: 0
+  centerRayCastOffsetY: -0.15
+  centerRayCastRadius: 0.5
+  debuglegSideways: 0
+  debugBodySideways: 0
   stepNormal: {x: 0, y: 0, z: 0}
 --- !u!1 &7080496781076168838
 GameObject:
@@ -2930,25 +3024,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20cb9b589b42a6343acf1a908eecc947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offsetZ: 0.2
+  _stagger: 1
+  staggerDistance: -0.1
   stepDistance: 0.15
-  stepHeight: 0.05
-  stepDuration: 0.2
-  oppositeLeg: {fileID: 7080496780083948622}
-  body: {fileID: 5676511242226525021}
-  offsetY: 0.55
+  stepHeight: 0.08
+  stepDuration: 0.3
+  LegConstraints:
+  - {fileID: 7080496780083948622}
+  - {fileID: 7080496781123847960}
+  body: {fileID: 2200835502550968100}
   raycastLayer:
     serializedVersion: 2
     m_Bits: 1024
-  forwardRayCastDistance: 0.5
-  forwardRayCastRadius: 0.3
+  forwardRayCastDistance: 0.4
+  forwardRayCastRadius: 0.35
+  forwardRayCastOffsetZ: 0.3
+  forwardRayCastOffsetY: 0.35
   debugBodyForward: 0
   downRayCastDistance: 1.2
-  downRayCastRadius: 0.3
+  downRayCastRadius: 0.5
+  downRayCastOffsetY: 0.65
   debugLegDown: 0
   centerRayCastDistance: 0.8
-  centerRayCastRadius: 0.4
-  debugBodyDown: 0
+  centerRayCastOffsetY: -0.15
+  centerRayCastRadius: 0.5
+  debuglegSideways: 0
+  debugBodySideways: 0
   stepNormal: {x: 0, y: 0, z: 0}
 --- !u!1 &7080496781322242292
 GameObject:
@@ -3066,7 +3167,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7185357525275364265}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.305, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3489,6 +3590,37 @@ Transform:
   - {fileID: 8092079452639175042}
   m_Father: {fileID: 2410207829111508885}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8907002133541389708
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2162337365253799191}
+  m_Layer: 8
+  m_Name: DetectPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2162337365253799191
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8907002133541389708}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2200835502550968100}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9005994613681410394
 GameObject:

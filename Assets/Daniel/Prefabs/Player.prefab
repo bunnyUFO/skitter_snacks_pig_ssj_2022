@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3515410466033970884}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.019, y: 0.73558986, z: -6.295117}
+  m_LocalPosition: {x: 1.9674584, y: 6.04, z: -0.35931623}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -67,7 +67,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7173524, y: 1}
+    m_SensorSize: {x: 1.638313, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -76,7 +76,7 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_YAxis:
-    Value: 0.64
+    Value: 1
     m_SpeedMode: 1
     m_MaxSpeed: 0.005
     m_AccelTime: 0.1
@@ -176,17 +176,17 @@ MonoBehaviour:
   m_TransparentLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_MinimumDistanceFromTarget: 0.01
+  m_MinimumDistanceFromTarget: 0.1
   m_AvoidObstacles: 1
   m_DistanceLimit: 0
   m_MinimumOcclusionTime: 0
-  m_CameraRadius: 0.4
+  m_CameraRadius: 0.5
   m_Strategy: 2
   m_MaximumEffort: 6
   m_SmoothingTime: 0.5
   m_Damping: 5
   m_DampingWhenOccluded: 0.2
-  m_OptimalTargetDistance: 5
+  m_OptimalTargetDistance: 10
 --- !u!1 &3515410466335861164
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,6 +217,7 @@ Transform:
   m_Children:
   - {fileID: 3333735796460920873}
   - {fileID: 3515410466033970886}
+  - {fileID: 5467224382511331449}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -244,8 +245,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3515410466794326975}
-  m_LocalRotation: {x: 0.1281964, y: 0.000000017064409, z: -0.0000000022057962, w: 0.9917488}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.4267662, y: -0.53246313, z: 0.35588473, w: 0.6385137}
+  m_LocalPosition: {x: 0.000009894371, y: 0, z: -0.0000017881393}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -289,7 +290,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7173524, y: 1}
+    m_SensorSize: {x: 1.638313, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -322,9 +323,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3515410467182514056}
-  m_LocalRotation: {x: 0.16413702, y: -0.0000000120153025, z: 0.0000000019992714,
-    w: 0.98643756}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.44967854, y: -0.51918423, z: 0.37499157, w: 0.62259007}
+  m_LocalPosition: {x: 0.0000009536743, y: 0, z: -0.00000011920929}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -368,7 +368,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7173524, y: 1}
+    m_SensorSize: {x: 1.638313, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -401,8 +401,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3515410467382665348}
-  m_LocalRotation: {x: 0.14616707, y: -0.000000017021586, z: 0.0000000025150066, w: 0.98925996}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.43827954, y: -0.52591926, z: 0.36548582, w: 0.63066643}
+  m_LocalPosition: {x: 0.0000009536743, y: 0, z: -0.00000011920929}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -446,7 +446,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7173524, y: 1}
+    m_SensorSize: {x: 1.638313, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -514,7 +514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 2.15459, z: -6.295117}
+  m_FollowOffset: {x: 0, y: 6.04, z: -2}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -641,7 +641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 2.15459, z: -6.295117}
+  m_FollowOffset: {x: 0, y: 6.04, z: -2}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -768,7 +768,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 2.15459, z: -6.295117}
+  m_FollowOffset: {x: 0, y: 6.04, z: -2}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -836,6 +836,159 @@ MonoBehaviour:
   m_BiasX: 0
   m_BiasY: 0
   m_CenterOnActivate: 1
+--- !u!1 &7266401483201565583
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5467224382511331449}
+  - component: {fileID: 2698848874363000394}
+  - component: {fileID: 4210064284936102637}
+  - component: {fileID: 1964442652473603038}
+  - component: {fileID: 3433850016883816688}
+  m_Layer: 0
+  m_Name: Main Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5467224382511331449
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7266401483201565583}
+  m_LocalRotation: {x: 0.4496786, y: -0.51918423, z: 0.3749916, w: 0.62259}
+  m_LocalPosition: {x: 1.9674584, y: 6.04, z: -0.35931623}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3515410466335861167}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &2698848874363000394
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7266401483201565583}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.1
+  far clip plane: 5000
+  field of view: 40
+  orthographic: 0
+  orthographic size: 10
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!81 &4210064284936102637
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7266401483201565583}
+  m_Enabled: 1
+--- !u!114 &1964442652473603038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7266401483201565583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+--- !u!114 &3433850016883816688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7266401483201565583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowDebugText: 0
+  m_ShowCameraFrustum: 1
+  m_IgnoreTimeScale: 0
+  m_WorldUpOverride: {fileID: 0}
+  m_UpdateMethod: 2
+  m_BlendUpdateMethod: 1
+  m_DefaultBlend:
+    m_Style: 1
+    m_Time: 2
+    m_CustomCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  m_CustomBlends: {fileID: 0}
+  m_CameraCutEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraActivatedEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &3515410467609691917
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -843,19 +996,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3515410466335861167}
     m_Modifications:
-    - target: {fileID: 538330447, guid: 60c7b87bac9738145ad61caa3e4d9e15, type: 3}
-      propertyPath: m_AngularDrag
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1567569974861381022, guid: 60c7b87bac9738145ad61caa3e4d9e15,
         type: 3}
       propertyPath: m_Name
       value: SpiderTest
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786846578562727129, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.305
       objectReference: {fileID: 0}
     - target: {fileID: 2200835502550968100, guid: 60c7b87bac9738145ad61caa3e4d9e15,
         type: 3}
@@ -865,12 +1009,12 @@ PrefabInstance:
     - target: {fileID: 2200835502550968100, guid: 60c7b87bac9738145ad61caa3e4d9e15,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.019
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2200835502550968100, guid: 60c7b87bac9738145ad61caa3e4d9e15,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.419
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2200835502550968100, guid: 60c7b87bac9738145ad61caa3e4d9e15,
         type: 3}
@@ -912,566 +1056,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7080496779923420797, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: stepHeight
-      value: 0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496779923420797, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: stepDuration
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496779923420797, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: debugBodyDown
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496779923420797, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: debugBodyForward
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496779923420797, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: centerRayCastRadius
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496779923420797, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: raycastLayer.m_Bits
-      value: 1024
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496779923420797, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: forwardRayCastRadius
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496779923420797, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: centerRayCastDistance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496779923420797, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: forwardRayCastOffsetY
-      value: 0.39
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496779923420797, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: forwardRayCastOffsetZ
-      value: 0.23
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496779923420797, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: forwardRayCastDistance
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496779923420797, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: LegConstraints.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496779923420797, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: LegConstraints.Array.data[0]
-      value: 
-      objectReference: {fileID: 5948064882912252049}
-    - target: {fileID: 7080496779923420797, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: LegConstraints.Array.data[1]
-      value: 
-      objectReference: {fileID: 5948064882603218492}
-    - target: {fileID: 7080496780083948622, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: stepHeight
-      value: 0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780083948622, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: stepDuration
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780083948622, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: debugBodyDown
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780083948622, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: debugBodyForward
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780083948622, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: centerRayCastRadius
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780083948622, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: raycastLayer.m_Bits
-      value: 1024
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780083948622, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: forwardRayCastRadius
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780083948622, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: centerRayCastDistance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780083948622, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: forwardRayCastOffsetY
-      value: 0.39
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780083948622, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: forwardRayCastOffsetZ
-      value: 0.23
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780083948622, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: forwardRayCastDistance
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780083948622, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: LegConstraints.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780083948622, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: LegConstraints.Array.data[0]
-      value: 
-      objectReference: {fileID: 5948064883166996590}
-    - target: {fileID: 7080496780083948622, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: LegConstraints.Array.data[1]
-      value: 
-      objectReference: {fileID: 5948064883019898594}
-    - target: {fileID: 7080496780412374523, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: stepHeight
-      value: 0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780412374523, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: stepDuration
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780412374523, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: debugBodyDown
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780412374523, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: debugBodyForward
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780412374523, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: centerRayCastRadius
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780412374523, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: raycastLayer.m_Bits
-      value: 1024
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780412374523, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: forwardRayCastRadius
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780412374523, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: centerRayCastDistance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780412374523, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: forwardRayCastOffsetY
-      value: 0.39
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780412374523, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: forwardRayCastOffsetZ
-      value: 0.23
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780412374523, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: forwardRayCastDistance
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780412374523, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: LegConstraints.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780412374523, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: LegConstraints.Array.data[0]
-      value: 
-      objectReference: {fileID: 5948064882603218492}
-    - target: {fileID: 7080496780412374523, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: LegConstraints.Array.data[1]
-      value: 
-      objectReference: {fileID: 5948064883166996590}
-    - target: {fileID: 7080496780573743004, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: stepHeight
-      value: 0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780573743004, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: stepDuration
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780573743004, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: debugBodyDown
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780573743004, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: debugBodyForward
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780573743004, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: centerRayCastRadius
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780573743004, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: raycastLayer.m_Bits
-      value: 1024
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780573743004, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: forwardRayCastRadius
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780573743004, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: centerRayCastDistance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780573743004, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: forwardRayCastOffsetY
-      value: 0.39
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780573743004, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: forwardRayCastOffsetZ
-      value: 0.23
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780573743004, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: forwardRayCastDistance
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780573743004, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: LegConstraints.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780573743004, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: LegConstraints.Array.data[0]
-      value: 
-      objectReference: {fileID: 5948064883352351088}
-    - target: {fileID: 7080496780573743004, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: LegConstraints.Array.data[1]
-      value: 
-      objectReference: {fileID: 5948064882734009078}
-    - target: {fileID: 7080496780666771951, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: stepHeight
-      value: 0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780666771951, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: stepDuration
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780666771951, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: debugBodyDown
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780666771951, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: debugBodyForward
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780666771951, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: centerRayCastRadius
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780666771951, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: raycastLayer.m_Bits
-      value: 1024
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780666771951, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: forwardRayCastRadius
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780666771951, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: centerRayCastDistance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780666771951, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: forwardRayCastOffsetY
-      value: 0.39
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780666771951, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: forwardRayCastOffsetZ
-      value: 0.23
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780666771951, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: forwardRayCastDistance
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780666771951, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: LegConstraints.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780666771951, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: LegConstraints.Array.data[0]
-      value: 
-      objectReference: {fileID: 5948064882422169621}
-    - target: {fileID: 7080496780666771951, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: LegConstraints.Array.data[1]
-      value: 
-      objectReference: {fileID: 5948064883352351088}
-    - target: {fileID: 7080496780847361891, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: stepHeight
-      value: 0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780847361891, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: stepDuration
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780847361891, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: debugBodyDown
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780847361891, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: debugBodyForward
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780847361891, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: centerRayCastRadius
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780847361891, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: raycastLayer.m_Bits
-      value: 1024
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780847361891, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: forwardRayCastRadius
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780847361891, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: centerRayCastDistance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780847361891, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: forwardRayCastOffsetY
-      value: 0.39
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780847361891, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: forwardRayCastOffsetZ
-      value: 0.23
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780847361891, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: forwardRayCastDistance
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780847361891, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: LegConstraints.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496780847361891, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: LegConstraints.Array.data[0]
-      value: 
-      objectReference: {fileID: 5948064883527625539}
-    - target: {fileID: 7080496780847361891, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: LegConstraints.Array.data[1]
-      value: 
-      objectReference: {fileID: 5948064882422169621}
-    - target: {fileID: 7080496781123847960, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: stepHeight
-      value: 0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496781123847960, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: stepDuration
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496781123847960, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: debugBodyDown
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496781123847960, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: debugBodyForward
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496781123847960, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: centerRayCastRadius
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496781123847960, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: raycastLayer.m_Bits
-      value: 1024
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496781123847960, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: forwardRayCastRadius
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496781123847960, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: centerRayCastDistance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496781123847960, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: forwardRayCastOffsetY
-      value: 0.39
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496781123847960, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: forwardRayCastOffsetZ
-      value: 0.23
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496781123847960, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: forwardRayCastDistance
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496781123847960, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: LegConstraints.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496781123847960, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: LegConstraints.Array.data[0]
-      value: 
-      objectReference: {fileID: 5948064883019898594}
-    - target: {fileID: 7080496781123847960, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: LegConstraints.Array.data[1]
-      value: 
-      objectReference: {fileID: 5948064882912252049}
-    - target: {fileID: 7080496781340610865, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: stepHeight
-      value: 0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496781340610865, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: stepDuration
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496781340610865, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: debugBodyDown
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496781340610865, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: debugBodyForward
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496781340610865, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: centerRayCastRadius
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496781340610865, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: raycastLayer.m_Bits
-      value: 1024
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496781340610865, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: forwardRayCastRadius
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496781340610865, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: centerRayCastDistance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496781340610865, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: forwardRayCastOffsetY
-      value: 0.39
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496781340610865, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: forwardRayCastOffsetZ
-      value: 0.23
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496781340610865, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: forwardRayCastDistance
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496781340610865, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: LegConstraints.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7080496781340610865, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: LegConstraints.Array.data[0]
-      value: 
-      objectReference: {fileID: 5948064882734009078}
-    - target: {fileID: 7080496781340610865, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-        type: 3}
-      propertyPath: LegConstraints.Array.data[1]
-      value: 
-      objectReference: {fileID: 5948064883527625539}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60c7b87bac9738145ad61caa3e4d9e15, type: 3}
 --- !u!4 &3333735796460920873 stripped
@@ -1480,99 +1064,3 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3515410467609691917}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5948064882422169621 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7080496781123847960, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-    type: 3}
-  m_PrefabInstance: {fileID: 3515410467609691917}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20cb9b589b42a6343acf1a908eecc947, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5948064882603218492 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7080496781340610865, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-    type: 3}
-  m_PrefabInstance: {fileID: 3515410467609691917}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20cb9b589b42a6343acf1a908eecc947, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5948064882734009078 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7080496780412374523, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-    type: 3}
-  m_PrefabInstance: {fileID: 3515410467609691917}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20cb9b589b42a6343acf1a908eecc947, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5948064882912252049 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7080496780573743004, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-    type: 3}
-  m_PrefabInstance: {fileID: 3515410467609691917}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20cb9b589b42a6343acf1a908eecc947, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5948064883019898594 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7080496780666771951, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-    type: 3}
-  m_PrefabInstance: {fileID: 3515410467609691917}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20cb9b589b42a6343acf1a908eecc947, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5948064883166996590 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7080496780847361891, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-    type: 3}
-  m_PrefabInstance: {fileID: 3515410467609691917}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20cb9b589b42a6343acf1a908eecc947, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5948064883352351088 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7080496779923420797, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-    type: 3}
-  m_PrefabInstance: {fileID: 3515410467609691917}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20cb9b589b42a6343acf1a908eecc947, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5948064883527625539 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7080496780083948622, guid: 60c7b87bac9738145ad61caa3e4d9e15,
-    type: 3}
-  m_PrefabInstance: {fileID: 3515410467609691917}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20cb9b589b42a6343acf1a908eecc947, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

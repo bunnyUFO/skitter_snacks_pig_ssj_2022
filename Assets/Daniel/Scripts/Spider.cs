@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,8 +9,8 @@ public class Spider : MonoBehaviour
     AnimationCurve sensitivityCurve;
     [SerializeField] List<ProceduralAnimationScript> legs;
     [SerializeField] bool debug= false;
-    public bool grounded = false;
     private Rigidbody _rigidbody;
+    private bool _stagger = false;
 
     private void Awake()
     {
@@ -20,21 +19,21 @@ public class Spider : MonoBehaviour
 
     void Update()
     {
-        foreach (ProceduralAnimationScript leg in legs)
+        if (transform.hasChanged)
         {
-            leg.UpdatePosition(Time.deltaTime);
+            foreach (ProceduralAnimationScript leg in legs)
+            {
+                leg.UpdatePosition(Time.deltaTime);
+            }
         }
-
-        CalculateOrientation();
         StaggerLegs();
+        CalculateOrientation();
     }
 
     private void CalculateOrientation()
     {
         Vector3 up = Vector3.zero;
         float avgSurfaceDist = 0;
-
-        grounded = false;
 
         Vector3 point, a, b, c;
 
@@ -62,8 +61,6 @@ public class Spider : MonoBehaviour
             }
         }
 
-        grounded = legs.TrueForAll(leg => leg.IsGrounded());
-
         // Scale up vector and surface vertical distance
         up /= legs.Count;
         avgSurfaceDist /= legs.Count;
@@ -71,9 +68,7 @@ public class Spider : MonoBehaviour
         {
             Debug.DrawRay(transform.position, up, Color.green, 0);
         }
-
-        // I grounded move body to Y offset
-        // if (grounded)
+        
         if (true)
         {
             // _rigidbody.AddForce(Vector3.zero);
@@ -88,13 +83,20 @@ public class Spider : MonoBehaviour
         }
     }
 
+    public void StaggerLegs(bool stagger)
+    {
+        _stagger = stagger;
+    }
+
     public void StaggerLegs()
     {
-        if (_rigidbody.velocity.magnitude == 0)
+        if(_stagger && legs.TrueForAll(leg => !leg.IsMoving()))
         {
-            foreach (var leg in legs)
+            _stagger = false;
+            for (int i = 0; i < legs.Count; i++)
             {
-                leg.staggerLeg();
+                float delay = (((i/4) + (i%2)) * legs[i].stepDuration)/2f;
+                legs[i].Stagger(delay);
             }
         }
     }
