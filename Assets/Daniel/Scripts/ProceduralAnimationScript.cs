@@ -1,15 +1,15 @@
-using System.Collections;
+using LateExe;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class ProceduralAnimationScript : MonoBehaviour
 {
     [Header ("Step Configurations")]
-    [SerializeField] bool stagger = false;
+    public bool _stagger = false;
+    [SerializeField] float staggerDistance = 0f;
     [SerializeField] float stepDistance = 0.2f;
     [SerializeField] float stepHeight = 0.2f;
-    [SerializeField] float stepDuration = 0.2f;
+    [SerializeField] public float stepDuration = 0.2f;
     [SerializeField] List<ProceduralAnimationScript> LegConstraints = null;
     
     [Header ("Shared Raycast Configurations")]
@@ -31,51 +31,71 @@ public class ProceduralAnimationScript : MonoBehaviour
     
     [Header ("Body Down Raycast Configurations")]
     [SerializeField] float centerRayCastDistance = 2f;
+    [SerializeField] float  centerRayCastOffsetY= 0.1f;
+    [SerializeField] float  centerRayCastOffsetZ= 0.3f;
     [SerializeField] float centerRayCastRadius = 2f;
-    [SerializeField] bool debugBodyDown = false;
+    [SerializeField] bool debuglegSideways = false;
+    [SerializeField] bool debugBodySideways = false;
 
     public Vector3 stepNormal;
-    private Transform rayCastSource;
+    private Transform _rayCastSource;
+    // private Rigidbody _rigidbody;
     private Vector3 _oldPosition, _currentPosition, _targetPosition, _raycastPosition,_bodyPosition;
-    private float lerp, lerpTime;
-    private bool _canMove, _previouslyGrounded, _grounded = false;
+    private float _lerp, _lerpTime;
+    private Executer _exe;
 
     //Set initial IK target position to ground at z offset from source
     private void Awake()
     {
-        rayCastSource = transform.parent.transform.Find("raycast_source").transform;
-        lerp = 1;
-        lerpTime = stepDuration;
+        _rayCastSource = transform.parent.transform.Find("raycast_source").transform;
+        // _rigidbody = body.GetComponent<Rigidbody>();
+        _lerp = 0;
+        _lerpTime = 0;
         _oldPosition = _currentPosition = _targetPosition = transform.position;
-        _previouslyGrounded = _grounded;
-        _raycastPosition = rayCastSource.position;
-        _canMove = true;
-
-        Vector3 legDownRaySource = _raycastPosition + transform.up * downRayCastOffsetY;
-        if (stagger)
-        {
-            staggerLeg();
-        }
-
-        if (stagger && Physics.SphereCast(legDownRaySource , downRayCastRadius, -transform.up.normalized, out RaycastHit downHit, downRayCastDistance, raycastLayer.value)) {
-            _oldPosition = _currentPosition =_targetPosition = downHit.point + transform.forward*stepDistance/2;
-        }
+        _raycastPosition = _rayCastSource.position;
+        _exe = new Executer(this);
     }
     
     public void UpdatePosition(float deltaTime)
     {
         transform.position = _currentPosition;
-        _raycastPosition = rayCastSource.position;
+        _raycastPosition = _rayCastSource.position;
         _bodyPosition = body.position;
-        updateCanMove();
         
-        Vector3 legDownRaySource = _raycastPosition + transform.up * downRayCastOffsetY;
+        if (Vector3.Distance(_currentPosition, _targetPosition) > stepDistance && !IsMoving() && !OtherLegsMoving())
+        {
+            _lerpTime = 0f;
+        }
+
+        detectSurfaces();
         
-        Vector3 bodyDownBodySource = _raycastPosition;
-        Vector3 bodyDownCastDirection = (rayCastSource.right*(-rayCastSource.localPosition.x)).normalized;
-        Vector3 bodyForwardBodySource = _bodyPosition + transform.up*forwardRayCastOffsetY + transform.forward*(rayCastSource.localPosition.z - forwardRayCastOffsetZ);
+
+        _lerp = _lerpTime/stepDuration;
         
-        _grounded = lerp < 1;
+        if (_lerp < 1)
+        {
+            Vector3 tempPosition = Vector3.Lerp(_oldPosition, _targetPosition, _lerp);
+            tempPosition += transform.up * Mathf.Sin(_lerp * Mathf.PI) * stepHeight;
+            
+            _currentPosition = tempPosition;
+            _lerpTime += deltaTime;
+        }
+        else
+        {
+            _stagger = false;
+            _oldPosition = _currentPosition;
+        }
+    }
+
+    private void detectSurfaces()
+    {
+        Vector3 staggerOffset = _stagger ? transform.forward * staggerDistance : Vector3.zero;
+        Vector3 bodyForwardBodySource = _bodyPosition + transform.up*forwardRayCastOffsetY + transform.forward*(_rayCastSource.localPosition.z - forwardRayCastOffsetZ);
+        Vector3 legDownRaySource = _raycastPosition + transform.up * downRayCastOffsetY + staggerOffset;
+        Vector3 sidewaysCastDirection = (_rayCastSource.right*(-_rayCastSource.localPosition.x)).normalized;
+        Vector3 legSidewaysRaySource = _raycastPosition - transform.up*centerRayCastOffsetY + -sidewaysCastDirection*centerRayCastOffsetZ;
+        Vector3 bodySidewaysRaySource = body.position - transform.up*centerRayCastOffsetY +  (_rayCastSource.right*(_rayCastSource.localPosition.x)).normalized*(centerRayCastDistance/2);
+
         /*
          * Ray cast and set target move position
          * Ray cast forward from body first
@@ -84,67 +104,32 @@ public class ProceduralAnimationScript : MonoBehaviour
         */
         if  (Physics.SphereCast(bodyForwardBodySource , forwardRayCastRadius, transform.forward.normalized, out RaycastHit forwardHit, forwardRayCastDistance, raycastLayer.value))
         {
+            _stagger = false;
             _targetPosition = forwardHit.point;
             stepNormal = forwardHit.normal;
-            _grounded = _currentPosition.y - forwardHit.point.y < forwardRayCastOffsetY;
-
-            if (Vector3.Distance(_currentPosition, _targetPosition) > stepDistance && lerp >= 1 && !otherLegsMoving())
-            {
-                lerpTime = 0f;
-            }
+            // _rigidbody.velocity = body.transform.forward;
         }
-        else if (Physics.SphereCast(legDownRaySource , downRayCastRadius, -transform.up.normalized, out RaycastHit downHit, downRayCastDistance, raycastLayer.value)) {
+        else if (Physics.SphereCast(legDownRaySource , downRayCastRadius, -transform.up.normalized, out RaycastHit downHit, downRayCastDistance, raycastLayer.value))
+        {
             _targetPosition = downHit.point;
             stepNormal = downHit.normal;
-            _grounded = _currentPosition.y - downHit.point.y < downRayCastOffsetY;
-            
-
-            if (Vector3.Distance(_currentPosition, _targetPosition) > stepDistance && lerp >= 1 && !otherLegsMoving())
-            {
-                lerpTime = 0f;
-            }
         }
-        else if  (Physics.SphereCast(bodyDownBodySource , centerRayCastRadius, bodyDownCastDirection.normalized, out RaycastHit centerHit, centerRayCastDistance, raycastLayer.value))
+        else if  (Physics.SphereCast(legSidewaysRaySource , centerRayCastRadius, sidewaysCastDirection.normalized, out RaycastHit horizontal, centerRayCastDistance, raycastLayer.value))
+        {
+            _targetPosition = horizontal.point;
+            stepNormal = horizontal.normal;
+        }
+        else if  (Physics.SphereCast(bodySidewaysRaySource , centerRayCastRadius, sidewaysCastDirection.normalized, out RaycastHit centerHit, centerRayCastDistance, raycastLayer.value))
         {
             _targetPosition = centerHit.point;
             stepNormal = centerHit.normal;
-            _grounded = true;
-
-            if (Vector3.Distance(_currentPosition, _targetPosition) > stepDistance && lerp >= 1 && !otherLegsMoving())
-            {
-                lerpTime = 0f;
-            }
-        }
-
-        lerp = lerpTime/stepDuration;
-        
-        if (lerp < 1)
-        {
-            Vector3 tempPosition = Vector3.Lerp(_oldPosition, _targetPosition, lerp);
-            tempPosition += transform.up * Mathf.Sin(lerp * Mathf.PI) * stepHeight;
-            
-            _currentPosition = tempPosition;
-            lerpTime += deltaTime;
-        }
-        else
-        {
-            // if (_grounded)
-            if (true)
-            {
-                _oldPosition = _currentPosition;
-            }
-            // else
-            // {
-            //     transform.position = _oldPosition = _currentPosition = rayCastSource.position + transform.forward * legStaggerOffset;
-            // }
         }
     }
-
-    public Vector3 GetOldPosition()
+    
+    public bool OtherLegsMoving()
     {
-        return _oldPosition;
+        return LegConstraints.TrueForAll(leg => leg.IsMoving());
     }
-
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
@@ -165,60 +150,51 @@ public class ProceduralAnimationScript : MonoBehaviour
             Gizmos.DrawWireSphere(source + -transform.up.normalized*downRayCastDistance, downRayCastRadius);
         }
 
-        if (debugBodyDown)
-        {
-            Vector3 source = castSource;
-            Vector3 bodyDownCastDirection = (castTransformRight*(-castTransform.localPosition.x)).normalized;
-            Gizmos.color = Color.magenta;
-            Gizmos.DrawWireSphere(source, centerRayCastRadius);
-            Gizmos.DrawLine(source, source + bodyDownCastDirection.normalized*centerRayCastDistance);
-            Gizmos.DrawWireSphere(source + bodyDownCastDirection.normalized*centerRayCastDistance, centerRayCastRadius);
-        }
-        
         if (debugBodyForward)
         {
+            Gizmos.color = Color.red;
             Vector3 source = body.position + transform.up*forwardRayCastOffsetY + transform.forward*(castTransform.localPosition.z - forwardRayCastOffsetZ);
             Gizmos.DrawWireSphere(source, forwardRayCastRadius);
             Gizmos.DrawLine(source, source + transform.forward.normalized*forwardRayCastDistance);
             Gizmos.DrawWireSphere(source + transform.forward.normalized*forwardRayCastDistance, forwardRayCastRadius);
         }
+        if (debuglegSideways)
+        {
+            Vector3 bodySidewaysRaySourceSidewaysRaySource = (castTransformRight*(-castTransform.localPosition.x)).normalized;
+            Vector3 legSidewaysRaySource = castSource - transform.up*centerRayCastOffsetY + -bodySidewaysRaySourceSidewaysRaySource*centerRayCastOffsetZ;
+            Gizmos.color = Color.magenta;
+            Gizmos.DrawWireSphere(legSidewaysRaySource, centerRayCastRadius);
+            Gizmos.DrawLine(legSidewaysRaySource, legSidewaysRaySource + bodySidewaysRaySourceSidewaysRaySource.normalized*centerRayCastDistance);
+            Gizmos.DrawWireSphere(legSidewaysRaySource + bodySidewaysRaySourceSidewaysRaySource.normalized*centerRayCastDistance, centerRayCastRadius);
+        }
+        
+        if (debugBodySideways)
+        {
+            Vector3 source = body.position - transform.up*centerRayCastOffsetY +  (castTransformRight*(castTransform.localPosition.x)).normalized*(centerRayCastDistance/2);
+            Vector3 bodySidewaysRaySource = (castTransformRight*(-castTransform.localPosition.x)).normalized;
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawWireSphere(source, centerRayCastRadius);
+            Gizmos.DrawLine(source, source + bodySidewaysRaySource.normalized*centerRayCastDistance);
+            Gizmos.DrawWireSphere(source + bodySidewaysRaySource.normalized*centerRayCastDistance, centerRayCastRadius);
+        }
     }
-    public bool IsGrounded()
-    {
-        return _grounded;
-    }
-    
     public bool IsMoving()
     {
-        return lerp < 1;
+        return _lerp < 1;
     }
-
-    private bool otherLegsMoving()
+    public void Stagger(float delay = 0f)
     {
-        return LegConstraints.TrueForAll(leg => leg.IsMoving());
+        _exe.DelayExecute(delay , x=>  _stagger = true);
+        _exe.DelayExecute(delay , x=> _lerpTime = 0);
     }
     
-    private void updateCanMove()
+    public Vector3 GetOldPosition()
     {
-        if (otherLegsMoving())
-        {
-            _canMove = false;
-        }
-        else
-        {
-            _canMove = true;
-        }
+        return _oldPosition;
     }
-
-
-    public void staggerLeg()
+    
+    public Vector3 GetTargetPosition()
     {
-        if (!stagger) { return; }
-
-        Vector3 legDownRaySource = _raycastPosition + transform.up * downRayCastOffsetY;
-        
-        if (Physics.SphereCast(legDownRaySource , downRayCastRadius, -transform.up.normalized, out RaycastHit downHit, downRayCastDistance, raycastLayer.value)) {
-            _currentPosition = downHit.point + transform.forward*stepDistance/2;
-        }
+        return _targetPosition;
     }
 }

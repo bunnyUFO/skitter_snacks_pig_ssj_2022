@@ -12,7 +12,6 @@ public class Ant : MonoBehaviour
     [SerializeField] AnimationCurve sensitivityCurve;
     [SerializeField] private List<ProceduralAnimationScript> legs;
     private Rigidbody _rigidbody;
-    private bool _grounded = false;
 
     private void Awake()
     {
@@ -52,8 +51,6 @@ public class Ant : MonoBehaviour
         Vector3 up = Vector3.zero;
         float avgSurfaceDist = 0;
 
-        _grounded = false;
-
         Vector3 point, a, b, c;
 
         // cross product of adjacent leg pairs to calculate average up
@@ -66,8 +63,7 @@ public class Ant : MonoBehaviour
             b = (legPair.GetOldPosition() - point).normalized;
             c = Vector3.Cross(a, b);
             up += c * sensitivityCurve.Evaluate(c.magnitude) + (legs[i].stepNormal == Vector3.zero ? transform.forward : legs[i].stepNormal);
-            _grounded |= legs[i].IsGrounded();
-            
+
             Debug.DrawRay(point, c, Color.yellow, 0);
             Debug.DrawRay(point, legs[i].stepNormal, Color.magenta, 0);
             
@@ -76,14 +72,7 @@ public class Ant : MonoBehaviour
         avgSurfaceDist /= legs.Count;
         
         Debug.DrawRay(transform.position, up, Color.green, 0);
-
-        // Asigns Up Using Vector3.ProjectOnPlane To Preserve Forward Orientation
-        //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Vector3.ProjectOnPlane(transform.forward, up), up), 22.5f * Time.deltaTime);
-        // Asigns Up Using Vector3.ProjectOnPlane To Preserve Forward Orientation
-        //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Vector3.ProjectOnPlane(transform.forward, up), up), 22.5f * Time.deltaTime);
-        if (_grounded) {
-            transform.Translate(0, -(-avgSurfaceDist + -offsetY) * 0.5f, 0, Space.Self);
-        }
+        transform.Translate(0, -(-avgSurfaceDist + -offsetY) * 0.5f, 0, Space.Self);
     }
 
     private void OnDrawGizmos()
