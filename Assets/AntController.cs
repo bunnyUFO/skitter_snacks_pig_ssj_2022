@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class AntController : MonoBehaviour
 {
     Rigidbody _rigidbody;
-    Vector3 targetDirection;
+    public Vector3 targetDirection;
 
     NavMeshAgent agent;
 
@@ -32,7 +32,34 @@ public class AntController : MonoBehaviour
 
     void Update()
     {
+        if (agent.isOnOffMeshLink)
+        {
+            distance = (agent.currentOffMeshLinkData.startPos - this.transform.position).magnitude;
+            if (!transitioning && distance < linkDistance)
+            {
+                debugRemoveControl();
+                transitioning = true;
+            }
+        }
 
+        if (transitioning)
+        {
+            updateTimer();
+            enableWalk();
+
+            if (timer <= 0)
+            {
+                disableWalk();
+                transitioning = false;
+                agent.CompleteOffMeshLink();
+                debugGainControl();
+                timer = reset;
+            }
+        }
+
+
+
+        /*
         if (agent.isOnOffMeshLink && transitioning == false)
         {
             //Debug.Log("At navmesh link, coords are x:" + this.transform.position.x + " y:" + this.transform.position.y + " z:" + this.transform.position.z);
@@ -66,36 +93,52 @@ public class AntController : MonoBehaviour
                 disableWalk();
             }
         }
+        */
     }
 
     void enableWalk()
     {
         transitionSpeed = transitionSpeedReset;
-        targetDirection = transform.forward;
-        _rigidbody.velocity = targetDirection * transitionSpeed;
-        Debug.Log("Walking");
+        targetDirection = transform.forward - this.transform.position;
+        _rigidbody.velocity = (targetDirection.normalized) * transitionSpeed;
+        //Debug.Log("Walking");
     }
 
     void disableWalk()
     {
         transitionSpeed = 0;
-        targetDirection = transform.forward;
-        _rigidbody.velocity = targetDirection * transitionSpeed;
+        targetDirection = transform.forward - this.transform.position;
+        _rigidbody.velocity = (targetDirection.normalized) * transitionSpeed;
+
+        Debug.Log("Stopped Walking");
+        
     }
 
     void debugRemoveControl()
     {
-        agent.updateUpAxis = false;
-        agent.updateRotation = false;
-        agent.updatePosition = false;
+        //agent.updateUpAxis = false;
+        //agent.updateRotation = false;
+        //agent.updatePosition = false;
         Debug.Log("Lost Control");
     }
 
     void debugGainControl()
     {
-        agent.updateUpAxis = true;
-        agent.updateRotation = true;
-        agent.updatePosition = true;
+        //agent.updateUpAxis = true;
+        //agent.updateRotation = true;
+        //agent.updatePosition = true;
         Debug.Log("Took Control");
+    }
+
+    void updateTimer()
+    {
+        timer -= Time.deltaTime;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Vector3 Dir = this.transform.forward - this.transform.position;
+        Gizmos.DrawLine(transform.position, Dir);
     }
 }
