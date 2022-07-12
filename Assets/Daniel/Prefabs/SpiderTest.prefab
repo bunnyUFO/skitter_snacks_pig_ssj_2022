@@ -1,5 +1,64 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &258301225
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 258301226}
+  - component: {fileID: 258301228}
+  - component: {fileID: 258301227}
+  m_Layer: 8
+  m_Name: trigger
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &258301226
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258301225}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: -0.004, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2200835502550968100}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &258301228
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258301225}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.6, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &258301227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258301225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b90036ccb1e71f428bee60f983c7ecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody: {fileID: 538330447}
 --- !u!1 &699183340795143249
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,6 +303,7 @@ Transform:
   - {fileID: 2922047021335439337}
   - {fileID: 2162337365253799191}
   - {fileID: 2692573997567221267}
+  - {fileID: 258301226}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -348,9 +408,9 @@ Rigidbody:
   m_GameObject: {fileID: 1567569974861381022}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 1
   m_AngularDrag: 0
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
@@ -638,7 +698,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2174646813808236595}
   m_LocalRotation: {x: 0.12429418, y: 0, z: 0, w: 0.99224544}
-  m_LocalPosition: {x: 0, y: 0.318, z: -0.095}
+  m_LocalPosition: {x: -0, y: 0.411, z: -0.247}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -656,7 +716,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.2
-  m_Height: 1
+  m_Height: 0.62
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2219167455749558504
@@ -908,9 +968,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2922047021879212839}
   - component: {fileID: 7080496781340610865}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_LEG_IK_1_target
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -954,18 +1014,19 @@ MonoBehaviour:
   raycastLayer:
     serializedVersion: 2
     m_Bits: 1024
-  forwardRayCastDistance: 0.4
-  forwardRayCastRadius: 0.35
-  forwardRayCastOffsetZ: 0.3
-  forwardRayCastOffsetY: 0.35
+  forwardRayCastDistance: 0.2
+  forwardRayCastRadius: 0.45
+  forwardRayCastOffsetZ: 0.2
+  forwardRayCastOffsetY: 0.8
   debugBodyForward: 0
-  downRayCastDistance: 1.2
-  downRayCastRadius: 0.5
-  downRayCastOffsetY: 0.65
+  downRayCastDistance: 0.4
+  downRayCastRadius: 0.4
+  downRayCastOffsetY: 0.56
   debugLegDown: 0
-  centerRayCastDistance: 0.8
-  centerRayCastOffsetY: -0.15
-  centerRayCastRadius: 0.5
+  centerRayCastDistance: 0.7
+  centerRayCastOffsetY: 0
+  centerRayCastOffsetZ: 0
+  centerRayCastRadius: 0.4
   debuglegSideways: 0
   debugBodySideways: 0
   stepNormal: {x: 0, y: 0, z: 0}
@@ -1838,9 +1899,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7080496779481195447}
   - component: {fileID: 7080496780573743004}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R_LEG_IK_4_target
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1884,18 +1945,19 @@ MonoBehaviour:
   raycastLayer:
     serializedVersion: 2
     m_Bits: 1024
-  forwardRayCastDistance: 0.4
-  forwardRayCastRadius: 0.35
-  forwardRayCastOffsetZ: 0.3
-  forwardRayCastOffsetY: 0.35
+  forwardRayCastDistance: 0.2
+  forwardRayCastRadius: 0.45
+  forwardRayCastOffsetZ: 0.2
+  forwardRayCastOffsetY: 0.8
   debugBodyForward: 0
-  downRayCastDistance: 1.2
-  downRayCastRadius: 0.5
-  downRayCastOffsetY: 0.65
+  downRayCastDistance: 0.4
+  downRayCastRadius: 0.4
+  downRayCastOffsetY: 0.56
   debugLegDown: 0
-  centerRayCastDistance: 0.8
-  centerRayCastOffsetY: -0.15
-  centerRayCastRadius: 0.5
+  centerRayCastDistance: 0.7
+  centerRayCastOffsetY: 0
+  centerRayCastOffsetZ: 0
+  centerRayCastRadius: 0.4
   debuglegSideways: 0
   debugBodySideways: 0
   stepNormal: {x: 0, y: 0, z: 0}
@@ -2120,9 +2182,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7080496779728883970}
   - component: {fileID: 7080496780083948622}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_LEG_IK_2_target
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2166,18 +2228,19 @@ MonoBehaviour:
   raycastLayer:
     serializedVersion: 2
     m_Bits: 1024
-  forwardRayCastDistance: 0.4
-  forwardRayCastRadius: 0.35
-  forwardRayCastOffsetZ: 0.3
-  forwardRayCastOffsetY: 0.35
+  forwardRayCastDistance: 0.2
+  forwardRayCastRadius: 0.45
+  forwardRayCastOffsetZ: 0.2
+  forwardRayCastOffsetY: 0.8
   debugBodyForward: 0
-  downRayCastDistance: 1.2
-  downRayCastRadius: 0.5
-  downRayCastOffsetY: 0.65
+  downRayCastDistance: 0.4
+  downRayCastRadius: 0.4
+  downRayCastOffsetY: 0.56
   debugLegDown: 0
-  centerRayCastDistance: 0.8
-  centerRayCastOffsetY: -0.15
-  centerRayCastRadius: 0.5
+  centerRayCastDistance: 0.7
+  centerRayCastOffsetY: 0
+  centerRayCastOffsetZ: 0
+  centerRayCastRadius: 0.4
   debuglegSideways: 0
   debugBodySideways: 0
   stepNormal: {x: 0, y: 0, z: 0}
@@ -2222,9 +2285,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7080496780168902227}
   - component: {fileID: 7080496781123847960}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R_LEG_IK_3_target
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2268,18 +2331,19 @@ MonoBehaviour:
   raycastLayer:
     serializedVersion: 2
     m_Bits: 1024
-  forwardRayCastDistance: 0.4
-  forwardRayCastRadius: 0.35
-  forwardRayCastOffsetZ: 0.3
-  forwardRayCastOffsetY: 0.35
+  forwardRayCastDistance: 0.2
+  forwardRayCastRadius: 0.45
+  forwardRayCastOffsetZ: 0.2
+  forwardRayCastOffsetY: 0.8
   debugBodyForward: 0
-  downRayCastDistance: 1.2
-  downRayCastRadius: 0.5
-  downRayCastOffsetY: 0.65
+  downRayCastDistance: 0.4
+  downRayCastRadius: 0.4
+  downRayCastOffsetY: 0.56
   debugLegDown: 0
-  centerRayCastDistance: 0.8
-  centerRayCastOffsetY: -0.15
-  centerRayCastRadius: 0.5
+  centerRayCastDistance: 0.7
+  centerRayCastOffsetY: 0
+  centerRayCastOffsetZ: 0
+  centerRayCastRadius: 0.4
   debuglegSideways: 0
   debugBodySideways: 0
   stepNormal: {x: 0, y: 0, z: 0}
@@ -2352,9 +2416,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7080496780338310048}
   - component: {fileID: 7080496780666771951}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_LEG_IK_3_target
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2398,18 +2462,19 @@ MonoBehaviour:
   raycastLayer:
     serializedVersion: 2
     m_Bits: 1024
-  forwardRayCastDistance: 0.4
-  forwardRayCastRadius: 0.35
-  forwardRayCastOffsetZ: 0.3
-  forwardRayCastOffsetY: 0.35
+  forwardRayCastDistance: 0.2
+  forwardRayCastRadius: 0.45
+  forwardRayCastOffsetZ: 0.2
+  forwardRayCastOffsetY: 0.8
   debugBodyForward: 0
-  downRayCastDistance: 1.2
-  downRayCastRadius: 0.5
-  downRayCastOffsetY: 0.65
+  downRayCastDistance: 0.4
+  downRayCastRadius: 0.4
+  downRayCastOffsetY: 0.56
   debugLegDown: 0
-  centerRayCastDistance: 0.8
-  centerRayCastOffsetY: -0.15
-  centerRayCastRadius: 0.5
+  centerRayCastDistance: 0.7
+  centerRayCastOffsetY: 0
+  centerRayCastOffsetZ: 0
+  centerRayCastRadius: 0.4
   debuglegSideways: 0
   debugBodySideways: 0
   stepNormal: {x: 0, y: 0, z: 0}
@@ -2454,9 +2519,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7080496780437505379}
   - component: {fileID: 7080496780412374523}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R_LEG_IK_1_target
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2500,18 +2565,19 @@ MonoBehaviour:
   raycastLayer:
     serializedVersion: 2
     m_Bits: 1024
-  forwardRayCastDistance: 0.4
-  forwardRayCastRadius: 0.35
-  forwardRayCastOffsetZ: 0.3
-  forwardRayCastOffsetY: 0.35
+  forwardRayCastDistance: 0.2
+  forwardRayCastRadius: 0.45
+  forwardRayCastOffsetZ: 0.2
+  forwardRayCastOffsetY: 0.8
   debugBodyForward: 0
-  downRayCastDistance: 1.2
-  downRayCastRadius: 0.5
-  downRayCastOffsetY: 0.65
+  downRayCastDistance: 0.4
+  downRayCastRadius: 0.4
+  downRayCastOffsetY: 0.56
   debugLegDown: 0
-  centerRayCastDistance: 0.8
-  centerRayCastOffsetY: -0.15
-  centerRayCastRadius: 0.5
+  centerRayCastDistance: 0.7
+  centerRayCastOffsetY: 0
+  centerRayCastOffsetZ: 0
+  centerRayCastRadius: 0.4
   debuglegSideways: 0
   debugBodySideways: 0
   stepNormal: {x: 0, y: 0, z: 0}
@@ -2829,9 +2895,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7080496781072716812}
   - component: {fileID: 7080496779923420797}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_LEG_IK_4_target
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2875,18 +2941,19 @@ MonoBehaviour:
   raycastLayer:
     serializedVersion: 2
     m_Bits: 1024
-  forwardRayCastDistance: 0.4
-  forwardRayCastRadius: 0.35
-  forwardRayCastOffsetZ: 0.3
-  forwardRayCastOffsetY: 0.35
+  forwardRayCastDistance: 0.2
+  forwardRayCastRadius: 0.45
+  forwardRayCastOffsetZ: 0.2
+  forwardRayCastOffsetY: 0.8
   debugBodyForward: 0
-  downRayCastDistance: 1.2
-  downRayCastRadius: 0.5
-  downRayCastOffsetY: 0.65
+  downRayCastDistance: 0.4
+  downRayCastRadius: 0.4
+  downRayCastOffsetY: 0.56
   debugLegDown: 0
-  centerRayCastDistance: 0.8
-  centerRayCastOffsetY: -0.15
-  centerRayCastRadius: 0.5
+  centerRayCastDistance: 0.7
+  centerRayCastOffsetY: 0
+  centerRayCastOffsetZ: 0
+  centerRayCastRadius: 0.4
   debuglegSideways: 0
   debugBodySideways: 0
   stepNormal: {x: 0, y: 0, z: 0}
@@ -2990,9 +3057,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7080496781123447271}
   - component: {fileID: 7080496780847361891}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R_LEG_IK_2_target
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3036,18 +3103,19 @@ MonoBehaviour:
   raycastLayer:
     serializedVersion: 2
     m_Bits: 1024
-  forwardRayCastDistance: 0.4
-  forwardRayCastRadius: 0.35
-  forwardRayCastOffsetZ: 0.3
-  forwardRayCastOffsetY: 0.35
+  forwardRayCastDistance: 0.2
+  forwardRayCastRadius: 0.45
+  forwardRayCastOffsetZ: 0.2
+  forwardRayCastOffsetY: 0.8
   debugBodyForward: 0
-  downRayCastDistance: 1.2
-  downRayCastRadius: 0.5
-  downRayCastOffsetY: 0.65
+  downRayCastDistance: 0.4
+  downRayCastRadius: 0.4
+  downRayCastOffsetY: 0.56
   debugLegDown: 0
-  centerRayCastDistance: 0.8
-  centerRayCastOffsetY: -0.15
-  centerRayCastRadius: 0.5
+  centerRayCastDistance: 0.7
+  centerRayCastOffsetY: 0
+  centerRayCastOffsetZ: 0
+  centerRayCastRadius: 0.4
   debuglegSideways: 0
   debugBodySideways: 0
   stepNormal: {x: 0, y: 0, z: 0}
