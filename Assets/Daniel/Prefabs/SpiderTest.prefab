@@ -23,7 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 699183340795143249}
-  m_LocalRotation: {x: 0.21148878, y: -0.6747388, z: -0.21148878, w: 0.6747388}
+  m_LocalRotation: {x: 0.15637591, y: -0.6895989, z: -0.15637591, w: 0.6895989}
   m_LocalPosition: {x: -0, y: 0.19015387, z: 0.17226286}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -43,7 +43,7 @@ Transform:
   - {fileID: 4749538154171152633}
   m_Father: {fileID: 5676511242226525021}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: -25.553}
 --- !u!1 &941922393369458182
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,6 +221,7 @@ GameObject:
   - component: {fileID: 1737414978}
   - component: {fileID: 1737414979}
   - component: {fileID: 1454333717}
+  - component: {fileID: 4745873507989672107}
   m_Layer: 8
   m_Name: SpiderTest
   m_TagString: Player
@@ -498,6 +499,20 @@ CapsuleCollider:
   m_Enabled: 1
   m_Radius: 0.2
   m_Height: 0.75
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.34, z: -0.17}
+--- !u!136 &4745873507989672107
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567569974861381022}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.25
+  m_Height: 0.8
   m_Direction: 2
   m_Center: {x: 0, y: 0.34, z: -0.17}
 --- !u!1 &1569833163258140332
@@ -931,7 +946,7 @@ MonoBehaviour:
   downRayCastDistance: 0.4
   downRayCastRadius: 0.4
   downRayCastOffsetY: 0.56
-  debugLegDown: 1
+  debugLegDown: 0
   centerRayCastDistance: 0.7
   centerRayCastOffsetY: 0
   centerRayCastOffsetX: 0.3
@@ -1316,7 +1331,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5027826030474756754}
-  m_LocalRotation: {x: 0, y: 0, z: 0.1768143, w: 0.9842442}
+  m_LocalRotation: {x: -0.019630598, y: -0.017318096, z: 0.18933539, w: 0.9815635}
   m_LocalPosition: {x: -0.15080492, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1324,7 +1339,7 @@ Transform:
   - {fileID: 6955543255850592754}
   m_Father: {fileID: 3759574069368231987}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -1.833, y: -2.376, z: 21.874}
 --- !u!1 &5184307542193542047
 GameObject:
   m_ObjectHideFlags: 0
@@ -1863,7 +1878,7 @@ MonoBehaviour:
   downRayCastDistance: 0.4
   downRayCastRadius: 0.4
   downRayCastOffsetY: 0.56
-  debugLegDown: 1
+  debugLegDown: 0
   centerRayCastDistance: 0.7
   centerRayCastOffsetY: 0
   centerRayCastOffsetX: 0.3
@@ -2147,7 +2162,7 @@ MonoBehaviour:
   downRayCastDistance: 0.4
   downRayCastRadius: 0.4
   downRayCastOffsetY: 0.56
-  debugLegDown: 1
+  debugLegDown: 0
   centerRayCastDistance: 0.7
   centerRayCastOffsetY: 0
   centerRayCastOffsetX: 0.3
@@ -2251,7 +2266,7 @@ MonoBehaviour:
   downRayCastDistance: 0.4
   downRayCastRadius: 0.4
   downRayCastOffsetY: 0.56
-  debugLegDown: 1
+  debugLegDown: 0
   centerRayCastDistance: 0.7
   centerRayCastOffsetY: 0
   centerRayCastOffsetX: 0.3
@@ -2383,7 +2398,7 @@ MonoBehaviour:
   downRayCastDistance: 0.4
   downRayCastRadius: 0.4
   downRayCastOffsetY: 0.56
-  debugLegDown: 1
+  debugLegDown: 0
   centerRayCastDistance: 0.7
   centerRayCastOffsetY: 0
   centerRayCastOffsetX: 0.3
@@ -2487,7 +2502,7 @@ MonoBehaviour:
   downRayCastDistance: 0.4
   downRayCastRadius: 0.4
   downRayCastOffsetY: 0.56
-  debugLegDown: 1
+  debugLegDown: 0
   centerRayCastDistance: 0.7
   centerRayCastOffsetY: 0
   centerRayCastOffsetX: 0.3
@@ -2864,7 +2879,7 @@ MonoBehaviour:
   downRayCastDistance: 0.4
   downRayCastRadius: 0.4
   downRayCastOffsetY: 0.56
-  debugLegDown: 1
+  debugLegDown: 0
   centerRayCastDistance: 0.7
   centerRayCastOffsetY: 0
   centerRayCastOffsetX: 0.3
@@ -3027,7 +3042,7 @@ MonoBehaviour:
   downRayCastDistance: 0.4
   downRayCastRadius: 0.4
   downRayCastOffsetY: 0.56
-  debugLegDown: 1
+  debugLegDown: 0
   centerRayCastDistance: 0.7
   centerRayCastOffsetY: 0
   centerRayCastOffsetX: 0.3
