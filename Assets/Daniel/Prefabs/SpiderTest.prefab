@@ -1,64 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &258301225
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 258301226}
-  - component: {fileID: 258301228}
-  - component: {fileID: 258301227}
-  m_Layer: 8
-  m_Name: trigger
-  m_TagString: Player
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &258301226
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 258301225}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -0.004, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2200835502550968100}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &258301228
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 258301225}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.6, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &258301227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 258301225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b90036ccb1e71f428bee60f983c7ecb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rigidbody: {fileID: 538330447}
 --- !u!1 &699183340795143249
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,6 +220,7 @@ GameObject:
   - component: {fileID: 1737414977}
   - component: {fileID: 1737414978}
   - component: {fileID: 1737414979}
+  - component: {fileID: 1454333717}
   m_Layer: 8
   m_Name: SpiderTest
   m_TagString: Player
@@ -302,8 +244,6 @@ Transform:
   - {fileID: 1786846578562727129}
   - {fileID: 2922047021335439337}
   - {fileID: 2162337365253799191}
-  - {fileID: 2692573997567221267}
-  - {fileID: 258301226}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -410,7 +350,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 1
   m_AngularDrag: 0
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
@@ -546,6 +486,20 @@ MonoBehaviour:
   analogMovement: 0
   cursorLocked: 1
   cursorInputForLook: 1
+--- !u!136 &1454333717
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567569974861381022}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.2
+  m_Height: 0.75
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.34, z: -0.17}
 --- !u!1 &1569833163258140332
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,52 +627,6 @@ Transform:
   m_Father: {fileID: 3759574069368231987}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2174646813808236595
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2692573997567221267}
-  - component: {fileID: 108207550693135922}
-  m_Layer: 8
-  m_Name: Collider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2692573997567221267
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2174646813808236595}
-  m_LocalRotation: {x: 0.12429418, y: 0, z: 0, w: 0.99224544}
-  m_LocalPosition: {x: -0, y: 0.411, z: -0.247}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2200835502550968100}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 14.28, y: 0, z: 0}
---- !u!136 &108207550693135922
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2174646813808236595}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.2
-  m_Height: 0.62
-  m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2219167455749558504
 GameObject:
   m_ObjectHideFlags: 0
@@ -1002,7 +910,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20cb9b589b42a6343acf1a908eecc947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stagger: 1
+  _stagger: 0
   staggerDistance: -0.09
   stepDistance: 0.1
   stepHeight: 0.08
@@ -1014,6 +922,7 @@ MonoBehaviour:
   raycastLayer:
     serializedVersion: 2
     m_Bits: 1024
+  fallingExtraDistance: 2
   forwardRayCastDistance: 0.2
   forwardRayCastRadius: 0.45
   forwardRayCastOffsetZ: 0.2
@@ -1022,10 +931,10 @@ MonoBehaviour:
   downRayCastDistance: 0.4
   downRayCastRadius: 0.4
   downRayCastOffsetY: 0.56
-  debugLegDown: 0
+  debugLegDown: 1
   centerRayCastDistance: 0.7
   centerRayCastOffsetY: 0
-  centerRayCastOffsetZ: 0
+  centerRayCastOffsetX: 0.3
   centerRayCastRadius: 0.4
   debuglegSideways: 0
   debugBodySideways: 0
@@ -1933,11 +1842,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20cb9b589b42a6343acf1a908eecc947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stagger: 1
+  _stagger: 0
   staggerDistance: -0.14
   stepDistance: 0.15
   stepHeight: 0.08
-  stepDuration: 0.3
+  stepDuration: 0.4
   LegConstraints:
   - {fileID: 7080496779923420797}
   - {fileID: 7080496780412374523}
@@ -1945,6 +1854,7 @@ MonoBehaviour:
   raycastLayer:
     serializedVersion: 2
     m_Bits: 1024
+  fallingExtraDistance: 2
   forwardRayCastDistance: 0.2
   forwardRayCastRadius: 0.45
   forwardRayCastOffsetZ: 0.2
@@ -1953,10 +1863,10 @@ MonoBehaviour:
   downRayCastDistance: 0.4
   downRayCastRadius: 0.4
   downRayCastOffsetY: 0.56
-  debugLegDown: 0
+  debugLegDown: 1
   centerRayCastDistance: 0.7
   centerRayCastOffsetY: 0
-  centerRayCastOffsetZ: 0
+  centerRayCastOffsetX: 0.3
   centerRayCastRadius: 0.4
   debuglegSideways: 0
   debugBodySideways: 0
@@ -2216,11 +2126,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20cb9b589b42a6343acf1a908eecc947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stagger: 1
+  _stagger: 0
   staggerDistance: 0.1
   stepDistance: 0.15
   stepHeight: 0.08
-  stepDuration: 0.3
+  stepDuration: 0.4
   LegConstraints:
   - {fileID: 7080496780847361891}
   - {fileID: 7080496780666771951}
@@ -2228,6 +2138,7 @@ MonoBehaviour:
   raycastLayer:
     serializedVersion: 2
     m_Bits: 1024
+  fallingExtraDistance: 2
   forwardRayCastDistance: 0.2
   forwardRayCastRadius: 0.45
   forwardRayCastOffsetZ: 0.2
@@ -2236,10 +2147,10 @@ MonoBehaviour:
   downRayCastDistance: 0.4
   downRayCastRadius: 0.4
   downRayCastOffsetY: 0.56
-  debugLegDown: 0
+  debugLegDown: 1
   centerRayCastDistance: 0.7
   centerRayCastOffsetY: 0
-  centerRayCastOffsetZ: 0
+  centerRayCastOffsetX: 0.3
   centerRayCastRadius: 0.4
   debuglegSideways: 0
   debugBodySideways: 0
@@ -2319,11 +2230,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20cb9b589b42a6343acf1a908eecc947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stagger: 1
+  _stagger: 0
   staggerDistance: 0.14
   stepDistance: 0.15
   stepHeight: 0.08
-  stepDuration: 0.3
+  stepDuration: 0.5
   LegConstraints:
   - {fileID: 7080496780666771951}
   - {fileID: 7080496780573743004}
@@ -2331,6 +2242,7 @@ MonoBehaviour:
   raycastLayer:
     serializedVersion: 2
     m_Bits: 1024
+  fallingExtraDistance: 2
   forwardRayCastDistance: 0.2
   forwardRayCastRadius: 0.45
   forwardRayCastOffsetZ: 0.2
@@ -2339,10 +2251,10 @@ MonoBehaviour:
   downRayCastDistance: 0.4
   downRayCastRadius: 0.4
   downRayCastOffsetY: 0.56
-  debugLegDown: 0
+  debugLegDown: 1
   centerRayCastDistance: 0.7
   centerRayCastOffsetY: 0
-  centerRayCastOffsetZ: 0
+  centerRayCastOffsetX: 0.3
   centerRayCastRadius: 0.4
   debuglegSideways: 0
   debugBodySideways: 0
@@ -2450,11 +2362,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20cb9b589b42a6343acf1a908eecc947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stagger: 1
+  _stagger: 0
   staggerDistance: -0.14
   stepDistance: 0.15
   stepHeight: 0.08
-  stepDuration: 0.3
+  stepDuration: 0.5
   LegConstraints:
   - {fileID: 7080496781123847960}
   - {fileID: 7080496779923420797}
@@ -2462,6 +2374,7 @@ MonoBehaviour:
   raycastLayer:
     serializedVersion: 2
     m_Bits: 1024
+  fallingExtraDistance: 2
   forwardRayCastDistance: 0.2
   forwardRayCastRadius: 0.45
   forwardRayCastOffsetZ: 0.2
@@ -2470,10 +2383,10 @@ MonoBehaviour:
   downRayCastDistance: 0.4
   downRayCastRadius: 0.4
   downRayCastOffsetY: 0.56
-  debugLegDown: 0
+  debugLegDown: 1
   centerRayCastDistance: 0.7
   centerRayCastOffsetY: 0
-  centerRayCastOffsetZ: 0
+  centerRayCastOffsetX: 0.3
   centerRayCastRadius: 0.4
   debuglegSideways: 0
   debugBodySideways: 0
@@ -2553,7 +2466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20cb9b589b42a6343acf1a908eecc947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stagger: 1
+  _stagger: 0
   staggerDistance: 0.09
   stepDistance: 0.1
   stepHeight: 0.08
@@ -2565,6 +2478,7 @@ MonoBehaviour:
   raycastLayer:
     serializedVersion: 2
     m_Bits: 1024
+  fallingExtraDistance: 2
   forwardRayCastDistance: 0.2
   forwardRayCastRadius: 0.45
   forwardRayCastOffsetZ: 0.2
@@ -2573,10 +2487,10 @@ MonoBehaviour:
   downRayCastDistance: 0.4
   downRayCastRadius: 0.4
   downRayCastOffsetY: 0.56
-  debugLegDown: 0
+  debugLegDown: 1
   centerRayCastDistance: 0.7
   centerRayCastOffsetY: 0
-  centerRayCastOffsetZ: 0
+  centerRayCastOffsetX: 0.3
   centerRayCastRadius: 0.4
   debuglegSideways: 0
   debugBodySideways: 0
@@ -2929,11 +2843,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20cb9b589b42a6343acf1a908eecc947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stagger: 1
+  _stagger: 0
   staggerDistance: 0.1
   stepDistance: 0.15
   stepHeight: 0.08
-  stepDuration: 0.3
+  stepDuration: 0.4
   LegConstraints:
   - {fileID: 7080496780573743004}
   - {fileID: 7080496781340610865}
@@ -2941,6 +2855,7 @@ MonoBehaviour:
   raycastLayer:
     serializedVersion: 2
     m_Bits: 1024
+  fallingExtraDistance: 2
   forwardRayCastDistance: 0.2
   forwardRayCastRadius: 0.45
   forwardRayCastOffsetZ: 0.2
@@ -2949,10 +2864,10 @@ MonoBehaviour:
   downRayCastDistance: 0.4
   downRayCastRadius: 0.4
   downRayCastOffsetY: 0.56
-  debugLegDown: 0
+  debugLegDown: 1
   centerRayCastDistance: 0.7
   centerRayCastOffsetY: 0
-  centerRayCastOffsetZ: 0
+  centerRayCastOffsetX: 0.3
   centerRayCastRadius: 0.4
   debuglegSideways: 0
   debugBodySideways: 0
@@ -3091,11 +3006,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20cb9b589b42a6343acf1a908eecc947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stagger: 1
+  _stagger: 0
   staggerDistance: -0.1
   stepDistance: 0.15
   stepHeight: 0.08
-  stepDuration: 0.3
+  stepDuration: 0.4
   LegConstraints:
   - {fileID: 7080496780083948622}
   - {fileID: 7080496781123847960}
@@ -3103,6 +3018,7 @@ MonoBehaviour:
   raycastLayer:
     serializedVersion: 2
     m_Bits: 1024
+  fallingExtraDistance: 2
   forwardRayCastDistance: 0.2
   forwardRayCastRadius: 0.45
   forwardRayCastOffsetZ: 0.2
@@ -3111,10 +3027,10 @@ MonoBehaviour:
   downRayCastDistance: 0.4
   downRayCastRadius: 0.4
   downRayCastOffsetY: 0.56
-  debugLegDown: 0
+  debugLegDown: 1
   centerRayCastDistance: 0.7
   centerRayCastOffsetY: 0
-  centerRayCastOffsetZ: 0
+  centerRayCastOffsetX: 0.3
   centerRayCastRadius: 0.4
   debuglegSideways: 0
   debugBodySideways: 0
@@ -3235,7 +3151,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7185357525275364265}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.305, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
