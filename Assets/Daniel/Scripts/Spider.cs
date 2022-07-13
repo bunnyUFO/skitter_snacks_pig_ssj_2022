@@ -28,11 +28,24 @@ public class Spider : MonoBehaviour
             leg.UpdatePosition(Time.deltaTime);
         }
         StaggerLegs();
+        Move();
+    }
+    
+    private void Move() {
+        if (legs.TrueForAll(leg => !leg.Grounded()))
+        {
+            _rigidbody.useGravity = true;
+        }
+        
         CalculateOrientation();
     }
 
     private void CalculateOrientation()
     {
+        
+        //will need to raycast to rotate towards closest surface
+        //or predict point of impact and rotate when close
+
         Vector3 up = Vector3.zero;
         float avgSurfaceDist = 0;
 
@@ -100,4 +113,10 @@ public class Spider : MonoBehaviour
             }
         }
     }
+    public void OnCollisionEnter(Collision other)
+    {
+        _rigidbody.useGravity = false;
+        StaggerLegs(true);
+    }
+    
 }
