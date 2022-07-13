@@ -22,8 +22,8 @@ TagManager:
   - Ground
   - Walkable
   - Obstacle
-  - 
-  - 
+  - Nothing
+  - NavmeshBake
   - 
   - 
   - 
@@ -45,4 +45,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Michael Layer
+    uniqueID: 2588743879
     locked: 0
