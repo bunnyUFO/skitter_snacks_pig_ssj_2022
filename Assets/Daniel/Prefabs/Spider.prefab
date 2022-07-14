@@ -949,21 +949,21 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   fallingExtraDistance: 2
-  forwardRayCastDistance: 0.2
+  forwardRayCastDistance: 0.44
   forwardRayCastRadius: 0.45
-  forwardRayCastOffsetZ: 0.2
+  forwardRayCastOffsetZ: 0.44
   forwardRayCastOffsetY: 0.8
-  debugBodyForward: 1
+  debugBodyForward: 0
   downRayCastDistance: 1
   downRayCastRadius: 0.4
   downRayCastOffsetY: 0.6
-  debugLegDown: 1
+  debugLegDown: 0
   centerRayCastDistance: 0.7
   centerRayCastOffsetY: 0
   centerRayCastOffsetX: 0.3
   centerRayCastRadius: 0.4
-  debuglegSideways: 1
-  debugBodySideways: 1
+  debuglegSideways: 0
+  debugBodySideways: 0
   stepNormal: {x: 0, y: 0, z: 0}
 --- !u!1 &3262173727876796739
 GameObject:
@@ -2310,21 +2310,21 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   fallingExtraDistance: 2
-  forwardRayCastDistance: 0.2
+  forwardRayCastDistance: 0.4
   forwardRayCastRadius: 0.45
-  forwardRayCastOffsetZ: 0.2
+  forwardRayCastOffsetZ: 0.4
   forwardRayCastOffsetY: 0.8
-  debugBodyForward: 1
+  debugBodyForward: 0
   downRayCastDistance: 1
   downRayCastRadius: 0.4
   downRayCastOffsetY: 0.6
-  debugLegDown: 1
+  debugLegDown: 0
   centerRayCastDistance: 0.7
   centerRayCastOffsetY: 0
   centerRayCastOffsetX: 0.3
   centerRayCastRadius: 0.4
-  debuglegSideways: 1
-  debugBodySideways: 1
+  debuglegSideways: 0
+  debugBodySideways: 0
   stepNormal: {x: 0, y: 0, z: 0}
 --- !u!1 &7460874407893095620
 GameObject:
@@ -2414,21 +2414,21 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   fallingExtraDistance: 2
-  forwardRayCastDistance: 0.2
+  forwardRayCastDistance: 0.4
   forwardRayCastRadius: 0.45
-  forwardRayCastOffsetZ: 0.2
+  forwardRayCastOffsetZ: 0.4
   forwardRayCastOffsetY: 0.8
-  debugBodyForward: 1
+  debugBodyForward: 0
   downRayCastDistance: 1
   downRayCastRadius: 0.4
   downRayCastOffsetY: 0.6
-  debugLegDown: 1
+  debugLegDown: 0
   centerRayCastDistance: 0.7
   centerRayCastOffsetY: 0
   centerRayCastOffsetX: 0.3
   centerRayCastRadius: 0.4
-  debuglegSideways: 1
-  debugBodySideways: 1
+  debuglegSideways: 0
+  debugBodySideways: 0
   stepNormal: {x: 0, y: 0, z: 0}
 --- !u!1 &7460874408019753570
 GameObject:
@@ -2546,21 +2546,21 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   fallingExtraDistance: 2
-  forwardRayCastDistance: 0.2
+  forwardRayCastDistance: 0.4
   forwardRayCastRadius: 0.45
-  forwardRayCastOffsetZ: 0.2
+  forwardRayCastOffsetZ: 0.4
   forwardRayCastOffsetY: 0.8
-  debugBodyForward: 1
+  debugBodyForward: 0
   downRayCastDistance: 1
   downRayCastRadius: 0.4
   downRayCastOffsetY: 0.6
-  debugLegDown: 1
+  debugLegDown: 0
   centerRayCastDistance: 0.7
   centerRayCastOffsetY: 0
   centerRayCastOffsetX: 0.3
   centerRayCastRadius: 0.4
-  debuglegSideways: 1
-  debugBodySideways: 1
+  debuglegSideways: 0
+  debugBodySideways: 0
   stepNormal: {x: 0, y: 0, z: 0}
 --- !u!1 &7460874408244333518
 GameObject:
@@ -2709,21 +2709,21 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   fallingExtraDistance: 2
-  forwardRayCastDistance: 0.2
+  forwardRayCastDistance: 0.4
   forwardRayCastRadius: 0.45
-  forwardRayCastOffsetZ: 0.2
+  forwardRayCastOffsetZ: 0.4
   forwardRayCastOffsetY: 0.8
-  debugBodyForward: 1
+  debugBodyForward: 0
   downRayCastDistance: 1
   downRayCastRadius: 0.4
   downRayCastOffsetY: 0.6
-  debugLegDown: 1
+  debugLegDown: 0
   centerRayCastDistance: 0.7
   centerRayCastOffsetY: 0
   centerRayCastOffsetX: 0.3
   centerRayCastRadius: 0.4
-  debuglegSideways: 1
-  debugBodySideways: 1
+  debuglegSideways: 0
+  debugBodySideways: 0
   stepNormal: {x: 0, y: 0, z: 0}
 --- !u!1 &7460874408283375769
 GameObject:
@@ -2934,21 +2934,21 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   fallingExtraDistance: 2
-  forwardRayCastDistance: 0.2
+  forwardRayCastDistance: 0.4
   forwardRayCastRadius: 0.45
-  forwardRayCastOffsetZ: 0.2
+  forwardRayCastOffsetZ: 0.4
   forwardRayCastOffsetY: 0.8
-  debugBodyForward: 1
+  debugBodyForward: 0
   downRayCastDistance: 1
   downRayCastRadius: 0.4
   downRayCastOffsetY: 0.6
-  debugLegDown: 1
+  debugLegDown: 0
   centerRayCastDistance: 0.7
   centerRayCastOffsetY: 0
   centerRayCastOffsetX: 0.3
   centerRayCastRadius: 0.4
-  debuglegSideways: 1
-  debugBodySideways: 1
+  debuglegSideways: 0
+  debugBodySideways: 0
   stepNormal: {x: 0, y: 0, z: 0}
 --- !u!1 &7460874408557817168
 GameObject:
@@ -3159,21 +3159,21 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   fallingExtraDistance: 2
-  forwardRayCastDistance: 0.2
+  forwardRayCastDistance: 0.4
   forwardRayCastRadius: 0.45
-  forwardRayCastOffsetZ: 0.2
+  forwardRayCastOffsetZ: 0.4
   forwardRayCastOffsetY: 0.8
-  debugBodyForward: 1
+  debugBodyForward: 0
   downRayCastDistance: 1
   downRayCastRadius: 0.4
   downRayCastOffsetY: 0.6
-  debugLegDown: 1
+  debugLegDown: 0
   centerRayCastDistance: 0.7
   centerRayCastOffsetY: 0
   centerRayCastOffsetX: 0.3
   centerRayCastRadius: 0.4
-  debuglegSideways: 1
-  debugBodySideways: 1
+  debuglegSideways: 0
+  debugBodySideways: 0
   stepNormal: {x: 0, y: 0, z: 0}
 --- !u!1 &7460874408940970845
 GameObject:
@@ -3384,21 +3384,21 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   fallingExtraDistance: 2
-  forwardRayCastDistance: 0.2
+  forwardRayCastDistance: 0.4
   forwardRayCastRadius: 0.45
-  forwardRayCastOffsetZ: 0.2
+  forwardRayCastOffsetZ: 0.4
   forwardRayCastOffsetY: 0.8
-  debugBodyForward: 1
+  debugBodyForward: 0
   downRayCastDistance: 1
   downRayCastRadius: 0.4
   downRayCastOffsetY: 0.6
-  debugLegDown: 1
+  debugLegDown: 0
   centerRayCastDistance: 0.7
   centerRayCastOffsetY: 0
   centerRayCastOffsetX: 0.3
   centerRayCastRadius: 0.4
-  debuglegSideways: 1
-  debugBodySideways: 1
+  debuglegSideways: 0
+  debugBodySideways: 0
   stepNormal: {x: 0, y: 0, z: 0}
 --- !u!1 &7460874409198914136
 GameObject:

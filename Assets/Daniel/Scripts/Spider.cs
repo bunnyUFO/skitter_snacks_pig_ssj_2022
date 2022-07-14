@@ -5,8 +5,13 @@ using UnityEngine;
 
 public class Spider : MonoBehaviour
 {
-    [Header("Body Positioning")] [LabelOverride("Body Y Offset")] [SerializeField]
-    float offsetY = 0.2f;
+    [Header("Body Positioning")] 
+    [LabelOverride("Y Offset")] [SerializeField]
+    float yOffset = 0.2f;
+    [LabelOverride("Y Offset Tolerance")] [SerializeField]
+    float yOffsetTolerance = 0.02f;
+    [LabelOverride("Y Offset Duration")] [SerializeField]
+    float yOffsetDuration = 0.5f;
 
     [LabelOverride("Rotation Speed Curve")] [SerializeField]
     AnimationCurve sensitivityCurve;
@@ -15,6 +20,7 @@ public class Spider : MonoBehaviour
     [SerializeField] bool debug = false;
     private Rigidbody _rigidbody;
     private bool _stagger = false;
+    private float _deltaTime;
 
     private void Awake()
     {
@@ -23,6 +29,7 @@ public class Spider : MonoBehaviour
 
     void Update()
     {
+        _deltaTime = Time.deltaTime;
         foreach (ProceduralAnimationScript leg in legs)
         {
             leg.UpdatePosition(Time.deltaTime);
@@ -85,11 +92,14 @@ public class Spider : MonoBehaviour
 
         if (!_rigidbody.useGravity)
         {
-            //THIS IS CAUSING JITTERY CAMERA!!!
-            //NEED TO FINS WAY TO SMOOTHYL TRANSITION
             transform.rotation = Quaternion.Slerp(transform.rotation,
                 Quaternion.LookRotation(Vector3.ProjectOnPlane(transform.forward, up), up), 22.5f * Time.deltaTime);
-            transform.Translate(0, -(-avgSurfaceDist + -offsetY) * 0.5f, 0, Space.Self);
+            float yTranslateDistance = -(-avgSurfaceDist + -yOffset) * 0.5f;
+            if (Math.Abs(yTranslateDistance) > yOffsetTolerance)
+            {
+                float yScaleFactor = _deltaTime / yOffsetDuration;
+                transform.Translate(0, -(-avgSurfaceDist + -yOffset) * 0.5f*yScaleFactor, 0, Space.Self);
+            }
         }
         else
         {
