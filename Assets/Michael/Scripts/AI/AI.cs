@@ -38,7 +38,7 @@ public class AI : MonoBehaviour
 
     public bool debug = false;
 
-    Vector3 v_navmeshLinkEndPos;
+    public bool playingSong = false;
 
     void Start()
     {
@@ -67,6 +67,17 @@ public class AI : MonoBehaviour
 
     void Update()
     {
+        // Testing currently played song/sound effect works
+        /*
+        if (audioManager.currentlyPlayingSong("Idle"))
+        {
+            playingSong = true;
+        }
+        else
+        {
+            playingSong = false;
+        }
+        */
 
         switch (_state)
         {
