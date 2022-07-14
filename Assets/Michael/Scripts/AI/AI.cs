@@ -23,6 +23,9 @@ public class AI : MonoBehaviour
     Vector3 v_phermoneVector;
     AIFOV aifov;
     Phermone phermone;
+    AudioManager audioManager;
+    AudioSource audioSource;
+    Manager manager;
 
     public float pointRange = 1.0f;
     public float timer = 5.0f;
@@ -32,6 +35,8 @@ public class AI : MonoBehaviour
     public float phermoneTimerReset;
     public float range;
     int tPN = 0;
+
+    public bool debug = false;
 
     Vector3 v_navmeshLinkEndPos;
 
@@ -44,6 +49,10 @@ public class AI : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         aifov = GetComponent<AIFOV>();
         phermone = GetComponentInChildren<Phermone>();
+        audioSource = GetComponent<AudioSource>();
+
+        audioManager = GameObject.Find("SoundManager").GetComponent<AudioManager>();
+        manager = GameObject.Find("EnemyManager").GetComponent<Manager>();
         
         range = aifov.Range;
 
@@ -51,17 +60,13 @@ public class AI : MonoBehaviour
         {
             agent.destination = Patrol_Points[tPN].transform.position;
         }
+
+        
     }
 
 
     void Update()
     {
-        /*
-        if (agent.isOnOffMeshLink)
-        {
-            Debug.Log("I'm on navmesh link");
-        }
-        */
 
         switch (_state)
         {
@@ -91,6 +96,8 @@ public class AI : MonoBehaviour
                     {
                         _state = State.Returning;
                         timer = reset;
+
+                        manager.changeMusic();
                     }
                 }
                 else
@@ -121,6 +128,8 @@ public class AI : MonoBehaviour
 
             case State.Spotting:
 
+                manager.changeMusic();
+
                 spotbar.reveal(true);
 
                 agent.isStopped = true;
@@ -144,13 +153,16 @@ public class AI : MonoBehaviour
                     _state = State.Chasing;
                     agent.isStopped = false;
                     phermone.ReleasePhermones();
+
+                    manager.changeMusic();
                 }
                 
                 if (v_targetVector.magnitude > range || aifov.RaycastHit())
                 {
                     _state = State.Returning;
                     agent.isStopped = false;
-                    Debug.Log("Made it to destination");
+
+                    manager.changeMusic();
                 }
 
                 break;
@@ -181,8 +193,6 @@ public class AI : MonoBehaviour
 
                 break;
         }
-
-        
     }
 
     public enum State
@@ -244,6 +254,18 @@ public class AI : MonoBehaviour
         }
     }
 
+    public bool isSpotting()
+    {
+        if (_state == State.Spotting)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     private void OnTriggerStay(Collider touchedObject)
     {
         if (touchedObject.gameObject.CompareTag("Phermone") && _state != State.Chasing && _state != State.Returning)
@@ -252,4 +274,30 @@ public class AI : MonoBehaviour
             _state = State.Phermone;
         }
     }
+
+    public Color colour = Color.red;
+
+    private void OnDrawGizmos()
+    {
+        if (debug)
+        {
+            for (int i = 0; i < Patrol_Points.Count; i++)
+            {
+                Gizmos.color = colour;
+
+                Gizmos.DrawSphere(Patrol_Points[i].transform.position, 0.2f);
+
+                if (i > 0)
+                {
+                    //Gizmos.color = Color.red;
+                    Gizmos.DrawLine(Patrol_Points[i - 1].transform.position, Patrol_Points[i].transform.position);
+                }
+                if (i == 0)
+                {
+                    Gizmos.DrawLine(Patrol_Points[i].transform.position, Patrol_Points[Patrol_Points.Count - 1].transform.position);
+                }
+            }
+        }
+    }
+
 }

@@ -9,6 +9,8 @@ public class Manager : MonoBehaviour
     Phermone phermone;
     Spotbar spotbar;
     Slider slide;
+    AI ai;
+    AudioManager audioManager;
 
     [Header("Found Enemies")]
     public List<GameObject> enemies = new List<GameObject>();
@@ -42,6 +44,8 @@ public class Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioManager = GameObject.Find("SoundManager").GetComponent<AudioManager>();
+
         foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
         {
             enemies.Add(enemy);
@@ -72,6 +76,42 @@ public class Manager : MonoBehaviour
             slide.maxValue = barSize;
             
 
+        }
+    }
+
+    public void changeMusic()
+    {
+        bool idle = true;
+
+        for (int i = 0; i < enemies.Count; i++)
+        {
+            ai = enemies[i].GetComponent<AI>();
+
+            if (ai.isSpotting())
+            {
+                idle = false;
+                if (audioManager.returnState() != 2 && audioManager.returnState() != 3)
+                {
+                    audioManager.playMusic("Detected");
+                }
+            }
+
+            if (ai.isChasing())
+            {
+                idle = false;
+                if (audioManager.returnState() != 3)
+                {
+                    audioManager.playMusic("Chasing");
+                }
+            }
+        }
+
+        if (idle)
+        {
+            if (audioManager.returnState() != 1)
+            {
+                audioManager.playMusic("Idle");
+            }
         }
     }
 }
