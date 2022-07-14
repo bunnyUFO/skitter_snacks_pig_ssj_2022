@@ -10,6 +10,8 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource songSrc;
 
+    int arrayNum;
+
     public enum MusicState
     {
         Idle,
@@ -81,6 +83,83 @@ public class AudioManager : MonoBehaviour
                 return 3;
         }
 
+        return 0;
+    }
+
+    
+    public bool currentlyPlayingSound(string soundName, AudioSource src)
+    {
+       
+        switch (soundName)
+        {
+            case "Walk":
+                
+                if (src.isPlaying && src.clip.length == soundList[0].length)
+                {
+                    return true;
+                }
+
+                break;
+        }
+
+        return false;
+    }
+
+    public bool currentlyPlayingSong(string songName)
+    {
+        switch (songName)
+        {
+            case "Idle":
+
+                if (songSrc.isPlaying && songSrc.clip.length == songList[0].length)
+                {
+                    return true;
+                }
+
+                break;
+
+            case "Detected":
+
+                if (songSrc.isPlaying && songSrc.clip.length == songList[1].length)
+                {
+                    return true;
+                }
+
+                break;
+
+            case "Chasing":
+
+                if (songSrc.isPlaying && songSrc.clip.length == songList[2].length)
+                {
+                    return true;
+                }
+
+                break;
+        }
+
+        return false;
+    }
+
+    public bool playingAnySound(AudioSource src)
+    {
+        if (src.isPlaying)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
+
+    int returnArrayNumber(string soundName)
+    {
+        switch (soundName)
+        {
+            case "Walk":
+                return 1;
+        }
         return 0;
     }
 }
