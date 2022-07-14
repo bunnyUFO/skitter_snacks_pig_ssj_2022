@@ -84,13 +84,13 @@ public class ProceduralAnimationScript : MonoBehaviour
         if (_startedFalling)
         {
             _startedFalling = false;
-            transform.Translate( centerRayCastOffsetX *(transform.right*(transform.localPosition.x)).normalized);
+            transform.Translate( transform.localPosition.x, 0f, 0f);
         }
 
         _lerpTime += deltaTime;
         _lerp = _lerpTime / stepDuration;
-        Vector3 offset = Mathf.Sin(_lerp * Mathf.PI) * stepHeight/2 * transform.up;
-        transform.Translate(offset);
+        float offset = Mathf.Sin(_lerp * Mathf.PI) * stepHeight/2;
+        transform.Translate(0f, offset, offset/4);
     }
 
     private void UpdatePositions()
