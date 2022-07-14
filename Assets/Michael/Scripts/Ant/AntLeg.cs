@@ -5,7 +5,6 @@ using UnityEngine;
 public class AntLeg : MonoBehaviour
 {
     [Header ("Step Configurations")]
-    [SerializeField] float staggerDistance = 0f;
     [SerializeField] float stepDistance = 0.2f;
     [SerializeField] float stepHeight = 0.2f;
     [SerializeField] public float stepDuration = 0.2f;
@@ -40,7 +39,7 @@ public class AntLeg : MonoBehaviour
     private Transform _rayCastSource;
     private Vector3 _oldPosition, _currentPosition, _targetPosition, _raycastPosition,_bodyPosition;
     private float _lerp, _lerpTime;
-    private bool _startedFalling, _raycastHt;
+    private bool _raycastHt;
     private Executer _exe;
     
     private void Awake()
@@ -49,7 +48,6 @@ public class AntLeg : MonoBehaviour
         _lerp = _lerpTime = 0f;
         _oldPosition = _currentPosition = _targetPosition = transform.position;
         _raycastPosition = _rayCastSource.position;
-        _startedFalling = true;
         _exe = new Executer(this);
     }
     

@@ -43,7 +43,7 @@ public class ProceduralAnimationScript : MonoBehaviour
     private Rigidbody _rigidbody;
     private Vector3 _oldPosition, _currentPosition, _targetPosition, _raycastPosition,_bodyPosition;
     private float _lerp, _lerpTime;
-    private bool _startedFalling, _raycastHt;
+    private bool _raycastHt;
     private Executer _exe;
     
     private void Awake()
@@ -53,7 +53,6 @@ public class ProceduralAnimationScript : MonoBehaviour
         _lerp = _lerpTime = 0f;
         _oldPosition = _currentPosition = _targetPosition = transform.position;
         _raycastPosition = _rayCastSource.position;
-        _startedFalling = true;
         _exe = new Executer(this);
     }
     
@@ -81,14 +80,10 @@ public class ProceduralAnimationScript : MonoBehaviour
 
     private void AirFall(float deltaTime)
     {
-        if (_startedFalling)
-        {
-            _startedFalling = false;
-            transform.Translate( transform.localPosition.x, 0f, 0f);
-        }
 
         _lerpTime += deltaTime;
         _lerp = _lerpTime / stepDuration;
+        transform.position = new Vector3(_raycastPosition.x, _raycastPosition.y, _raycastPosition.z) + 2f*_rayCastSource.localPosition.x*transform.right;
         float offset = Mathf.Sin(_lerp * Mathf.PI) * stepHeight/2;
         transform.Translate(0f, offset, offset/4);
     }
@@ -225,6 +220,7 @@ public class ProceduralAnimationScript : MonoBehaviour
     {
         return _lerp < 1;
     }
+
     public void Stagger(float delay = 0f)
     {
         _exe.DelayExecute(delay , x=>  _stagger = true);

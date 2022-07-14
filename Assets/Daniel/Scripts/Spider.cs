@@ -85,14 +85,19 @@ public class Spider : MonoBehaviour
 
         if (!_rigidbody.useGravity)
         {
+            //THIS IS CAUSING JITTERY CAMERA!!!
+            //NEED TO FINS WAY TO SMOOTHYL TRANSITION
             transform.rotation = Quaternion.Slerp(transform.rotation,
                 Quaternion.LookRotation(Vector3.ProjectOnPlane(transform.forward, up), up), 22.5f * Time.deltaTime);
             transform.Translate(0, -(-avgSurfaceDist + -offsetY) * 0.5f, 0, Space.Self);
         }
         else
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation,
-                Quaternion.LookRotation(Vector3.ProjectOnPlane(transform.forward, Vector3.up), Vector3.up), 22.5f * Time.deltaTime);
+            //predict path and rotate slowly towards orientation of predicted hit point 
+
+            // transform.rotation = Quaternion.Slerp(transform.rotation,
+            //     Quaternion.LookRotation(Vector3.ProjectOnPlane(transform.forward, Vector3.up), Vector3.up),
+            //     22.5f * Time.deltaTime);
         }
     }
 
@@ -119,4 +124,9 @@ public class Spider : MonoBehaviour
         StaggerLegs(true);
     }
     
+    public void OnTriggerStay(Collider other)
+    {
+        _rigidbody.useGravity = false;
+        StaggerLegs(true);
+    }
 }
