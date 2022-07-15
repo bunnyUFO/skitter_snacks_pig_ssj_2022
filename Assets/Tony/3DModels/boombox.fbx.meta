@@ -3,7 +3,57 @@ guid: 296f991a6a8d811418f32dec6a615cb1
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body
+    second: {fileID: 2100000, guid: 7c3b46e8e8c6da84c98d843af807d351, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BrushedMetal
+    second: {fileID: 2100000, guid: 598c0d15e77cfca45bd166e8f4d9fae5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CleanMetal
+    second: {fileID: 2100000, guid: be1ea7e8b15444a409bf5bc1a80d6f2e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Flat Plastic
+    second: {fileID: 2100000, guid: 5e46751185997064a881960ed86afb12, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OverSteareo
+    second: {fileID: 2100000, guid: aabf8a4d835425343902708ecb411c7c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Radio Sticker+ autostop sticker
+    second: {fileID: 2100000, guid: 1ea716c5834f0bb4287fd8902859b74a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TT_checker_512x512_UV_GRID
+    second: {fileID: 2100000, guid: 948ab3962df68a3429cc2c2caa8a58b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Top Plate
+    second: {fileID: 2100000, guid: 341009908f193c24e9cc2179de503985, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TransparentPlastic
+    second: {fileID: 2100000, guid: 50417667a37ad52498094f3a2f19c2de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Woofer
+    second: {fileID: 2100000, guid: 9cbf77772dbd2e64cb40784e019d31f3, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
