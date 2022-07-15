@@ -232,7 +232,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7caf825b08a949908ed41e8dba8b9b41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offsetY: 0.1
+  yOffset: 0.2
+  yOffsetTolerance: 0.02
+  yOffsetDuration: 0.5
   sensitivityCurve:
     serializedVersion: 2
     m_Curve:
