@@ -3,48 +3,47 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// To add more doritos to UI, first create a gameobject called Food6
+// Add FoodUI script to that game object
+// Create 2 Images one called Empty6 and one called Full6 within the gameobject
+// In the Game Object's Empty and Full public fields, write Empty6 and Full6
+// Then add Doritos.Add(GameObject.Find("Food6")); below the others
+// Finished
+
 public class UIManager : MonoBehaviour
 {
-    Text text;
-    string foodString;
-
-    [Header("Found Food")]
+    [Header("Food")]
     public List<Food> foodList = new List<Food>();
+    public int foodCollected = 0;
+    public List<GameObject> Doritos = new List<GameObject>();
 
-    [Header("Food Collected")]
-    public int food;
+    GameObject fullFood;
+    GameObject emptyFood;
+
 
     void Start()
     {
-        text = GetComponentInChildren<Text>();
-
         foreach (GameObject food in GameObject.FindGameObjectsWithTag("Food"))
         {
             foodList.Add(food.GetComponent<Food>());
         }
 
-        foodString = "Food: " + food + "/" + foodList.Count;
-        text.text = foodString;
+        Doritos.Add(GameObject.Find("Food1"));
+        Doritos.Add(GameObject.Find("Food2"));
+        Doritos.Add(GameObject.Find("Food3"));
+        Doritos.Add(GameObject.Find("Food4"));
+        Doritos.Add(GameObject.Find("Food5"));
     }
 
-    // Update is called once per frame
-    void Update()
+    public void updateFood()
     {
-        for (int i = 0; i < foodList.Count; i++)
-        {
-            if (foodList[i].Collected && !foodList[i].Sent)
-            {
-                UpdateText();
-                foodList[i].Sent = true;
-            }
-        }
+        foodCollected++;
+        Doritos[foodCollected-1].GetComponent<FoodUI>().foodActive();
+        Debug.Log("Collecting Food " + foodCollected);
     }
 
-    void UpdateText()
+    public void updateIndicator(int state)
     {
-        food++;
-
-        foodString = "Food: " + food + "/" + foodList.Count;
-        text.text = foodString;
+        GameObject.Find("Indicator").GetComponent<IndicatorUI>().updateState(state);
     }
 }

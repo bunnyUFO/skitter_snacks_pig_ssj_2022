@@ -8,31 +8,33 @@ public class ManualLinkV4 : MonoBehaviour
     NavMeshAgent _agent;
     Rigidbody _rigidBody;
 
-    Vector3 rotationTarget;
     Vector3 direction;
 
     Vector3 linkEndPoint;
     Vector3 linkStartPoint;
-    //Vector3 linkRotationPoint;
     Vector3 linkMidRotationPoint;
 
-    Vector3 realStartPoint;
-    Vector3 realEndPoint;
+    Vector3 linkEndRotationPointTemp;
+    Vector3 directionTemp;
 
     public float beginDistance = 2.0f;
     float distanceFromStart;
     float distanceFromMid;
     float distanceFromEnd;
 
+    float distanceFromEndTemp;
+
     public float endpointThreshold = 0.1f;
 
-    bool traversing = false;
+    bool traversing = false, tempTraversing = false;
 
     // Start is called before the first frame update
     void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
         _rigidBody = GetComponent<Rigidbody>();
+
+        _agent.autoTraverseOffMeshLink = false;
     }
 
     void Update()
@@ -52,7 +54,7 @@ public class ManualLinkV4 : MonoBehaviour
 
             if (distanceFromStart < 2f)
             {
-                _agent.updatePosition = false;
+                //_agent.updatePosition = false;
                 _agent.updateRotation = false;
                 _agent.updateUpAxis = false;
 
@@ -62,7 +64,7 @@ public class ManualLinkV4 : MonoBehaviour
 
         if (traversing)
         {
-            Debug.Log("Is Traversing");
+            //Debug.Log("Is Traversing");
 
             _rigidBody.velocity = this.transform.forward * 3.0f;
 
@@ -70,24 +72,24 @@ public class ManualLinkV4 : MonoBehaviour
 
             Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, direction.y, direction.z));
 
-            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, 8 * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, 12 * Time.deltaTime);
 
             distanceFromMid = (linkMidRotationPoint - this.transform.position).magnitude;
             distanceFromEnd = (linkEndPoint - this.transform.position).magnitude;
-            Debug.Log("Distance from Mid" + distanceFromMid);
-            Debug.Log("Distance from End" + distanceFromEnd);
+            //Debug.Log("Distance from Mid" + distanceFromMid);
+            //Debug.Log("Distance from End" + distanceFromEnd);
 
-            if (distanceFromMid < 0.5f)
+            if (distanceFromMid < 0.75f)
             {
-                Debug.Log("Has Reached Mid");
+                //Debug.Log("Has Reached Mid");
                 linkMidRotationPoint = linkEndPoint;
             }
-            if (distanceFromEnd < 0.5f)
+            if (distanceFromEnd < 0.75f)
             {
-                Debug.Log("Has Reached End");
+                //Debug.Log("Has Reached End");
                 _rigidBody.velocity = this.transform.forward * 0;
 
-                _agent.updatePosition = true;
+                //_agent.updatePosition = true;
                 _agent.updateRotation = true;
                 _agent.updateUpAxis = true;
 
@@ -95,6 +97,11 @@ public class ManualLinkV4 : MonoBehaviour
 
                 traversing = false;
             }
+        }
+
+        if (!traversing && _agent.isOnOffMeshLink)
+        {
+            //_agent.autoTraverseOffMeshLink = true;
         }
 
         /*

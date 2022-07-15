@@ -52,4 +52,9 @@ public class AIFOV : MonoBehaviour
             return true;
         }
     }
+
+    private void OnDrawGizmos()
+    {
+
+    }
 }

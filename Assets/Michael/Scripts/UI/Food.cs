@@ -4,18 +4,12 @@ using UnityEngine;
 
 public class Food : MonoBehaviour
 {
+    UIManager uiManager;
     public bool Collected = false;
-    public bool Sent = false;
 
-    void Start()
+    private void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
     }
 
     private void OnTriggerStay(Collider touchedObject)
@@ -24,6 +18,7 @@ public class Food : MonoBehaviour
         {
             Collected = true;
             GetComponent<MeshRenderer>().enabled = false;
+            uiManager.updateFood();
         }
     }
 }

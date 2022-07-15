@@ -8,9 +8,9 @@ public class Manager : MonoBehaviour
     INFO info;
     Phermone phermone;
     Spotbar spotbar;
-    Slider slide;
     AI ai;
     AudioManager audioManager;
+    UIManager uiManager;
 
     [Header("Found Enemies")]
     public List<GameObject> enemies = new List<GameObject>();
@@ -45,6 +45,7 @@ public class Manager : MonoBehaviour
     void Start()
     {
         audioManager = GameObject.Find("SoundManager").GetComponent<AudioManager>();
+        uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
 
         foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
         {
@@ -71,9 +72,6 @@ public class Manager : MonoBehaviour
             spotbar.mediumSpotValue = midRangeBarIncrease;
             spotbar.farSpotValue = longRangeBarIncrease;
             // Perhaps add an addition to decide what long, mid and short range is? Currently those values are > 1/2 long, > 1/4 && < 1/2 mid, < 1/4 short
-
-            slide = enemies[i].GetComponentInChildren<Slider>();
-            slide.maxValue = barSize;
             
 
         }
@@ -93,6 +91,7 @@ public class Manager : MonoBehaviour
                 if (audioManager.returnState() != 2 && audioManager.returnState() != 3)
                 {
                     audioManager.playMusic("Detected");
+                    uiManager.updateIndicator(2);
                 }
             }
 
@@ -102,6 +101,7 @@ public class Manager : MonoBehaviour
                 if (audioManager.returnState() != 3)
                 {
                     audioManager.playMusic("Chasing");
+                    uiManager.updateIndicator(3);
                 }
             }
         }
@@ -111,6 +111,7 @@ public class Manager : MonoBehaviour
             if (audioManager.returnState() != 1)
             {
                 audioManager.playMusic("Idle");
+                uiManager.updateIndicator(1);
             }
         }
     }

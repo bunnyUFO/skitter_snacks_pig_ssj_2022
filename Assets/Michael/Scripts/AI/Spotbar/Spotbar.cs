@@ -13,33 +13,17 @@ public class Spotbar : MonoBehaviour
     public float mediumSpotValue = 2;
     public float farSpotValue = 1;
 
-    GameObject imageObject1;
-    GameObject imageObject2;
-
-    Slider slide;
-
     void Start()
     {
-        slide = GetComponent<Slider>();
-        imageObject1 = GameObject.Find("Fill");
-        imageObject2 = GameObject.Find("Background");
-        reveal(false);
+
     }
 
     void Update()
     {
-        slide.value = spotbarValue;
-
         if (spotbarValue > spotbarSize)
         {
             spotbarValue = spotbarSize;
         }
-    }
-
-    public void reveal(bool revealStatus)
-    {
-        imageObject1.SetActive(revealStatus);
-        imageObject2.SetActive(revealStatus);
     }
 
     public bool spotted()

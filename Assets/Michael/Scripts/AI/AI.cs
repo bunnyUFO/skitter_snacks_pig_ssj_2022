@@ -101,7 +101,6 @@ public class AI : MonoBehaviour
 
                 if (v_targetVector.magnitude > range)
                 {
-                    GetComponent<MeshRenderer>().material = red;
                     timer -= Time.deltaTime;
                     if (timer <= 0)
                     {
@@ -113,15 +112,12 @@ public class AI : MonoBehaviour
                 }
                 else
                 {
-                    GetComponent<MeshRenderer>().material = green;
                     timer = reset;
                 }
 
                 break;
 
             case State.Returning:
-
-                GetComponent<MeshRenderer>().material = red;
 
                 spotbar.decreaseSpot();
 
@@ -132,7 +128,7 @@ public class AI : MonoBehaviour
                 {
                     UpdateTarget();
                     _state = State.Patroling;
-                    spotbar.reveal(false);
+                    //spotbar.reveal(false);
                 }
 
                 break;
@@ -141,7 +137,7 @@ public class AI : MonoBehaviour
 
                 manager.changeMusic();
 
-                spotbar.reveal(true);
+                //spotbar.reveal(true);
 
                 agent.isStopped = true;
 
@@ -193,9 +189,8 @@ public class AI : MonoBehaviour
                 }
 
                 spotbar.maxSpot();
-                spotbar.reveal(false);
+                //spotbar.reveal(false);
 
-                GetComponent<MeshRenderer>().material = blue;
                 agent.destination = v_phermoneVector;
 
                 break;
@@ -234,17 +229,14 @@ public class AI : MonoBehaviour
         if (v_targetVector.magnitude <= range/4)
         {
             spotbar.increaseSpot(3);
-            GetComponent<MeshRenderer>().material = closeRange;
         }
         else if (v_targetVector.magnitude <= range/2 && v_targetVector.magnitude > range/4)
         {
             spotbar.increaseSpot(2);
-            GetComponent<MeshRenderer>().material = mediumRange;
         }
         else if (v_targetVector.magnitude > range/2)
         {
             spotbar.increaseSpot(1);
-            GetComponent<MeshRenderer>().material = farRange;
         }
     }
 
@@ -300,7 +292,6 @@ public class AI : MonoBehaviour
 
                 if (i > 0)
                 {
-                    //Gizmos.color = Color.red;
                     Gizmos.DrawLine(Patrol_Points[i - 1].transform.position, Patrol_Points[i].transform.position);
                 }
                 if (i == 0)

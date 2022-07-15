@@ -65,27 +65,8 @@ public class AudioManager : MonoBehaviour
                 songSrc.Play();
 
                 break;
-
         }
     }
-
-    public int returnState()
-    {
-        switch (_state)
-        {
-            case MusicState.Idle:
-                return 1;
-
-            case MusicState.Detected:
-                return 2;
-
-            case MusicState.Chasing:
-                return 3;
-        }
-
-        return 0;
-    }
-
     
     public bool currentlyPlayingSound(string soundName, AudioSource src)
     {
@@ -151,15 +132,21 @@ public class AudioManager : MonoBehaviour
             return false;
         }
     }
-    
 
-    int returnArrayNumber(string soundName)
+    public int returnState()
     {
-        switch (soundName)
+        switch (_state)
         {
-            case "Walk":
+            case MusicState.Idle:
                 return 1;
+
+            case MusicState.Detected:
+                return 2;
+
+            case MusicState.Chasing:
+                return 3;
         }
+
         return 0;
     }
 }
