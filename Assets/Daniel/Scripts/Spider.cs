@@ -98,13 +98,12 @@ public class Spider : MonoBehaviour
             {
                 transform.rotation = Quaternion.Slerp(transform.rotation,
                     Quaternion.LookRotation(Vector3.ProjectOnPlane(transform.forward, up), up), 22.5f * Time.deltaTime);
-            }
-            
-            float yTranslateDistance = -(-avgSurfaceDist + -yOffset) * 0.5f;
-            if (Math.Abs(yTranslateDistance) > yOffsetTolerance)
-            {
-                float yScaleFactor = _deltaTime / yOffsetDuration;
-                transform.Translate(0, -(-avgSurfaceDist + -yOffset) * 0.5f * yScaleFactor, 0, Space.Self);
+                float yTranslateDistance = -(-avgSurfaceDist + -yOffset) * 0.5f;
+                if (Math.Abs(yTranslateDistance) > yOffsetTolerance)
+                {
+                    float yScaleFactor = _deltaTime / yOffsetDuration;
+                    transform.Translate(0, -(-avgSurfaceDist + -yOffset) * 0.5f * yScaleFactor, 0, Space.Self);
+                }
             }
         }
         else

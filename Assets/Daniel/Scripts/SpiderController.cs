@@ -17,14 +17,25 @@ namespace StarterAssets
         [Header("Spider Movement")]
         [SerializeField] 
         private float moveSpeed = 2.0f;
+        [SerializeField] 
+        private float rotationSpeed = 90f;
+        [SerializeField] 
+        private float jumpViewRotationSpeed = 25f;
+        
         [SerializeField]
         [Header("Spider Jump")]
         private float maxJumpPower =10f;
         [SerializeField] 
         private float jumpChargeTime =6f;
         [SerializeField] 
-        private Projection _projection;
-        
+        private Projection projection;
+
+        [Header("Camera")]
+        [SerializeField] 
+        private CinemachineFreeLook cinemachineFreeLook;
+        [SerializeField] 
+        private float jumpCameraOffsetX = 15f;
+
         public float jumpCharge;
         private Spider _spider;
         private Vector3 _previousInputDirection, _inputDirection, _jumpVelocity;
@@ -56,23 +67,31 @@ namespace StarterAssets
             }
         }
 
+        
+        
         private void Jump(float deltaTime)
         {
             if (!_rigidbody.useGravity)
             {
-                _projection.EnableProjection(false);
+                projection.EnableProjection(false);
             }
             
             if (Keyboard.current.spaceKey.isPressed)
             {
-                _projection.EnableProjection(true);
+                if (jumpCharge == 0f)
+                {
+                    cinemachineFreeLook.m_YAxis.Value = 0.6f;
+                    cinemachineFreeLook.m_XAxis.Value = _spider.transform.rotation.eulerAngles.y + jumpCameraOffsetX;
+                }
+
+                projection.EnableProjection(true);
                 _spider.ChargingJump(true);
                 _jumpChargeTimeDelta += deltaTime;
                 jumpCharge = Math.Min(1, _jumpChargeTimeDelta/ jumpChargeTime);
 
                 float jumpPower = maxJumpPower * jumpCharge;
                 _jumpVelocity = (_spider.transform.up + _spider.transform.forward).normalized * jumpPower;
-                _projection.SimulateTrajectory(_spider, 
+                projection.SimulateTrajectory(_spider, 
                     _spider.transform.position, 
                     _jumpVelocity);
             }
@@ -125,7 +144,7 @@ namespace StarterAssets
         private void Rotate(float deltaTime)
         {
 
-            float rotateSpeed = Keyboard.current.spaceKey.isPressed ? 45f : 180f;
+            float rotateSpeed = Keyboard.current.spaceKey.isPressed ? jumpViewRotationSpeed : rotationSpeed;
             if( Keyboard.current.qKey.isPressed || Mouse.current.leftButton.isPressed){
                 transform.Rotate(0f, -rotateSpeed * deltaTime, 0f);
             }

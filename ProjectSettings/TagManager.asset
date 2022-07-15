@@ -22,7 +22,7 @@ TagManager:
   - Ground
   - Walkable
   - Obstacle
-  - Nothing
+  - Food
   - NavmeshBake
   - 
   - 

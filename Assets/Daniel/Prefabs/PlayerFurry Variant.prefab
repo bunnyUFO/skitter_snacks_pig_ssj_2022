@@ -1,0 +1,156 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2245351788804363193
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1335100156013984099, guid: 4c263c4dfbb561c43a2fda471345cd54,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.00000008940697
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335100156013984099, guid: 4c263c4dfbb561c43a2fda471345cd54,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0000009536743
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335100156013984099, guid: 4c263c4dfbb561c43a2fda471345cd54,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9170897
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335100156013984099, guid: 4c263c4dfbb561c43a2fda471345cd54,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.3986613
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335100156013984099, guid: 4c263c4dfbb561c43a2fda471345cd54,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0036293976
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335100156013984099, guid: 4c263c4dfbb561c43a2fda471345cd54,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0015777107
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335100156216481391, guid: 4c263c4dfbb561c43a2fda471345cd54,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.00000008940697
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335100156216481391, guid: 4c263c4dfbb561c43a2fda471345cd54,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0000009536743
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335100156216481391, guid: 4c263c4dfbb561c43a2fda471345cd54,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8940789
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335100156216481391, guid: 4c263c4dfbb561c43a2fda471345cd54,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.44789213
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335100156216481391, guid: 4c263c4dfbb561c43a2fda471345cd54,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0035383664
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335100156216481391, guid: 4c263c4dfbb561c43a2fda471345cd54,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0017725562
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335100156608500324, guid: 4c263c4dfbb561c43a2fda471345cd54,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.1514473
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335100156608500324, guid: 4c263c4dfbb561c43a2fda471345cd54,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.6164002
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335100157097881673, guid: 4c263c4dfbb561c43a2fda471345cd54,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerFurry
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335100157097881674, guid: 4c263c4dfbb561c43a2fda471345cd54,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335100157097881674, guid: 4c263c4dfbb561c43a2fda471345cd54,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335100157097881674, guid: 4c263c4dfbb561c43a2fda471345cd54,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335100157097881674, guid: 4c263c4dfbb561c43a2fda471345cd54,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335100157097881674, guid: 4c263c4dfbb561c43a2fda471345cd54,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.04757282
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335100157097881674, guid: 4c263c4dfbb561c43a2fda471345cd54,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335100157097881674, guid: 4c263c4dfbb561c43a2fda471345cd54,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9988678
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335100157097881674, guid: 4c263c4dfbb561c43a2fda471345cd54,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335100157097881674, guid: 4c263c4dfbb561c43a2fda471345cd54,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335100157097881674, guid: 4c263c4dfbb561c43a2fda471345cd54,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 185.453
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335100157097881674, guid: 4c263c4dfbb561c43a2fda471345cd54,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606999983856918940, guid: 4c263c4dfbb561c43a2fda471345cd54,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.003594257
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606999983856918940, guid: 4c263c4dfbb561c43a2fda471345cd54,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0016562361
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764054645145885601, guid: 4c263c4dfbb561c43a2fda471345cd54,
+        type: 3}
+      propertyPath: _obstaclesParent
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4c263c4dfbb561c43a2fda471345cd54, type: 3}
