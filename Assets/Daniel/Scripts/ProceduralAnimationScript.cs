@@ -30,11 +30,11 @@ public class ProceduralAnimationScript : MonoBehaviour
     [SerializeField] float downRayCastOffsetY = 1f;
     [SerializeField] bool debugLegDown = false;
     
-    [Header ("Body Down Raycast Configurations")]
-    [SerializeField] float centerRayCastDistance = 2f;
-    [SerializeField] float  centerRayCastOffsetY= 0.1f;
-    [SerializeField] float  centerRayCastOffsetX= 0.3f;
-    [SerializeField] float centerRayCastRadius = 2f;
+    [Header ("Leg Sideways Raycast Configurations")]
+    [SerializeField] float sidewaysRayCastDistance = 2f;
+    [SerializeField] float  sidewaysRayCastOffsetY= 0.1f;
+    [SerializeField] float  sidewaysRayCastOffsetX= 0.3f;
+    [SerializeField] float sidewaysRayCastRadius = 2f;
     [SerializeField] bool debuglegSideways = false;
     [SerializeField] bool debugBodySideways = false;
 
@@ -123,8 +123,8 @@ public class ProceduralAnimationScript : MonoBehaviour
         Vector3 bodyForwardBodySource = _bodyPosition + transform.up*forwardRayCastOffsetY + transform.forward*(_rayCastSource.localPosition.z - forwardRayCastOffsetZ);
         Vector3 legDownRaySource = _raycastPosition + transform.up * downRayCastOffsetY + staggerOffset;
         Vector3 sidewaysCastDirection = (_rayCastSource.right*(-_rayCastSource.localPosition.x)).normalized;
-        Vector3 legSidewaysRaySource = _raycastPosition - transform.up*centerRayCastOffsetY + -sidewaysCastDirection*centerRayCastOffsetX;
-        Vector3 bodySidewaysRaySource = body.position - transform.up*centerRayCastOffsetY +  (_rayCastSource.right*(_rayCastSource.localPosition.x)).normalized*(centerRayCastDistance/2);
+        Vector3 legSidewaysRaySource = _raycastPosition - transform.up*sidewaysRayCastOffsetY + -sidewaysCastDirection*sidewaysRayCastOffsetX;
+        Vector3 bodySidewaysRaySource = body.position - transform.up*sidewaysRayCastOffsetY +  (_rayCastSource.right*(_rayCastSource.localPosition.x)).normalized*(sidewaysRayCastDistance/2);
         _raycastHt = false;
         
         /*
@@ -147,20 +147,20 @@ public class ProceduralAnimationScript : MonoBehaviour
             stepNormal = downHit.normal;
             _raycastHt = true;
         }
-        else if  (Physics.SphereCast(legSidewaysRaySource , centerRayCastRadius, sidewaysCastDirection.normalized, out RaycastHit horizontal, centerRayCastDistance, raycastLayer.value))
+        else if  (Physics.SphereCast(legSidewaysRaySource , sidewaysRayCastRadius, sidewaysCastDirection.normalized, out RaycastHit horizontal, sidewaysRayCastDistance, raycastLayer.value))
         {
             _targetPosition = horizontal.point;
             stepNormal = horizontal.normal;
             _raycastHt = true;
         }
-        else if  (Physics.SphereCast(bodySidewaysRaySource , centerRayCastRadius, sidewaysCastDirection.normalized, out RaycastHit centerHit, centerRayCastDistance, raycastLayer.value))
+        else if  (Physics.SphereCast(bodySidewaysRaySource , sidewaysRayCastRadius, sidewaysCastDirection.normalized, out RaycastHit centerHit, sidewaysRayCastDistance, raycastLayer.value))
         {
             _targetPosition = centerHit.point;
             stepNormal = centerHit.normal;
             _raycastHt = true;
         }
 
-        
+
         return _raycastHt;
     }
     
@@ -199,21 +199,21 @@ public class ProceduralAnimationScript : MonoBehaviour
         if (debuglegSideways)
         {
             Vector3 bodySidewaysRaySourceSidewaysRaySource = (castTransformRight*(-castTransform.localPosition.x)).normalized;
-            Vector3 legSidewaysRaySource = castSource - transform.up*centerRayCastOffsetY + -bodySidewaysRaySourceSidewaysRaySource*centerRayCastOffsetX;
+            Vector3 legSidewaysRaySource = castSource - transform.up*sidewaysRayCastOffsetY + -bodySidewaysRaySourceSidewaysRaySource*sidewaysRayCastOffsetX;
             Gizmos.color = Color.magenta;
-            Gizmos.DrawWireSphere(legSidewaysRaySource, centerRayCastRadius);
-            Gizmos.DrawLine(legSidewaysRaySource, legSidewaysRaySource + bodySidewaysRaySourceSidewaysRaySource.normalized*centerRayCastDistance);
-            Gizmos.DrawWireSphere(legSidewaysRaySource + bodySidewaysRaySourceSidewaysRaySource.normalized*centerRayCastDistance, centerRayCastRadius);
+            Gizmos.DrawWireSphere(legSidewaysRaySource, sidewaysRayCastRadius);
+            Gizmos.DrawLine(legSidewaysRaySource, legSidewaysRaySource + bodySidewaysRaySourceSidewaysRaySource.normalized*sidewaysRayCastDistance);
+            Gizmos.DrawWireSphere(legSidewaysRaySource + bodySidewaysRaySourceSidewaysRaySource.normalized*sidewaysRayCastDistance, sidewaysRayCastRadius);
         }
         
         if (debugBodySideways)
         {
-            Vector3 source = body.position - transform.up*centerRayCastOffsetY +  (castTransformRight*(castTransform.localPosition.x)).normalized*(centerRayCastDistance/2);
+            Vector3 source = body.position - transform.up*sidewaysRayCastOffsetY +  (castTransformRight*(castTransform.localPosition.x)).normalized*(sidewaysRayCastDistance/2);
             Vector3 bodySidewaysRaySource = (castTransformRight*(-castTransform.localPosition.x)).normalized;
             Gizmos.color = Color.cyan;
-            Gizmos.DrawWireSphere(source, centerRayCastRadius);
-            Gizmos.DrawLine(source, source + bodySidewaysRaySource.normalized*centerRayCastDistance);
-            Gizmos.DrawWireSphere(source + bodySidewaysRaySource.normalized*centerRayCastDistance, centerRayCastRadius);
+            Gizmos.DrawWireSphere(source, sidewaysRayCastRadius);
+            Gizmos.DrawLine(source, source + bodySidewaysRaySource.normalized*sidewaysRayCastDistance);
+            Gizmos.DrawWireSphere(source + bodySidewaysRaySource.normalized*sidewaysRayCastDistance, sidewaysRayCastRadius);
         }
     }
     public bool IsMoving()

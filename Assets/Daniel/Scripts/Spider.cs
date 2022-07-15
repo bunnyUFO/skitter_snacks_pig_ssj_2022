@@ -110,27 +110,12 @@ public class Spider : MonoBehaviour
         else
         {
 
-            Vector3.ProjectOnPlane(_rigidbody.velocity, transform.right);
-                
-            // float xRotationAngle = Vector3.Angle(transform.up, _rigidbody.velocity);
-            //
-            // print("Original: " + xRotationAngle + " Altered: " + xRotationAngle + 180f);
-            // Quaternion rotation = Quaternion.Euler(xRotationAngle - 90, transform.eulerAngles.y, transform.eulerAngles.z);
-            // print(Vector3.Angle(transform.up, -_rigidbody.velocity));
-
-
-            // _timeInJump += _timeInJump;
-            // Vector3 nextPosition = transform.position + _rigidbody.velocity*_deltaTime;
-            // transform.rotation = Quaternion.LookRotation(nextPosition);
-
-            Quaternion direction = Quaternion.LookRotation(_rigidbody.velocity, transform.up);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, direction, 20);
-
-            //predict path and rotate slowly towards orientation of predicted hit point 
-
-            // transform.rotation = Quaternion.Slerp(transform.rotation,
-            //     Quaternion.LookRotation(Vector3.ProjectOnPlane(transform.forward, Vector3.up), Vector3.up),
-            //     22.5f * Time.deltaTime);
+            if (_rigidbody.velocity.magnitude > 0)
+            {
+                Vector3.ProjectOnPlane(_rigidbody.velocity, transform.right);
+                Quaternion direction = Quaternion.LookRotation(_rigidbody.velocity, transform.up);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, direction, 20);
+            }
         }
     }
 
@@ -167,5 +152,12 @@ public class Spider : MonoBehaviour
     public void ChargingJump(bool charging)
     {
         _chargingJump = charging;
+    }
+    
+    public void Jump(Vector3 velocity)
+    {
+        _rigidbody.useGravity = true;
+        _rigidbody.AddForce(velocity, ForceMode.Impulse);
+        _chargingJump = false;
     }
 }
