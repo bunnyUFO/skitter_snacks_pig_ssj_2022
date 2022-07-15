@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-
     public List<AudioClip> soundList = new List<AudioClip>();
     public List<AudioClip> songList = new List<AudioClip>();
 
     public AudioSource songSrc;
+    public AudioSource songSrc2;
 
     int arrayNum;
 
@@ -21,10 +21,10 @@ public class AudioManager : MonoBehaviour
 
     public MusicState _state;
 
-
     private void Start()
     {
-        playMusic("Idle");
+        songSrc.clip = songList[0];
+        songSrc.Play();
     }
 
     public void playSound(string soundName, AudioSource src)
@@ -44,22 +44,27 @@ public class AudioManager : MonoBehaviour
         {
             case "Idle":
 
+                songSrc2.Stop();
                 _state = MusicState.Idle;
-                songSrc.clip = songList[0];
-                songSrc.Play();
+                if (songSrc.clip.length != songList[0].length)
+                {
+                    songSrc.clip = songList[0];
+                    songSrc.Play();
+                }
 
                 break;
 
             case "Detected":
 
                 _state = MusicState.Detected;
-                songSrc.clip = songList[1];
-                songSrc.Play();
+                songSrc2.clip = songList[1];
+                songSrc2.Play();
 
                 break;
 
             case "Chasing":
 
+                songSrc2.Stop();
                 _state = MusicState.Chasing;
                 songSrc.clip = songList[2];
                 songSrc.Play();

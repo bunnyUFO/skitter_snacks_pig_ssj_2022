@@ -13,9 +13,17 @@ public class Spotbar : MonoBehaviour
     public float mediumSpotValue = 2;
     public float farSpotValue = 1;
 
+    public Image redTriangle;
+    public Image orangeTriangle;
+    public Image whiteTriangle;
+
     void Start()
     {
-
+        redTriangle = GameObject.Find("RedTriangle").GetComponent<Image>();
+        orangeTriangle = GameObject.Find("OrangeTriangle").GetComponent<Image>();
+        whiteTriangle = GameObject.Find("WhiteTriangle").GetComponent<Image>();
+        
+        //GetComponent<Image>().sprite = 
     }
 
     void Update()
@@ -29,7 +37,8 @@ public class Spotbar : MonoBehaviour
     public bool spotted()
     {
         if (spotbarValue == spotbarSize)
-        { 
+        {
+            GetComponent<Image>().sprite = redTriangle.sprite;
             return true;
         }
         else
@@ -40,6 +49,8 @@ public class Spotbar : MonoBehaviour
 
     public void increaseSpot(float value)
     {
+        GetComponent<Image>().sprite = orangeTriangle.sprite;
+
         if (spotbarValue < spotbarSize)
         {
             switch (value)
@@ -65,6 +76,8 @@ public class Spotbar : MonoBehaviour
 
     public void decreaseSpot()
     {
+        GetComponent<Image>().sprite = whiteTriangle.sprite;
+
         if (spotbarValue > 0)
         {
             spotbarValue -= reduceSpotValue * Time.deltaTime;
