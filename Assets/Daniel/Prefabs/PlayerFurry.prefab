@@ -66,7 +66,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.5942783, y: 1}
+    m_SensorSize: {x: 1.7173524, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -259,7 +259,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.5942783, y: 1}
+    m_SensorSize: {x: 1.7173524, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -292,8 +292,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3515410467182514056}
-  m_LocalRotation: {x: 0.35089386, y: -0.6445417, z: 0.43023825, w: 0.5256755}
-  m_LocalPosition: {x: -0.6451793, y: 2.0259457, z: -0.13243675}
+  m_LocalRotation: {x: 1.2080735e-37, y: -0.7749445, z: -4.950422e-38, w: 0.6320294}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -337,7 +337,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.5942783, y: 1}
+    m_SensorSize: {x: 1.7173524, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -370,7 +370,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3515410467382665348}
-  m_LocalRotation: {x: -0.0343341, y: -0.7738002, z: -0.04209777, w: 0.63109607}
+  m_LocalRotation: {x: -0.034334105, y: -0.77380013, z: -0.042097766, w: 0.6310961}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -415,7 +415,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.5942783, y: 1}
+    m_SensorSize: {x: 1.7173524, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -832,7 +832,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7266401483201565583}
-  m_LocalRotation: {x: -0.034334105, y: -0.77380025, z: -0.04209777, w: 0.63109607}
+  m_LocalRotation: {x: -0.034334105, y: -0.7738001, z: -0.042097766, w: 0.6310961}
   m_LocalPosition: {x: 1.469363, y: 0, z: 0.30161667}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -965,6 +965,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3515410466335861167}
     m_Modifications:
+    - target: {fileID: 416763216878431619, guid: a0f5fc50271371b4c82ffbf6ede87df6,
+        type: 3}
+      propertyPath: m_Height
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 416763216878431619, guid: a0f5fc50271371b4c82ffbf6ede87df6,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 416763216878431619, guid: a0f5fc50271371b4c82ffbf6ede87df6,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 416763216878431619, guid: a0f5fc50271371b4c82ffbf6ede87df6,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 416763217664895959, guid: a0f5fc50271371b4c82ffbf6ede87df6,
         type: 3}
       propertyPath: mainCamera
@@ -975,6 +995,11 @@ PrefabInstance:
       propertyPath: cineMachineFreeLook
       value: 
       objectReference: {fileID: 3515410466033970887}
+    - target: {fileID: 416763218862929880, guid: a0f5fc50271371b4c82ffbf6ede87df6,
+        type: 3}
+      propertyPath: yOffsetDuration
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 1155599255251816200, guid: a0f5fc50271371b4c82ffbf6ede87df6,
         type: 3}
       propertyPath: m_Name
@@ -1034,6 +1059,151 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2090941875120361039, guid: a0f5fc50271371b4c82ffbf6ede87df6,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905573655967883837, guid: a0f5fc50271371b4c82ffbf6ede87df6,
+        type: 3}
+      propertyPath: m_Height
+      value: 0.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905573655967883837, guid: a0f5fc50271371b4c82ffbf6ede87df6,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905573655967883837, guid: a0f5fc50271371b4c82ffbf6ede87df6,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905573655967883837, guid: a0f5fc50271371b4c82ffbf6ede87df6,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460874407425580533, guid: a0f5fc50271371b4c82ffbf6ede87df6,
+        type: 3}
+      propertyPath: debugBodyForward
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460874407425580533, guid: a0f5fc50271371b4c82ffbf6ede87df6,
+        type: 3}
+      propertyPath: forwardRayCastOffsetY
+      value: 0.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460874407425580533, guid: a0f5fc50271371b4c82ffbf6ede87df6,
+        type: 3}
+      propertyPath: forwardRayCastOffsetZ
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460874407425580533, guid: a0f5fc50271371b4c82ffbf6ede87df6,
+        type: 3}
+      propertyPath: forwardRayCastDistance
+      value: 0.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460874407605644153, guid: a0f5fc50271371b4c82ffbf6ede87df6,
+        type: 3}
+      propertyPath: debugBodyForward
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460874407605644153, guid: a0f5fc50271371b4c82ffbf6ede87df6,
+        type: 3}
+      propertyPath: forwardRayCastOffsetY
+      value: 0.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460874407699195146, guid: a0f5fc50271371b4c82ffbf6ede87df6,
+        type: 3}
+      propertyPath: debugBodyForward
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460874407699195146, guid: a0f5fc50271371b4c82ffbf6ede87df6,
+        type: 3}
+      propertyPath: forwardRayCastOffsetY
+      value: 0.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460874407856406381, guid: a0f5fc50271371b4c82ffbf6ede87df6,
+        type: 3}
+      propertyPath: debugBodyForward
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460874407856406381, guid: a0f5fc50271371b4c82ffbf6ede87df6,
+        type: 3}
+      propertyPath: forwardRayCastOffsetY
+      value: 0.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460874407856406381, guid: a0f5fc50271371b4c82ffbf6ede87df6,
+        type: 3}
+      propertyPath: forwardRayCastDistance
+      value: 0.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460874408002397095, guid: a0f5fc50271371b4c82ffbf6ede87df6,
+        type: 3}
+      propertyPath: debugBodyForward
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460874408002397095, guid: a0f5fc50271371b4c82ffbf6ede87df6,
+        type: 3}
+      propertyPath: forwardRayCastOffsetY
+      value: 0.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460874408002397095, guid: a0f5fc50271371b4c82ffbf6ede87df6,
+        type: 3}
+      propertyPath: forwardRayCastOffsetZ
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460874408223880590, guid: a0f5fc50271371b4c82ffbf6ede87df6,
+        type: 3}
+      propertyPath: debugBodyForward
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460874408223880590, guid: a0f5fc50271371b4c82ffbf6ede87df6,
+        type: 3}
+      propertyPath: forwardRayCastOffsetY
+      value: 0.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460874409262243544, guid: a0f5fc50271371b4c82ffbf6ede87df6,
+        type: 3}
+      propertyPath: debugBodyForward
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460874409262243544, guid: a0f5fc50271371b4c82ffbf6ede87df6,
+        type: 3}
+      propertyPath: forwardRayCastOffsetY
+      value: 0.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460874409262243544, guid: a0f5fc50271371b4c82ffbf6ede87df6,
+        type: 3}
+      propertyPath: forwardRayCastOffsetZ
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460874409262243544, guid: a0f5fc50271371b4c82ffbf6ede87df6,
+        type: 3}
+      propertyPath: forwardRayCastDistance
+      value: 0.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460874409422767339, guid: a0f5fc50271371b4c82ffbf6ede87df6,
+        type: 3}
+      propertyPath: debugBodyForward
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460874409422767339, guid: a0f5fc50271371b4c82ffbf6ede87df6,
+        type: 3}
+      propertyPath: forwardRayCastOffsetY
+      value: 0.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460874409422767339, guid: a0f5fc50271371b4c82ffbf6ede87df6,
+        type: 3}
+      propertyPath: forwardRayCastOffsetZ
+      value: 0.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460874409422767339, guid: a0f5fc50271371b4c82ffbf6ede87df6,
+        type: 3}
+      propertyPath: forwardRayCastDistance
+      value: 0.44
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0f5fc50271371b4c82ffbf6ede87df6, type: 3}

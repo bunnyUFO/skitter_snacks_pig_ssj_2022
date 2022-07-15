@@ -41,21 +41,20 @@ namespace StarterAssets
 
         private void Update()
         {
-            Jump(Time.deltaTime);
-            Rotate(Time.deltaTime);
-            Move();
             StaggerLegs();
+            Jump(Time.deltaTime);
+            if (!_rigidbody.useGravity)
+            {
+                Rotate(Time.deltaTime);
+                Move();;
+            }
         }
 
         private void Jump(float deltaTime)
         {
-            if (_rigidbody.useGravity)
-            {
-                return;
-            }
-
             if (Keyboard.current.spaceKey.isPressed)
             {
+                _spider.ChargingJump(true);
                 _jumpChargeTimeDelta += deltaTime;
                 jumpCharge = Math.Min(1, _jumpChargeTimeDelta/ jumpChargeTime);
                 cineMachineFreeLook.enabled = false;
@@ -72,6 +71,7 @@ namespace StarterAssets
                 jumpCamera.enabled = false;
                 mainCamera.enabled = true;
                 _rigidbody.useGravity = true;
+                _spider.ChargingJump(false);
                 float jumpPower = maxJumpPower * jumpCharge;
                 _rigidbody.AddForce((_spider.transform.up + _spider.transform.forward).normalized*jumpPower);
                 jumpCharge = 0f;
@@ -80,10 +80,6 @@ namespace StarterAssets
 
         private void Move()
         {
-            if (_rigidbody.useGravity)
-            {
-                return;
-            }
 
             if (Keyboard.current.spaceKey.isPressed)
             {
@@ -121,6 +117,7 @@ namespace StarterAssets
 
         private void Rotate(float deltaTime)
         {
+
             if( Keyboard.current.qKey.isPressed || Mouse.current.leftButton.isPressed){
                 transform.Rotate(0f, -180f * deltaTime, 0f);
             }
