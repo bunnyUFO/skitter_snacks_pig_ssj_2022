@@ -3,7 +3,22 @@ guid: 9c263ef7052457845b9c9a7edb19c1fe
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: f5244a35ba540db41a408e422e1a6f1b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass 2
+    second: {fileID: 2100000, guid: f5244a35ba540db41a408e422e1a6f1b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Label
+    second: {fileID: 2100000, guid: 6d709adfd35b51349a4229c8e7077b18, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -88,7 +103,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1.3
+    globalScale: 130
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
