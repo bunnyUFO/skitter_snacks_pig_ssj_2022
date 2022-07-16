@@ -15,7 +15,6 @@ public class ProceduralAnimationScript : MonoBehaviour
     [Header ("Shared Raycast Configurations")]
     [SerializeField] Transform body;
     [SerializeField] LayerMask raycastLayer = default;
-    [SerializeField] float fallingExtraDistance = 2f;
     
     [Header ("forward Raycast Configurations")]
     [SerializeField] float forwardRayCastDistance = 2f;
@@ -60,15 +59,8 @@ public class ProceduralAnimationScript : MonoBehaviour
     {
         UpdatePositions();
         if (_rigidbody.useGravity)
-        {
-            if (DetectSurfaces(fallingExtraDistance))
-            {
-                transform.position = _currentPosition = _oldPosition = _targetPosition;
-            }
-            else
-            {
-                AirFall(deltaTime);
-            }
+        { 
+            AirFall(deltaTime);
         }
         else
         {
@@ -117,7 +109,7 @@ public class ProceduralAnimationScript : MonoBehaviour
         }
     }
 
-    private bool DetectSurfaces(float extraRange = 0f)
+    private bool DetectSurfaces()
     {
         Vector3 staggerOffset = _stagger ? transform.forward * staggerDistance : Vector3.zero;
         Vector3 bodyForwardBodySource = _bodyPosition + transform.up*forwardRayCastOffsetY + transform.forward*(_rayCastSource.localPosition.z - forwardRayCastOffsetZ);
@@ -141,7 +133,7 @@ public class ProceduralAnimationScript : MonoBehaviour
             stepNormal = forwardHit.normal;
             _raycastHt = true;
         }
-        else if (Physics.SphereCast(legDownRaySource , downRayCastRadius, -transform.up.normalized, out RaycastHit downHit, downRayCastDistance + extraRange, raycastLayer.value))
+        else if (Physics.SphereCast(legDownRaySource , downRayCastRadius, -transform.up.normalized, out RaycastHit downHit, downRayCastDistance, raycastLayer.value))
         {
             _targetPosition = downHit.point;
             stepNormal = downHit.normal;

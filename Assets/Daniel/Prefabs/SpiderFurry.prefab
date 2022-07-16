@@ -55,7 +55,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 283093043}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -453,11 +453,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03b8fad9295f413a92d6b29006722232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
+  moveSpeed: 3
   rotationSpeed: 180
   jumpViewRotationSpeed: 30
   maxJumpPower: 25
   jumpChargeTime: 8
+  jumpAngle: 45
   projection: {fileID: 283093045}
   cinemachineFreeLook: {fileID: 0}
   jumpCameraOffsetX: 15
@@ -1099,19 +1100,18 @@ MonoBehaviour:
   raycastLayer:
     serializedVersion: 2
     m_Bits: 3584
-  fallingExtraDistance: 2
   forwardRayCastDistance: 0.44
   forwardRayCastRadius: 0.45
   forwardRayCastOffsetZ: 0.4
   forwardRayCastOffsetY: 0.52
   debugBodyForward: 0
-  downRayCastDistance: 1
-  downRayCastRadius: 0.4
-  downRayCastOffsetY: 0.6
-  debugLegDown: 0
-  sidewaysRayCastDistance: 0.5
+  downRayCastDistance: 1.4
+  downRayCastRadius: 0.45
+  downRayCastOffsetY: 0.9
+  debugLegDown: 1
+  sidewaysRayCastDistance: 1
   sidewaysRayCastOffsetY: 0.1
-  sidewaysRayCastOffsetX: 0.3
+  sidewaysRayCastOffsetX: 0.1
   sidewaysRayCastRadius: 0.3
   debuglegSideways: 0
   debugBodySideways: 0
@@ -2342,19 +2342,18 @@ MonoBehaviour:
   raycastLayer:
     serializedVersion: 2
     m_Bits: 3584
-  fallingExtraDistance: 2
   forwardRayCastDistance: 0.44
   forwardRayCastRadius: 0.45
   forwardRayCastOffsetZ: 0.4
   forwardRayCastOffsetY: 0.52
   debugBodyForward: 0
-  downRayCastDistance: 1
-  downRayCastRadius: 0.4
-  downRayCastOffsetY: 0.6
-  debugLegDown: 0
-  sidewaysRayCastDistance: 0.5
+  downRayCastDistance: 1.4
+  downRayCastRadius: 0.45
+  downRayCastOffsetY: 0.9
+  debugLegDown: 1
+  sidewaysRayCastDistance: 1
   sidewaysRayCastOffsetY: 0.1
-  sidewaysRayCastOffsetX: 0.3
+  sidewaysRayCastOffsetX: 0.1
   sidewaysRayCastRadius: 0.3
   debuglegSideways: 0
   debugBodySideways: 0
@@ -2446,19 +2445,18 @@ MonoBehaviour:
   raycastLayer:
     serializedVersion: 2
     m_Bits: 3584
-  fallingExtraDistance: 2
   forwardRayCastDistance: 0.4
   forwardRayCastRadius: 0.45
   forwardRayCastOffsetZ: 0.4
   forwardRayCastOffsetY: 0.52
   debugBodyForward: 0
-  downRayCastDistance: 1
-  downRayCastRadius: 0.4
-  downRayCastOffsetY: 0.6
-  debugLegDown: 0
-  sidewaysRayCastDistance: 0.5
+  downRayCastDistance: 1.4
+  downRayCastRadius: 0.45
+  downRayCastOffsetY: 0.9
+  debugLegDown: 1
+  sidewaysRayCastDistance: 1
   sidewaysRayCastOffsetY: 0.1
-  sidewaysRayCastOffsetX: 0.3
+  sidewaysRayCastOffsetX: 0.1
   sidewaysRayCastRadius: 0.3
   debuglegSideways: 0
   debugBodySideways: 0
@@ -2578,19 +2576,18 @@ MonoBehaviour:
   raycastLayer:
     serializedVersion: 2
     m_Bits: 3584
-  fallingExtraDistance: 2
   forwardRayCastDistance: 0.44
   forwardRayCastRadius: 0.45
   forwardRayCastOffsetZ: 0.35
   forwardRayCastOffsetY: 0.52
   debugBodyForward: 0
-  downRayCastDistance: 1
-  downRayCastRadius: 0.4
-  downRayCastOffsetY: 0.6
-  debugLegDown: 0
-  sidewaysRayCastDistance: 0.5
+  downRayCastDistance: 1.4
+  downRayCastRadius: 0.45
+  downRayCastOffsetY: 0.9
+  debugLegDown: 1
+  sidewaysRayCastDistance: 1
   sidewaysRayCastOffsetY: 0.1
-  sidewaysRayCastOffsetX: 0.3
+  sidewaysRayCastOffsetX: 0.1
   sidewaysRayCastRadius: 0.3
   debuglegSideways: 0
   debugBodySideways: 0
@@ -2741,19 +2738,18 @@ MonoBehaviour:
   raycastLayer:
     serializedVersion: 2
     m_Bits: 3584
-  fallingExtraDistance: 2
   forwardRayCastDistance: 0.44
   forwardRayCastRadius: 0.45
   forwardRayCastOffsetZ: 0.44
   forwardRayCastOffsetY: 0.52
   debugBodyForward: 0
-  downRayCastDistance: 1
-  downRayCastRadius: 0.4
-  downRayCastOffsetY: 0.6
-  debugLegDown: 0
-  sidewaysRayCastDistance: 0.5
+  downRayCastDistance: 1.4
+  downRayCastRadius: 0.45
+  downRayCastOffsetY: 0.9
+  debugLegDown: 1
+  sidewaysRayCastDistance: 1
   sidewaysRayCastOffsetY: 0.1
-  sidewaysRayCastOffsetX: 0.3
+  sidewaysRayCastOffsetX: 0.1
   sidewaysRayCastRadius: 0.3
   debuglegSideways: 0
   debugBodySideways: 0
@@ -2966,19 +2962,18 @@ MonoBehaviour:
   raycastLayer:
     serializedVersion: 2
     m_Bits: 3584
-  fallingExtraDistance: 2
   forwardRayCastDistance: 0.44
   forwardRayCastRadius: 0.45
   forwardRayCastOffsetZ: 0.35
   forwardRayCastOffsetY: 0.52
   debugBodyForward: 0
-  downRayCastDistance: 1
-  downRayCastRadius: 0.4
-  downRayCastOffsetY: 0.6
-  debugLegDown: 0
-  sidewaysRayCastDistance: 0.5
+  downRayCastDistance: 1.4
+  downRayCastRadius: 0.45
+  downRayCastOffsetY: 0.9
+  debugLegDown: 1
+  sidewaysRayCastDistance: 1
   sidewaysRayCastOffsetY: 0.1
-  sidewaysRayCastOffsetX: 0.3
+  sidewaysRayCastOffsetX: 0.1
   sidewaysRayCastRadius: 0.3
   debuglegSideways: 0
   debugBodySideways: 0
@@ -3191,19 +3186,18 @@ MonoBehaviour:
   raycastLayer:
     serializedVersion: 2
     m_Bits: 3584
-  fallingExtraDistance: 2
   forwardRayCastDistance: 0.4
   forwardRayCastRadius: 0.45
   forwardRayCastOffsetZ: 0.4
   forwardRayCastOffsetY: 0.52
   debugBodyForward: 0
-  downRayCastDistance: 1
-  downRayCastRadius: 0.4
-  downRayCastOffsetY: 0.6
-  debugLegDown: 0
-  sidewaysRayCastDistance: 0.5
+  downRayCastDistance: 1.4
+  downRayCastRadius: 0.45
+  downRayCastOffsetY: 0.9
+  debugLegDown: 1
+  sidewaysRayCastDistance: 1
   sidewaysRayCastOffsetY: 0.1
-  sidewaysRayCastOffsetX: 0.3
+  sidewaysRayCastOffsetX: 0.1
   sidewaysRayCastRadius: 0.3
   debuglegSideways: 0
   debugBodySideways: 0
@@ -3416,19 +3410,18 @@ MonoBehaviour:
   raycastLayer:
     serializedVersion: 2
     m_Bits: 3584
-  fallingExtraDistance: 2
   forwardRayCastDistance: 0.4
   forwardRayCastRadius: 0.45
   forwardRayCastOffsetZ: 0.4
   forwardRayCastOffsetY: 0.52
   debugBodyForward: 0
-  downRayCastDistance: 1
-  downRayCastRadius: 0.4
-  downRayCastOffsetY: 0.6
-  debugLegDown: 0
-  sidewaysRayCastDistance: 0.5
+  downRayCastDistance: 1.4
+  downRayCastRadius: 0.45
+  downRayCastOffsetY: 0.9
+  debugLegDown: 1
+  sidewaysRayCastDistance: 1
   sidewaysRayCastOffsetY: 0.1
-  sidewaysRayCastOffsetX: 0.3
+  sidewaysRayCastOffsetX: 0.1
   sidewaysRayCastRadius: 0.3
   debuglegSideways: 0
   debugBodySideways: 0

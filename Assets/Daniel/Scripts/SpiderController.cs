@@ -26,7 +26,9 @@ namespace StarterAssets
         [Header("Spider Jump")]
         private float maxJumpPower =10f;
         [SerializeField] 
-        private float jumpChargeTime =6f;
+        private float jumpChargeTime = 6f;        
+        [SerializeField] 
+        private float jumpAngle = 45f;
         [SerializeField] 
         private Projection projection;
 
@@ -37,6 +39,7 @@ namespace StarterAssets
         private float jumpCameraOffsetX = 15f;
 
         public float jumpCharge;
+        private Vector3 _oldUp, _oldForward;
         private Spider _spider;
         private Vector3 _previousInputDirection, _inputDirection, _jumpVelocity;
         private Rigidbody _rigidbody;
@@ -58,13 +61,13 @@ namespace StarterAssets
 
         private void Update()
         {
-            StaggerLegs();
-            Jump(Time.deltaTime);
             if (!_rigidbody.useGravity)
             {
                 Rotate(Time.deltaTime);
                 Move();;
             }
+            StaggerLegs();
+            Jump(Time.deltaTime);
         }
 
         
@@ -88,9 +91,9 @@ namespace StarterAssets
                 _spider.ChargingJump(true);
                 _jumpChargeTimeDelta += deltaTime;
                 jumpCharge = Math.Min(1, _jumpChargeTimeDelta/ jumpChargeTime);
-
+                
                 float jumpPower = maxJumpPower * jumpCharge;
-                _jumpVelocity = (_spider.transform.up + _spider.transform.forward).normalized * jumpPower;
+                _jumpVelocity = transform.forward * jumpPower;
                 projection.SimulateTrajectory(_spider, 
                     _spider.transform.position, 
                     _jumpVelocity);
@@ -143,14 +146,24 @@ namespace StarterAssets
 
         private void Rotate(float deltaTime)
         {
+            if (Keyboard.current.spaceKey.isPressed && jumpCharge == 0f)
+            {
+                _oldUp = transform.up;
+                _oldForward = transform.forward;
+                transform.rotation = Quaternion.AngleAxis(-jumpAngle, transform.right) * transform.rotation;
+            }
 
+
+            Vector3 up = Keyboard.current.spaceKey.isPressed ? _oldUp : transform.up;
+            
             float rotateSpeed = Keyboard.current.spaceKey.isPressed ? jumpViewRotationSpeed : rotationSpeed;
-            if( Keyboard.current.qKey.isPressed || Mouse.current.leftButton.isPressed){
-                transform.Rotate(0f, -rotateSpeed * deltaTime, 0f);
+            if( Keyboard.current.qKey.isPressed || Mouse.current.leftButton.isPressed)
+            {
+                transform.rotation = Quaternion.AngleAxis(-rotateSpeed * deltaTime, up) * transform.rotation;
             }
             if (Keyboard.current.eKey.isPressed || Mouse.current.rightButton.isPressed)
             {
-                transform.Rotate(0f, rotateSpeed * deltaTime, 0f);
+                transform.rotation = Quaternion.AngleAxis(rotateSpeed * deltaTime, up) * transform.rotation;
             }
         }
 
