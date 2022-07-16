@@ -3,7 +3,12 @@ guid: f4004e83199e0c04aa9b25fa24eec4c2
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: book pages
+    second: {fileID: 2100000, guid: e677fbdadcd80b540a5f68a28369bf38, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -88,7 +93,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1.3
+    globalScale: 130
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
