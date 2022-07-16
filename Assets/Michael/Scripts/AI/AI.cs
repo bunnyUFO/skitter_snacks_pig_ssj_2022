@@ -276,6 +276,13 @@ public class AI : MonoBehaviour
             v_phermoneVector = touchedObject.transform.position;
             _state = State.Phermone;
         }
+
+        if (touchedObject.gameObject.CompareTag("Phermone"))
+        {
+            _state = State.Phermone;
+        }
+
+        //Debug.Log("TouchingSomething");
     }
 
     public Color colour = Color.red;
