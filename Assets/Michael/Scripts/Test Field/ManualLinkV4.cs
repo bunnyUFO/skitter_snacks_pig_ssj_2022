@@ -7,17 +7,15 @@ public class ManualLinkV4 : MonoBehaviour
 {
     NavMeshAgent _agent;
     Rigidbody _rigidBody;
-
     Vector3 direction;
-
     Vector3 linkEndPoint;
     Vector3 linkStartPoint;
     Vector3 linkMidRotationPoint;
-
-    Vector3 linkEndRotationPointTemp;
-    Vector3 directionTemp;
+    AI ai;
 
     public float beginDistance = 2.0f;
+    public float midDistance = 1.0f;
+    public float endDistance = 1.0f;
     float distanceFromStart;
     float distanceFromMid;
     float distanceFromEnd;
@@ -26,25 +24,69 @@ public class ManualLinkV4 : MonoBehaviour
 
     public float endpointThreshold = 0.1f;
 
-    bool traversing = false, tempTraversing = false;
+    public bool traversing = false;
+
+    public float transitionTimer = 1.0f;
+    public float stopTimer = 1.0f;
+    float resetStop;
+
+    float transitionTimerReset;
+
+    bool autoTransitioning = false;
 
     // Start is called before the first frame update
     void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
         _rigidBody = GetComponent<Rigidbody>();
+        ai = GetComponent<AI>();
 
         _agent.autoTraverseOffMeshLink = false;
+
+        transitionTimerReset = transitionTimer;
+
+        resetStop = stopTimer;
     }
 
     void Update()
     {
-        
-        if (_agent.nextOffMeshLinkData.startPos != new Vector3(0, 0, 0) && !traversing)
+        if (!ai.isChasing())
         {
+            transitionTimer -= Time.deltaTime;
+
+            if (transitionTimer <= 0.0f)
+            {
+                _agent.autoTraverseOffMeshLink = false;
+                autoTransitioning = false;
+            }
+        }
+
+        if (ai.isChasing())
+        {
+            autoTransitioning = true;
+            if (_agent.isOnOffMeshLink)
+            {
+                stopTimer -= Time.deltaTime;
+            }
+            if (stopTimer <= 0)
+            {
+                _agent.autoTraverseOffMeshLink = true;
+                stopTimer = resetStop;
+                Debug.Log("Transitioning");
+            }
+            if (!_agent.isOnOffMeshLink)
+            {
+                stopTimer = resetStop;
+                _agent.autoTraverseOffMeshLink = false;
+            }
+            transitionTimer = transitionTimerReset;
+        }
+
+        if (_agent.nextOffMeshLinkData.startPos != new Vector3(0, 0, 0) && !traversing && !autoTransitioning)
+        {
+
             linkStartPoint = _agent.nextOffMeshLinkData.startPos;
             linkEndPoint = _agent.nextOffMeshLinkData.endPos;
-            //_agent.nextOffMeshLinkData
 
             distanceFromStart = (linkStartPoint - this.transform.position).magnitude;
 
@@ -52,8 +94,9 @@ public class ManualLinkV4 : MonoBehaviour
             linkMidRotationPoint.y = linkStartPoint.y + (linkEndPoint.y - linkStartPoint.y) / 2;
             linkMidRotationPoint.z = linkStartPoint.z + (linkEndPoint.z - linkStartPoint.z) / 2;
 
-            if (distanceFromStart < 2f)
+            if (distanceFromStart < beginDistance && !ai.isChasing() && transitionTimer <= 0.0f)
             {
+                Debug.Log("Am in distance of navmesh");
                 //_agent.updatePosition = false;
                 _agent.updateRotation = false;
                 _agent.updateUpAxis = false;
@@ -65,6 +108,8 @@ public class ManualLinkV4 : MonoBehaviour
         if (traversing)
         {
             //Debug.Log("Is Traversing");
+            //Debug.Log("Distance from mid: " + distanceFromMid);
+            //Debug.Log("Distance from end: " + distanceFromEnd);
 
             _rigidBody.velocity = this.transform.forward * 3.0f;
 
@@ -79,12 +124,11 @@ public class ManualLinkV4 : MonoBehaviour
             //Debug.Log("Distance from Mid" + distanceFromMid);
             //Debug.Log("Distance from End" + distanceFromEnd);
 
-            if (distanceFromMid < 0.75f)
+            if (distanceFromMid < midDistance)
             {
-                //Debug.Log("Has Reached Mid");
                 linkMidRotationPoint = linkEndPoint;
             }
-            if (distanceFromEnd < 0.75f)
+            if (distanceFromEnd < endDistance)
             {
                 //Debug.Log("Has Reached End");
                 _rigidBody.velocity = this.transform.forward * 0;
@@ -99,10 +143,7 @@ public class ManualLinkV4 : MonoBehaviour
             }
         }
 
-        if (!traversing && _agent.isOnOffMeshLink)
-        {
-            //_agent.autoTraverseOffMeshLink = true;
-        }
+
 
         /*
         // Obtain the triangular midpoint of a navlink

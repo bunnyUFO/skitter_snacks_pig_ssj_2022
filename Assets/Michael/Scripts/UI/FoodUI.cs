@@ -1,25 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FoodUI : MonoBehaviour
 {
-    GameObject imageEmpty;
-    GameObject imageFull;
-    public string empty;
-    public string full;
+    Image imageEmpty;
+    Image imageFull;
 
     private void Start()
     {
-        imageEmpty = GameObject.Find(empty);
-        imageFull = GameObject.Find(full);
+        imageEmpty = GameObject.Find("EmptyDorito").GetComponent<Image>();
+        imageFull = GameObject.Find("FullDorito").GetComponent<Image>();
 
-        imageFull.SetActive(false);
-        imageEmpty.SetActive(true);
+        GetComponent<Image>().sprite = imageEmpty.sprite;
     }
     public void foodActive()
     {
-        imageEmpty.SetActive(false);
-        imageFull.SetActive(true);
+        GetComponent<Image>().sprite = imageFull.sprite;
     }
 }

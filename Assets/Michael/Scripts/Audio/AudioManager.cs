@@ -27,6 +27,15 @@ public class AudioManager : MonoBehaviour
         songSrc.Play();
     }
 
+    private void Update()
+    {
+        if (_state == MusicState.Idle && !songSrc.isPlaying)
+        {
+            songSrc.clip = songList[0];
+            songSrc.Play();
+        }
+    }
+
     public void playSound(string soundName, AudioSource src)
     {
         switch (soundName)

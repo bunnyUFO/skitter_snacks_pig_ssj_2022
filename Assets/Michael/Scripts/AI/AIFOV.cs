@@ -5,10 +5,12 @@ using UnityEngine;
 public class AIFOV : MonoBehaviour
 {
     AI ai;
+    ManualLinkV4 link;
 
     public Transform player;
     public float FOV = 45;
     public float Range = 5;
+    public bool debugLOS;
 
     Vector3 targetDirection;
     float Angle;
@@ -19,6 +21,7 @@ public class AIFOV : MonoBehaviour
     void Start()
     {
         ai = GetComponent<AI>();
+        link = GetComponent<ManualLinkV4>();
     }
 
     void Update()
@@ -28,11 +31,11 @@ public class AIFOV : MonoBehaviour
 
         Angle = Vector3.Angle(transform.forward, targetDirection);
 
-        if (Mathf.Abs(Angle) < FOV / 2 && Distance < Range && !ai.isChasing())
+        if (Mathf.Abs(Angle) < FOV / 2 && Distance < Range && !ai.isChasing() && !link.traversing)
         {
             if (!Physics.Raycast(this.transform.position, targetDirection, Distance, layermask))
             {
-                Debug.DrawRay(this.transform.position, targetDirection.normalized * Distance, Color.yellow);
+                //Debug.DrawRay(this.transform.position, targetDirection.normalized * Distance, Color.yellow);
 
                 ai.spottingPlayer();
 
@@ -55,6 +58,22 @@ public class AIFOV : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        if (debugLOS)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(this.transform.position, player.transform.position);
+        }
+    }
 
+    public bool canSee()
+    {
+        if (!Physics.Raycast(this.transform.position, targetDirection, Distance, layermask))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

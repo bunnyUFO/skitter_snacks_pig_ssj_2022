@@ -28,11 +28,11 @@ public class UIManager : MonoBehaviour
             foodList.Add(food.GetComponent<Food>());
         }
 
-        Doritos.Add(GameObject.Find("Food1"));
-        Doritos.Add(GameObject.Find("Food2"));
-        Doritos.Add(GameObject.Find("Food3"));
-        Doritos.Add(GameObject.Find("Food4"));
-        Doritos.Add(GameObject.Find("Food5"));
+        Doritos.Add(GameObject.Find("Slot1"));
+        Doritos.Add(GameObject.Find("Slot2"));
+        Doritos.Add(GameObject.Find("Slot3"));
+        Doritos.Add(GameObject.Find("Slot4"));
+        Doritos.Add(GameObject.Find("Slot5"));
     }
 
     public void updateFood()

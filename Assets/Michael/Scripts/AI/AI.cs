@@ -8,14 +8,6 @@ public class AI : MonoBehaviour
     public List<GameObject> Patrol_Points = new List<GameObject>();
     public State _state;
     public Transform player;
-    public Transform rotationTarget;
-    public Material green;
-    public Material red;
-    public Material blue;
-
-    public Material closeRange;
-    public Material mediumRange;
-    public Material farRange;
 
     Spotbar spotbar;
     NavMeshAgent agent;
@@ -100,6 +92,17 @@ public class AI : MonoBehaviour
                 agent.destination = player.position;
 
                 if (v_targetVector.magnitude > range)
+                {
+                    timer -= Time.deltaTime;
+                    if (timer <= 0)
+                    {
+                        _state = State.Returning;
+                        timer = reset;
+
+                        manager.changeMusic();
+                    }
+                }
+                else if (!aifov.canSee())
                 {
                     timer -= Time.deltaTime;
                     if (timer <= 0)
@@ -300,5 +303,4 @@ public class AI : MonoBehaviour
             }
         }
     }
-
 }
