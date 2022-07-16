@@ -1863,6 +1863,20 @@
         {
             "m_OutputSlot": {
                 "m_Node": {
+                    "m_Id": "ba14da9285854168a8ff96946572d48a"
+                },
+                "m_SlotId": 3
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "279750c0c2c54f02aba55c9a149968e0"
+                },
+                "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
                     "m_Id": "bd623e6ed88046e79a5b623c8fcb19c6"
                 },
                 "m_SlotId": 0
@@ -7936,10 +7950,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -3257.60009765625,
-            "y": 958.400390625,
-            "width": 140.80029296875,
-            "height": 33.599853515625
+            "x": -3409.60009765625,
+            "y": 1040.0,
+            "width": 140.800048828125,
+            "height": 33.5999755859375
         }
     },
     "m_Slots": [
@@ -8819,9 +8833,9 @@
         "m_Position": {
             "serializedVersion": "2",
             "x": -3900.800048828125,
-            "y": 526.4000244140625,
+            "y": 524.7999877929688,
             "width": 208.0,
-            "height": 325.5999755859375
+            "height": 325.60003662109377
         }
     },
     "m_Slots": [
@@ -14641,10 +14655,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -3385.599853515625,
-            "y": 645.60009765625,
-            "width": 138.400146484375,
-            "height": 33.599853515625
+            "x": -3466.400146484375,
+            "y": 590.4000244140625,
+            "width": 137.60009765625,
+            "height": 33.5999755859375
         }
     },
     "m_Slots": [
@@ -15825,7 +15839,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Offset",
     "m_StageCapability": 3,
-    "m_Value": 0.5,
+    "m_Value": 1.0,
     "m_DefaultValue": 0.5,
     "m_Labels": []
 }

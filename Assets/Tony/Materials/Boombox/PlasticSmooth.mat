@@ -142,7 +142,7 @@ Material:
     - _Tiling: 5
     - _dustBlend: 0
     - _dustGeneralSharp: 1.2
-    - _dustPresence: 0.3
+    - _dustPresence: 0.1
     - _dustTiling: 80
     - _isAOTextured: 0
     - _isAlpha: 0
@@ -162,7 +162,7 @@ Material:
     - _Color: {r: 0, g: 0, b: 0, a: 0}
     - _Emission: {r: 0, g: 0, b: 0, a: 0}
     - _Emissive: {r: 0, g: 0, b: 0, a: 0}
-    - _dustBlend: {r: 0.1, g: 0.1, b: 1, a: 0}
+    - _dustBlend: {r: 0.16, g: 0.116, b: 0.58, a: 0}
     - _dustBlend_1: {r: 100, g: 100, b: 500, a: 0}
     - _dustColor: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 0}
     - _dustoColor: {r: 0.9056604, g: 0.9056604, b: 0.9056604, a: 0}

@@ -83,11 +83,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _dustAO:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 8aada387dfa4ec343a59802727bd4a98, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _dustNorm:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 226f01cd61542bb42a8736d227be11ef, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _texAo:
@@ -107,7 +107,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _texNormal:
-        m_Texture: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
+        m_Texture: {fileID: 2800000, guid: a2e770d8938b42d4cbc3a343dee73e12, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _texSmooth:
@@ -128,35 +128,35 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BlendSharpness: 4.06
+    - _BlendSharpness: 0.81
     - _EmissionStre: 1
     - _Metalness: 1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Smoothness: 0
+    - _Smoothness: 0.69
     - _dustBlend: 1
-    - _dustGeneralSharp: 1
-    - _dustPresence: 1
-    - _dustTiling: 10
+    - _dustGeneralSharp: 1.2
+    - _dustPresence: 0.1
+    - _dustTiling: 80
     - _isAOTextured: 0
     - _isAlpha: 0
-    - _isColorTextured: 0
+    - _isColorTextured: 1
     - _isEmissiveTextured: 0
     - _isMetalTextured: 0
     - _isNormalTextured: 0
     - _isSmoothTextured: 0
     - _isVerticalOnly: 1
-    - _noisePresence: 0.018
-    - _noiseSmooth: 0.111
-    - _noiseTiling: 15
-    - _textiling: 1000
+    - _noisePresence: 0.538
+    - _noiseSmooth: 0
+    - _noiseTiling: 10
+    - _textiling: 100
     m_Colors:
-    - _Blend_Sharpness_Dust: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 0, g: 1, b: 0.05791855, a: 1}
-    - _Emissive: {r: 0, g: 0, b: 0, a: 1}
-    - _dustBlend: {r: 0, g: 1, b: 0, a: 0}
+    - _Blend_Sharpness_Dust: {r: 50, g: 50, b: 50, a: 0}
+    - _Color: {r: 0, g: 0, b: 0, a: 0}
+    - _Emissive: {r: 0, g: 0, b: 0, a: 0}
+    - _dustBlend: {r: 0.16, g: 0.116, b: 0.58, a: 0}
     - _dustBlend_1: {r: 0, g: 1, b: 0, a: 0}
-    - _dustColor: {r: 0, g: 0, b: 0, a: 0}
+    - _dustColor: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 0}
     - _dustoColor: {r: 0, g: 0, b: 0, a: 0}
-    - _noiseColor: {r: 0.34905657, g: 0.34905657, b: 0.34905657, a: 1}
+    - _noiseColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
   m_BuildTextureStacks: []
