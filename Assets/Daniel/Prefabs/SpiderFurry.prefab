@@ -453,11 +453,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03b8fad9295f413a92d6b29006722232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  rotationSpeed: 90
-  jumpViewRotationSpeed: 25
+  moveSpeed: 4
+  rotationSpeed: 180
+  jumpViewRotationSpeed: 30
   maxJumpPower: 25
-  jumpChargeTime: 5.5
+  jumpChargeTime: 8
   projection: {fileID: 283093045}
   cinemachineFreeLook: {fileID: 0}
   jumpCameraOffsetX: 15
