@@ -39,7 +39,6 @@ namespace StarterAssets
         private void Move()
         {
             _inputDirection = new Vector3(_input.move.x, 0.0f, _input.move.y).normalized;
-            print(_inputDirection);
             Vector3 targetDirection = transform.forward * _inputDirection.z + transform.right * _inputDirection.x;
             _rigidbody.velocity = (targetDirection.normalized) * moveSpeed;
         }
