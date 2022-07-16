@@ -97,7 +97,7 @@ public class Spider : MonoBehaviour
             if (!_chargingJump)
             {
                 transform.rotation = Quaternion.Slerp(transform.rotation,
-                    Quaternion.LookRotation(Vector3.ProjectOnPlane(transform.forward, up), up), 22.5f * Time.deltaTime);
+                    Quaternion.LookRotation(Vector3.ProjectOnPlane(transform.forward, up), up), 22.5f * _deltaTime);
                 float yTranslateDistance = -(-avgSurfaceDist + -yOffset) * 0.5f;
                 if (Math.Abs(yTranslateDistance) > yOffsetTolerance)
                 {

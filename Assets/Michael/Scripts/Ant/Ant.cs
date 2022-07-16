@@ -7,6 +7,8 @@ public class Ant : MonoBehaviour
 {
     [Header("Body Positioning")] [LabelOverride("Body Y Offset")] [SerializeField]
     float offsetY = 0.1f;
+    float offsetToleranceY = 0.02f;
+    float offsetDurationY = 0.2f;
 
     [LabelOverride("Rotation Speed Curve")] [SerializeField]
     AnimationCurve sensitivityCurve;
@@ -68,6 +70,11 @@ public class Ant : MonoBehaviour
         }
         transform.rotation = Quaternion.Slerp(transform.rotation,
             Quaternion.LookRotation(Vector3.ProjectOnPlane(transform.forward, up), up), 22.5f * Time.deltaTime);
-        transform.Translate(0, -(-avgSurfaceDist + -offsetY) * 0.5f, 0, Space.Self);
+        float yTranslateDistance = -(-avgSurfaceDist + -offsetY) * 0.5f;
+        if (Math.Abs(yTranslateDistance) > offsetToleranceY)
+        {
+            float yScaleFactor = Time.deltaTime / offsetToleranceY;
+            transform.Translate(0, -(-avgSurfaceDist + -offsetY) * 0.5f * yScaleFactor, 0, Space.Self);
+        }
     }
 }
