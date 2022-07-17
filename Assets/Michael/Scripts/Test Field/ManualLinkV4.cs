@@ -98,7 +98,7 @@ public class ManualLinkV4 : MonoBehaviour
             {
                 Debug.Log("Am in distance of navmesh");
                 //_agent.updatePosition = false;
-                //_agent.updateRotation = false;
+                _agent.updateRotation = false;
                 _agent.updateUpAxis = false;
 
                 traversing = true;
@@ -134,7 +134,7 @@ public class ManualLinkV4 : MonoBehaviour
                 _rigidBody.velocity = this.transform.forward * 0;
 
                 //_agent.updatePosition = true;
-                //_agent.updateRotation = true;
+                _agent.updateRotation = true;
                 _agent.updateUpAxis = true;
 
                 _agent.CompleteOffMeshLink();
