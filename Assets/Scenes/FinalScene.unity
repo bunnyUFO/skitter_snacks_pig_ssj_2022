@@ -5217,7 +5217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 323645738, guid: 16e775afadee6ac42a263e5900537651, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.2168586
+      value: 0.21685861
       objectReference: {fileID: 0}
     - target: {fileID: 323645738, guid: 16e775afadee6ac42a263e5900537651, type: 3}
       propertyPath: m_LocalRotation.y
@@ -5225,7 +5225,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 323645738, guid: 16e775afadee6ac42a263e5900537651, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000022351744
+      value: 0.0000000074505815
       objectReference: {fileID: 0}
     - target: {fileID: 323645745, guid: 16e775afadee6ac42a263e5900537651, type: 3}
       propertyPath: near clip plane
@@ -5234,12 +5234,12 @@ PrefabInstance:
     - target: {fileID: 2994140288285726307, guid: 16e775afadee6ac42a263e5900537651,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.18294418
+      value: 0.18294415
       objectReference: {fileID: 0}
     - target: {fileID: 2994140288285726307, guid: 16e775afadee6ac42a263e5900537651,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000014901161
+      value: 0.000000022351742
       objectReference: {fileID: 0}
     - target: {fileID: 2994140288900936781, guid: 16e775afadee6ac42a263e5900537651,
         type: 3}
@@ -5319,7 +5319,7 @@ PrefabInstance:
     - target: {fileID: 2994140289948138852, guid: 16e775afadee6ac42a263e5900537651,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000029802322
+      value: -0.000000007450581
       objectReference: {fileID: 0}
     - target: {fileID: 4337055826823678888, guid: 16e775afadee6ac42a263e5900537651,
         type: 3}
@@ -5328,9 +5328,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5815588227169869734, guid: 16e775afadee6ac42a263e5900537651,
         type: 3}
+      propertyPath: obstaclesParents.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5815588227169869734, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
       propertyPath: obstaclesParents.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 380635166}
     - target: {fileID: 5815588227169869734, guid: 16e775afadee6ac42a263e5900537651,
         type: 3}
       propertyPath: obstaclesParents.Array.data[1]
@@ -5364,7 +5369,7 @@ PrefabInstance:
     - target: {fileID: 5952375593846875547, guid: 16e775afadee6ac42a263e5900537651,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.2168586
+      value: 0.21685861
       objectReference: {fileID: 0}
     - target: {fileID: 5952375593846875547, guid: 16e775afadee6ac42a263e5900537651,
         type: 3}
@@ -5374,7 +5379,7 @@ PrefabInstance:
     - target: {fileID: 5952375593846875547, guid: 16e775afadee6ac42a263e5900537651,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000022351744
+      value: 0.0000000074505815
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16e775afadee6ac42a263e5900537651, type: 3}
