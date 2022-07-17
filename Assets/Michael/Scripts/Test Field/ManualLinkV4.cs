@@ -96,7 +96,6 @@ public class ManualLinkV4 : MonoBehaviour
 
             if (distanceFromStart < beginDistance && !ai.isChasing() && transitionTimer <= 0.0f)
             {
-                Debug.Log("Am in distance of navmesh");
                 //_agent.updatePosition = false;
                 _agent.updateRotation = false;
                 _agent.updateUpAxis = false;

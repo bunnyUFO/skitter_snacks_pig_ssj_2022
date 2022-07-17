@@ -14,6 +14,8 @@ namespace StarterAssets
     [RequireComponent(typeof(PlayerInput))]
     public class SpiderController : MonoBehaviour
     {
+        [SerializeField]
+        private Spider spider;
         [Header("Spider Movement")]
         [SerializeField] 
         private float moveSpeed = 2.0f;
@@ -32,15 +34,22 @@ namespace StarterAssets
         [SerializeField] 
         private Projection projection;
 
-        [Header("Camera")]
+        [Header("Camera Configurations")]
         [SerializeField] 
-        private CinemachineFreeLook cinemachineFreeLook;
+        private CinemachineFreeLook thirddPersonView;
+        [SerializeField] 
+        private CinemachineFreeLook jumpView;
+        [SerializeField] 
+        private Camera thirddPersonCamera;
+        [SerializeField] 
+        private Camera jumpCamera;
         [SerializeField] 
         private float jumpCameraOffsetX = 15f;
 
+        private Spider _spider;
+        private Transform _spiderTransform;
         public float jumpCharge;
         private Vector3 _oldUp, _oldForward;
-        private Spider _spider;
         private Vector3 _previousInputDirection, _inputDirection, _jumpVelocity;
         private Rigidbody _rigidbody;
         private StarterAssetsInputs _input;
@@ -48,14 +57,14 @@ namespace StarterAssets
 
         private void Awake()
         {
-            _spider = transform.GetComponent<Spider>();
             _previousInputDirection =_inputDirection = Vector3.zero;
             _jumpChargeTimeDelta = 0f;
         }
 
         private void Start()
         {
-            _rigidbody = GetComponent<Rigidbody>();
+            _spiderTransform = spider.transform;
+            _rigidbody = spider.GetComponent<Rigidbody>();
             _input = GetComponent<StarterAssetsInputs>();
         }
 
@@ -83,26 +92,36 @@ namespace StarterAssets
             {
                 if (jumpCharge == 0f)
                 {
-                    cinemachineFreeLook.m_YAxis.Value = 0.6f;
-                    cinemachineFreeLook.m_XAxis.Value = _spider.transform.rotation.eulerAngles.y + jumpCameraOffsetX;
+                    thirddPersonView.enabled = false;
+                    thirddPersonCamera.enabled = false;
+                    jumpCamera.enabled = true;
+                    jumpView.enabled = true;
+                    jumpView.m_YAxis.Value = 0.6f;
+                    jumpView.m_XAxis.Value = spider.transform.rotation.eulerAngles.y + jumpCameraOffsetX;
                 }
 
                 projection.EnableProjection(true);
-                _spider.ChargingJump(true);
+                spider.ChargingJump(true);
                 _jumpChargeTimeDelta += deltaTime;
                 jumpCharge = Math.Min(1, _jumpChargeTimeDelta/ jumpChargeTime);
                 
                 float jumpPower = maxJumpPower * jumpCharge;
-                _jumpVelocity = transform.forward * jumpPower;
-                projection.SimulateTrajectory(_spider, 
-                    _spider.transform.position, 
+                _jumpVelocity = (_spiderTransform.forward +  _spiderTransform.up).normalized * jumpPower;
+                projection.SimulateTrajectory(spider, 
+                    _spiderTransform.position, 
                     _jumpVelocity);
             }
 
             if (Keyboard.current.spaceKey.wasReleasedThisFrame)
             {
+                thirddPersonView.enabled = true;
+                thirddPersonCamera.enabled = true;
+                jumpCamera.enabled = false;
+                jumpView.enabled = false;
+                thirddPersonView.m_YAxis.Value = 0f;
+                thirddPersonView.m_XAxis.Value = 0f;
                 _jumpChargeTimeDelta = 0f;
-                _spider.Jump(_jumpVelocity);
+                spider.Jump(_jumpVelocity);
                 jumpCharge = 0f;
             }
         }
@@ -119,7 +138,7 @@ namespace StarterAssets
             _inputDirection = new Vector3(_input.move.x, 0.0f, _input.move.y).normalized;
             
 
-            Vector3 targetDirection = transform.forward * _inputDirection.z + transform.right * _inputDirection.x;
+            Vector3 targetDirection = _spiderTransform.forward * _inputDirection.z + _spiderTransform.right * _inputDirection.x;
 
             _rigidbody.velocity = (targetDirection.normalized) * moveSpeed;
         }
@@ -128,7 +147,7 @@ namespace StarterAssets
         {
             if (stoppedMoving() || StoppedRotating())
             {
-                _spider.StaggerLegs(true);
+                spider.StaggerLegs(true);
             }
             
             _previousInputDirection = _inputDirection;
@@ -146,24 +165,26 @@ namespace StarterAssets
 
         private void Rotate(float deltaTime)
         {
+            //was causing bugs with camera
+            /*
             if (Keyboard.current.spaceKey.isPressed && jumpCharge == 0f)
             {
-                _oldUp = transform.up;
-                _oldForward = transform.forward;
-                transform.rotation = Quaternion.AngleAxis(-jumpAngle, transform.right) * transform.rotation;
+                _spiderTransform.rotation = Quaternion.AngleAxis(-jumpAngle, _spiderTransform.right) * _spiderTransform.rotation;
             }
+            */
+            
 
 
-            Vector3 up = Keyboard.current.spaceKey.isPressed ? _oldUp : transform.up;
+            Vector3 up =_spiderTransform.up;
             
             float rotateSpeed = Keyboard.current.spaceKey.isPressed ? jumpViewRotationSpeed : rotationSpeed;
             if( Keyboard.current.qKey.isPressed || Mouse.current.leftButton.isPressed)
             {
-                transform.rotation = Quaternion.AngleAxis(-rotateSpeed * deltaTime, up) * transform.rotation;
+                _spiderTransform.rotation = Quaternion.AngleAxis(-rotateSpeed * deltaTime, up) * _spiderTransform.rotation;
             }
             if (Keyboard.current.eKey.isPressed || Mouse.current.rightButton.isPressed)
             {
-                transform.rotation = Quaternion.AngleAxis(rotateSpeed * deltaTime, up) * transform.rotation;
+                _spiderTransform.rotation = Quaternion.AngleAxis(rotateSpeed * deltaTime, up) * _spiderTransform.rotation;
             }
         }
 
