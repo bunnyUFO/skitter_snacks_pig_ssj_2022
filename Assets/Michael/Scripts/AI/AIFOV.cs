@@ -18,7 +18,7 @@ public class AIFOV : MonoBehaviour
 
     public LayerMask layermask;
 
-    void Start()
+    void Awake()
     {
         ai = GetComponent<AI>();
         link = GetComponent<ManualLinkV4>();

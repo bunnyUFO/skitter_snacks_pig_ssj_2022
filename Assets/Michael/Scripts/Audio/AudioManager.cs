@@ -36,14 +36,9 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void playSound(string soundName, AudioSource src)
+    public void playSound(int soundIndex, AudioSource src)
     {
-        switch (soundName)
-        {
-            case "Walk":
-                src.PlayOneShot(soundList[0]);
-                break;
-        }
+        src.PlayOneShot(soundList[soundIndex]);
     }
 
     public void playMusic(string songName)
@@ -82,22 +77,10 @@ public class AudioManager : MonoBehaviour
         }
     }
     
-    public bool currentlyPlayingSound(string soundName, AudioSource src)
+    public bool currentlyPlayingSound(int soundIndex, AudioSource src)
     {
-       
-        switch (soundName)
-        {
-            case "Walk":
-                
-                if (src.isPlaying && src.clip.length == soundList[0].length)
-                {
-                    return true;
-                }
-
-                break;
-        }
-
-        return false;
+        print(soundList[soundIndex].name);
+        return src.isPlaying && src.clip.name == soundList[soundIndex].name;
     }
 
     public bool currentlyPlayingSong(string songName)

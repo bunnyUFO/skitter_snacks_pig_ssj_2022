@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,7 +15,7 @@ public class Manager : MonoBehaviour
     UIManager uiManager;
 
     [Header("Found Enemies")]
-    public List<GameObject> enemies = new List<GameObject>();
+    public List<AI> enemies = new List<AI>();
 
     [Header("Speed Settings")]
     public float speed;
@@ -49,7 +51,7 @@ public class Manager : MonoBehaviour
 
         foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
         {
-            enemies.Add(enemy);
+            enemies.Add(enemy.GetComponent<AI>());
         }
 
         for (int i = 0; i < enemies.Count; i++)
@@ -81,28 +83,23 @@ public class Manager : MonoBehaviour
     {
         bool idle = true;
 
-        for (int i = 0; i < enemies.Count; i++)
+        if (enemies.Any(enemy => enemy.isSpotting()) )
         {
-            ai = enemies[i].GetComponent<AI>();
-
-            if (ai.isSpotting())
+            idle = false;
+            if (audioManager.returnState() != 2 && audioManager.returnState() != 3)
             {
-                idle = false;
-                if (audioManager.returnState() != 2 && audioManager.returnState() != 3)
-                {
-                    audioManager.playMusic("Detected");
-                    uiManager.updateIndicator(2);
-                }
+                audioManager.playMusic("Detected");
+                uiManager.updateIndicator(2);
             }
+        }
 
-            if (ai.isChasing())
+        if (enemies.Any(enemy => enemy.isChasing()) )
+        {
+            idle = false;
+            if (audioManager.returnState() != 3)
             {
-                idle = false;
-                if (audioManager.returnState() != 3)
-                {
-                    audioManager.playMusic("Chasing");
-                    uiManager.updateIndicator(3);
-                }
+                audioManager.playMusic("Chasing");
+                uiManager.updateIndicator(3);
             }
         }
 

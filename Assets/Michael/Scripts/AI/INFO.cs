@@ -9,7 +9,7 @@ public class INFO : MonoBehaviour
     AI ai;
     AIFOV aifov;
 
-    private void Start()
+    private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         ai = GetComponent<AI>();
