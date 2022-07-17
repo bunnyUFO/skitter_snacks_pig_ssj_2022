@@ -1647,7 +1647,6 @@ GameObject:
   - component: {fileID: 110743982}
   - component: {fileID: 110743981}
   - component: {fileID: 110743980}
-  - component: {fileID: 110743983}
   - component: {fileID: 110743984}
   m_Layer: 12
   m_Name: Food3
@@ -1734,19 +1733,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 110743978}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &110743983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 110743978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81674a26c91c8614d86ca080b8d1ea2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Collected: 0
 --- !u!114 &110743984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2424,7 +2410,6 @@ GameObject:
   - component: {fileID: 176395831}
   - component: {fileID: 176395830}
   - component: {fileID: 176395829}
-  - component: {fileID: 176395832}
   - component: {fileID: 176395833}
   m_Layer: 12
   m_Name: Food5
@@ -2511,19 +2496,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 176395827}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &176395832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 176395827}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81674a26c91c8614d86ca080b8d1ea2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Collected: 0
 --- !u!114 &176395833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4644,7 +4616,6 @@ GameObject:
   - component: {fileID: 332347615}
   - component: {fileID: 332347614}
   - component: {fileID: 332347613}
-  - component: {fileID: 332347616}
   - component: {fileID: 332347617}
   m_Layer: 12
   m_Name: Food1
@@ -4731,19 +4702,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 332347611}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &332347616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 332347611}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81674a26c91c8614d86ca080b8d1ea2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Collected: 0
 --- !u!114 &332347617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5746,7 +5704,6 @@ GameObject:
   - component: {fileID: 396406529}
   - component: {fileID: 396406528}
   - component: {fileID: 396406527}
-  - component: {fileID: 396406530}
   - component: {fileID: 396406531}
   m_Layer: 12
   m_Name: Food4
@@ -5833,19 +5790,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 396406525}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &396406530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 396406525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81674a26c91c8614d86ca080b8d1ea2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Collected: 0
 --- !u!114 &396406531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8901,7 +8845,6 @@ GameObject:
   - component: {fileID: 574761894}
   - component: {fileID: 574761893}
   - component: {fileID: 574761892}
-  - component: {fileID: 574761891}
   - component: {fileID: 574761895}
   m_Layer: 12
   m_Name: Food6
@@ -8925,19 +8868,6 @@ Transform:
   m_Father: {fileID: 911786919}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &574761891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 574761889}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81674a26c91c8614d86ca080b8d1ea2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Collected: 0
 --- !u!135 &574761892
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -17911,7 +17841,7 @@ PrefabInstance:
     - target: {fileID: 2994140290284589672, guid: 16e775afadee6ac42a263e5900537651,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9644696
+      value: 0.96446955
       objectReference: {fileID: 0}
     - target: {fileID: 2994140290284589672, guid: 16e775afadee6ac42a263e5900537651,
         type: 3}
@@ -17921,12 +17851,12 @@ PrefabInstance:
     - target: {fileID: 2994140290284589672, guid: 16e775afadee6ac42a263e5900537651,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.009849668
+      value: -0.009849608
       objectReference: {fileID: 0}
     - target: {fileID: 2994140290284589672, guid: 16e775afadee6ac42a263e5900537651,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.002696082
+      value: 0.002696067
       objectReference: {fileID: 0}
     - target: {fileID: 4337055826823678888, guid: 16e775afadee6ac42a263e5900537651,
         type: 3}
@@ -30980,7 +30910,6 @@ GameObject:
   - component: {fileID: 2104885307}
   - component: {fileID: 2104885306}
   - component: {fileID: 2104885305}
-  - component: {fileID: 2104885308}
   - component: {fileID: 2104885309}
   m_Layer: 12
   m_Name: Food2
@@ -31067,19 +30996,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2104885303}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &2104885308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2104885303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81674a26c91c8614d86ca080b8d1ea2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Collected: 0
 --- !u!114 &2104885309
 MonoBehaviour:
   m_ObjectHideFlags: 0
