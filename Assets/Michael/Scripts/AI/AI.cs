@@ -6,13 +6,13 @@ using UnityEngine.AI;
 public class AI : MonoBehaviour
 {
     public List<GameObject> Patrol_Points = new List<GameObject>();
-    public State _state;
+    public State state;
     public Transform player;
 
     Spotbar spotbar;
     NavMeshAgent agent;
     Vector3 v_targetVector;
-    Vector3 v_phermoneVector;
+    public Vector3 v_phermoneVector;
     AIFOV aifov;
     Phermone phermone;
     AudioManager audioManager;
@@ -48,7 +48,7 @@ public class AI : MonoBehaviour
         
         range = aifov.Range;
 
-        if (_state == State.Patroling)
+        if (state == State.Patroling)
         {
             agent.destination = Patrol_Points[tPN].transform.position;
         }
@@ -71,7 +71,7 @@ public class AI : MonoBehaviour
         }
         */
 
-        switch (_state)
+        switch (state)
         {
             case State.Patroling:
 
@@ -96,7 +96,7 @@ public class AI : MonoBehaviour
                     timer -= Time.deltaTime;
                     if (timer <= 0)
                     {
-                        _state = State.Returning;
+                        state = State.Returning;
                         timer = reset;
 
                         manager.changeMusic();
@@ -107,7 +107,7 @@ public class AI : MonoBehaviour
                     timer -= Time.deltaTime;
                     if (timer <= 0)
                     {
-                        _state = State.Returning;
+                        state = State.Returning;
                         timer = reset;
 
                         manager.changeMusic();
@@ -130,7 +130,7 @@ public class AI : MonoBehaviour
                 if (v_targetVector.magnitude < pointRange)
                 {
                     UpdateTarget();
-                    _state = State.Patroling;
+                    state = State.Patroling;
                     //spotbar.reveal(false);
                 }
 
@@ -160,7 +160,7 @@ public class AI : MonoBehaviour
 
                 if (spotbar.spotted())
                 {
-                    _state = State.Chasing;
+                    state = State.Chasing;
                     agent.isStopped = false;
                     phermone.ReleasePhermones();
 
@@ -169,7 +169,7 @@ public class AI : MonoBehaviour
                 
                 if (v_targetVector.magnitude > range || aifov.RaycastHit())
                 {
-                    _state = State.Returning;
+                    state = State.Returning;
                     agent.isStopped = false;
 
                     manager.changeMusic();
@@ -186,7 +186,7 @@ public class AI : MonoBehaviour
                     phermoneTimer -= Time.deltaTime;
                     if (phermoneTimer <= 0)
                     {
-                        _state = State.Returning;
+                        state = State.Returning;
                         phermoneTimer = phermoneTimerReset;
                     }
                 }
@@ -244,12 +244,12 @@ public class AI : MonoBehaviour
 
     public void spottingPlayer()
     {
-        _state = State.Spotting;
+        state = State.Spotting;
     }
 
     public bool isChasing()
     {
-        if (_state == State.Chasing)
+        if (state == State.Chasing)
         {
             return true;
         }
@@ -261,7 +261,7 @@ public class AI : MonoBehaviour
 
     public bool isSpotting()
     {
-        if (_state == State.Spotting)
+        if (state == State.Spotting)
         {
             return true;
         }
@@ -269,40 +269,6 @@ public class AI : MonoBehaviour
         {
             return false;
         }
-    }
-    
-    /*
-    private void OnTriggerStay(Collider touchedObject)
-    {
-        if (touchedObject.gameObject.CompareTag("Phermone") && _state != State.Chasing && _state != State.Returning)
-        {
-            Debug.Log("Is touching phermone");
-            v_phermoneVector = touchedObject.transform.position;
-            _state = State.Phermone;
-        }
-        if (!touchedObject.gameObject.CompareTag("Untagged"))
-        {
-            Debug.Log("Is touching SOMETHING");
-        }
-        if (touchedObject.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("Is touching PLAYER");
-        }
-    }
-    */
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (!other.gameObject.CompareTag("Untagged"))
-        {
-            Debug.Log("Is touching SOMETHING");
-        }
-        if (other.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("Is touching PLAYER");
-        }
-
-
     }
 
     public Color colour = Color.red;

@@ -10,11 +10,12 @@ public class Phermone : MonoBehaviour
     public float maxScale = 10.0f;
     public float timer;
     public float reset;
+    private AI antAI;
 
-    void Start()
+    void Awake()
     {
+        antAI = transform.parent.GetComponent<AI>();
         GetComponent<MeshRenderer>().enabled = false;
-
         timer = maxScale / expansionSpeed;
         reset = timer;
         maxScale = maxScale - 0.5f;
@@ -42,4 +43,22 @@ public class Phermone : MonoBehaviour
         timer = reset;
     }
 
+    
+    private void OnTriggerEnter(Collider touchedObject)
+    {
+        if (touchedObject.gameObject.CompareTag("Phermone") && antAI.state != AI.State.Chasing && antAI.state != AI.State.Returning)
+        {
+            Debug.Log("Is touching phermone");
+            antAI.v_phermoneVector = touchedObject.transform.position;
+            antAI.state = AI.State.Phermone;
+        }
+        if (!touchedObject.gameObject.CompareTag("Untagged"))
+        {
+            Debug.Log("Is touching SOMETHING");
+        }
+        if (touchedObject.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Is touching PLAYER");
+        }
+    }
 }
