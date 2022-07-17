@@ -11,9 +11,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Daniel/scaleTestScene.unity
     guid: 17fd3d3c21184484d8ae252299cd5d09
-  - enabled: 1
+  - enabled: 0
     path: Assets/Daniel/SpiderWalkTest.unity
     guid: 4d6babd932902ba48bd6bb1eaac1b7e5
+  - enabled: 1
+    path: Assets/Daniel/FinalSceneTest.unity
+    guid: c574de60fd61c0b4dab68840c0947234
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7,
       type: 2}

@@ -106,7 +106,9 @@ namespace StarterAssets
                 jumpCharge = Math.Min(1, _jumpChargeTimeDelta/ jumpChargeTime);
                 
                 float jumpPower = maxJumpPower * jumpCharge;
-                _jumpVelocity = (_spiderTransform.forward +  _spiderTransform.up).normalized * jumpPower;
+                float radianAngle = jumpAngle * Mathf.Deg2Rad;
+                print("SIN: " + (float)Math.Sin(radianAngle) + " COS: " + (float)Math.Cos(radianAngle));
+                _jumpVelocity = (_spiderTransform.forward * (float)Math.Cos(radianAngle) +  _spiderTransform.up * (float)Math.Sin(radianAngle)).normalized * jumpPower;
                 projection.SimulateTrajectory(spider, 
                     _spiderTransform.position, 
                     _spiderTransform.rotation, 
