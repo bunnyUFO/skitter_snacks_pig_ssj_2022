@@ -7,7 +7,7 @@ using UnityEngine;
 public class Spider : MonoBehaviour
 {
     [Header("Body Positioning")] [LabelOverride("Y Offset")] [SerializeField]
-    float yOffset = 0.2f;
+    float yOffset = 0.1f;
 
     [LabelOverride("Y Offset Tolerance")] [SerializeField]
     float yOffsetTolerance = 0.02f;

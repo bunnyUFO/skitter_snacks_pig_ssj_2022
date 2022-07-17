@@ -109,6 +109,7 @@ namespace StarterAssets
                 _jumpVelocity = (_spiderTransform.forward +  _spiderTransform.up).normalized * jumpPower;
                 projection.SimulateTrajectory(spider, 
                     _spiderTransform.position, 
+                    _spiderTransform.rotation, 
                     _jumpVelocity);
             }
 

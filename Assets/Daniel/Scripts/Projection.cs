@@ -4,8 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class Projection : MonoBehaviour {
     [SerializeField] private LineRenderer _line;
-    [SerializeField] private int _maxPhysicsFrameIterations = 100;
-    [SerializeField] private Transform _obstaclesParent;
+    [SerializeField] private int maxPhysicsFrameIterations = 100;
+    [SerializeField] private Transform[] obstaclesParents;
 
     private Scene _simulationScene;
     private PhysicsScene _physicsScene;
@@ -19,28 +19,25 @@ public class Projection : MonoBehaviour {
         _simulationScene = SceneManager.CreateScene("Simulation", new CreateSceneParameters(LocalPhysicsMode.Physics3D));
         _physicsScene = _simulationScene.GetPhysicsScene();
 
-        foreach (Transform obj in _obstaclesParent) {
-            var ghostObj = Instantiate(obj.gameObject, obj.position, obj.rotation);
-            Renderer renderer = ghostObj.GetComponent<Renderer>();
-            if (renderer)
+        foreach (Transform parent in obstaclesParents)
+        {
+            makeGhostObject(parent);
+            foreach (Transform obj in parent)
             {
-                renderer.enabled = false;
+                makeGhostObject(obj);
             }
-
-            SceneManager.MoveGameObjectToScene(ghostObj, _simulationScene);
-            if (!ghostObj.isStatic) _spawnedObjects.Add(obj, ghostObj.transform);
         }
     }
 
-    public void SimulateTrajectory(Spider spider, Vector3 pos, Vector3 velocity) {
-        var ghostObj = Instantiate(spider, pos, Quaternion.identity);
+    public void SimulateTrajectory(Spider spider, Vector3 pos, Quaternion rotation, Vector3 velocity) {
+        var ghostObj = Instantiate(spider, pos, rotation);
         
         SceneManager.MoveGameObjectToScene(ghostObj.gameObject, _simulationScene);
         ghostObj.Jump(velocity);
 
-        _line.positionCount = _maxPhysicsFrameIterations;
+        _line.positionCount = maxPhysicsFrameIterations;
 
-        for (var i = 0; i < _maxPhysicsFrameIterations; i++) {
+        for (var i = 0; i < maxPhysicsFrameIterations; i++) {
             _physicsScene.Simulate(Time.fixedDeltaTime);
             _line.SetPosition(i, ghostObj.transform.position);
         }
@@ -51,5 +48,18 @@ public class Projection : MonoBehaviour {
     public void EnableProjection(bool enabled)
     {
         _line.enabled = enabled;
+    }
+
+    private void makeGhostObject(Transform obj)
+    {
+        var ghostObj = Instantiate(obj.gameObject, obj.position, obj.rotation);
+        Renderer renderer = ghostObj.GetComponent<Renderer>();
+        if (renderer)
+        {
+            renderer.enabled = false;
+        }
+
+        SceneManager.MoveGameObjectToScene(ghostObj, _simulationScene);
+        if (!ghostObj.isStatic) _spawnedObjects.Add(obj, ghostObj.transform);
     }
 }
