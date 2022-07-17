@@ -2873,10 +2873,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _line: {fileID: 6219721160394275886}
   maxPhysicsFrameIterations: 250
-  obstaclesParents:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  obstaclesParents: []
 --- !u!120 &6219721160394275886
 LineRenderer:
   m_ObjectHideFlags: 0
