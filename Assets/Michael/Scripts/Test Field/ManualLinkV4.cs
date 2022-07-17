@@ -14,7 +14,7 @@ public class ManualLinkV4 : MonoBehaviour
     AI ai;
 
     public float beginDistance = 2.0f;
-    public float midDistance = 1.0f;
+    public float midDistance = 1.5f;
     public float endDistance = 1.0f;
     float distanceFromStart;
     float distanceFromMid;
