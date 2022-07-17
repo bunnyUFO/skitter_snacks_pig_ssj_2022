@@ -270,14 +270,39 @@ public class AI : MonoBehaviour
             return false;
         }
     }
-
+    
+    /*
     private void OnTriggerStay(Collider touchedObject)
     {
         if (touchedObject.gameObject.CompareTag("Phermone") && _state != State.Chasing && _state != State.Returning)
         {
+            Debug.Log("Is touching phermone");
             v_phermoneVector = touchedObject.transform.position;
             _state = State.Phermone;
         }
+        if (!touchedObject.gameObject.CompareTag("Untagged"))
+        {
+            Debug.Log("Is touching SOMETHING");
+        }
+        if (touchedObject.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Is touching PLAYER");
+        }
+    }
+    */
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!other.gameObject.CompareTag("Untagged"))
+        {
+            Debug.Log("Is touching SOMETHING");
+        }
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Is touching PLAYER");
+        }
+
+
     }
 
     public Color colour = Color.red;
