@@ -70,11 +70,16 @@ public class Manager : MonoBehaviour
             phermone.reset = phermone.timer;
 
             spotbar = enemies[i].GetComponentInChildren<Spotbar>();
-            spotbar.spotbarSize = barSize;
-            spotbar.reduceSpotValue = barDecrease;
-            spotbar.shortSpotValue = shortRangeBarIncrease;
-            spotbar.mediumSpotValue = midRangeBarIncrease;
-            spotbar.farSpotValue = longRangeBarIncrease;
+            if (spotbar)
+            {
+                spotbar.spotbarSize = barSize;
+                spotbar.reduceSpotValue = barDecrease;
+                spotbar.shortSpotValue = shortRangeBarIncrease;
+                spotbar.mediumSpotValue = midRangeBarIncrease;
+                spotbar.farSpotValue = longRangeBarIncrease;
+                
+            }
+            
             // Perhaps add an addition to decide what long, mid and short range is? Currently those values are > 1/2 long, > 1/4 && < 1/2 mid, < 1/4 short
         }
 
