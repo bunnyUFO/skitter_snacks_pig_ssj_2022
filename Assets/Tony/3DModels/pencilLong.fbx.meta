@@ -3,7 +3,27 @@ guid: 955292109c23bcc4392d4e4bfc45201a
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: End
+    second: {fileID: 2100000, guid: 6cd180086e2cd3246baf86a966a96c33, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pencil
+    second: {fileID: 2100000, guid: e37db87bfa863394e8092542197f2117, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tip
+    second: {fileID: 2100000, guid: 286793c022be89c4ca3b59c216fac52c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wood
+    second: {fileID: 2100000, guid: 2dfd9b68dc85f6544b0b4e6d57772fcb, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -88,7 +108,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1.3
+    globalScale: 130
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

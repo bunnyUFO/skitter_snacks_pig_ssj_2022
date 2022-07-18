@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: penMuji
+  m_Name: penTip1
   m_Shader: {fileID: -6465566751694194690, guid: fb8e33682548fdb4b9430d095867a18f,
     type: 3}
   m_ValidKeywords: []
@@ -101,7 +101,7 @@ Material:
     m_Floats:
     - _BlendSharpness: 1
     - _EmissionStre: 1
-    - _Metalness: 1
+    - _Metalness: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Smoothness: 0.564
@@ -125,7 +125,7 @@ Material:
     - _textiling: 1
     m_Colors:
     - _Blend_Sharpness_Dust: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 0.895, g: 0.895, b: 0.895, a: 0}
+    - _Color: {r: 0.025316477, g: 1, b: 0, a: 0}
     - _Emissive: {r: 0, g: 0, b: 0, a: 0}
     - _dustBlend: {r: 1, g: 1, b: 1, a: 0}
     - _dustColor: {r: 0, g: 0, b: 0, a: 0}

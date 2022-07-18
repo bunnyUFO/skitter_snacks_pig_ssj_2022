@@ -3,7 +3,17 @@ guid: dcc5bd7bbcdc7b644af1a94d8240cb17
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cap
+    second: {fileID: 2100000, guid: a9377ca2009809f4f9ca969e7abc4f60, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pen
+    second: {fileID: 2100000, guid: 3b764003e05f05542827c4d92ee0eaee, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -88,7 +98,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1.3
+    globalScale: 130
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
