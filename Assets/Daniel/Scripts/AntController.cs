@@ -10,8 +10,6 @@ using UnityEngine.Pool;
 
 namespace StarterAssets
 {
-    [RequireComponent(typeof(Rigidbody))]
-    [RequireComponent(typeof(PlayerInput))]
     public class AntController : MonoBehaviour
     {
         [Header("Ant Movement")]

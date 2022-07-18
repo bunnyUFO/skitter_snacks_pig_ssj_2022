@@ -10,7 +10,6 @@ using UnityEngine.Pool;
 
 namespace StarterAssets
 {
-    [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(PlayerInput))]
     public class SpiderController : MonoBehaviour
     {

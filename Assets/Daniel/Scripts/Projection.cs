@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(LineRenderer))]
+
 public class Projection : MonoBehaviour {
     [SerializeField] private LineRenderer _line;
     [SerializeField] private int maxPhysicsFrameIterations = 100;

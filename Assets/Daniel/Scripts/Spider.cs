@@ -4,6 +4,9 @@ using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(CapsuleCollider))]
+
 public class Spider : MonoBehaviour
 {
     [Header("Body Positioning")] [LabelOverride("Y Offset")] [SerializeField]

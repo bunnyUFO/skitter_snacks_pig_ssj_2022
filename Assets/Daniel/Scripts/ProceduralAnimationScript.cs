@@ -42,7 +42,8 @@ public class ProceduralAnimationScript : MonoBehaviour
     private Rigidbody _rigidbody;
     private Vector3 _oldPosition, _currentPosition, _targetPosition, _raycastPosition,_bodyPosition;
     private float _lerp, _lerpTime;
-    private bool _raycastHt;
+    private bool _hit, _stepFinished;
+    private RaycastHit _raycastHit;
     private Executer _exe;
     
     private void Awake()
@@ -97,6 +98,7 @@ public class ProceduralAnimationScript : MonoBehaviour
 
         if (_lerp < 1)
         {
+            _stepFinished = false;
             Vector3 tempPosition = Vector3.Lerp(_oldPosition, _targetPosition, _lerp);
             tempPosition += transform.up * Mathf.Sin(_lerp * Mathf.PI) * stepHeight;
             _currentPosition = tempPosition;
@@ -104,6 +106,13 @@ public class ProceduralAnimationScript : MonoBehaviour
         }
         else
         {
+            if (!_stepFinished)
+            {
+                // print(getMaterial().name);
+                BroadcastMessage("playSound", "soft step");
+            }
+
+            _stepFinished = true;
             _stagger = false;
             _oldPosition = _currentPosition;
         }
@@ -117,7 +126,7 @@ public class ProceduralAnimationScript : MonoBehaviour
         Vector3 sidewaysCastDirection = (_rayCastSource.right*(-_rayCastSource.localPosition.x)).normalized;
         Vector3 legSidewaysRaySource = _raycastPosition - transform.up*sidewaysRayCastOffsetY + -sidewaysCastDirection*sidewaysRayCastOffsetX;
         Vector3 bodySidewaysRaySource = body.position - transform.up*sidewaysRayCastOffsetY +  (_rayCastSource.right*(_rayCastSource.localPosition.x)).normalized*(sidewaysRayCastDistance/2);
-        _raycastHt = false;
+        _hit = false;
         
         /*
          * Ray cast and set target move position
@@ -128,32 +137,36 @@ public class ProceduralAnimationScript : MonoBehaviour
         */
         if  (Physics.SphereCast(bodyForwardBodySource , forwardRayCastRadius, transform.forward.normalized, out RaycastHit forwardHit, forwardRayCastDistance, raycastLayer.value))
         {
+            _raycastHit = forwardHit;
             _stagger = false;
             _targetPosition = forwardHit.point;
             stepNormal = forwardHit.normal;
-            _raycastHt = true;
+            _hit = true;
         }
         else if (Physics.SphereCast(legDownRaySource , downRayCastRadius, -transform.up.normalized, out RaycastHit downHit, downRayCastDistance, raycastLayer.value))
         {
+            _raycastHit = downHit;
             _targetPosition = downHit.point;
             stepNormal = downHit.normal;
-            _raycastHt = true;
+            _hit = true;
         }
         else if  (Physics.SphereCast(legSidewaysRaySource , sidewaysRayCastRadius, sidewaysCastDirection.normalized, out RaycastHit horizontal, sidewaysRayCastDistance, raycastLayer.value))
         {
+            _raycastHit = horizontal;
             _targetPosition = horizontal.point;
             stepNormal = horizontal.normal;
-            _raycastHt = true;
+            _hit = true;
         }
         else if  (Physics.SphereCast(bodySidewaysRaySource , sidewaysRayCastRadius, sidewaysCastDirection.normalized, out RaycastHit centerHit, sidewaysRayCastDistance, raycastLayer.value))
         {
+            _raycastHit = centerHit;
             _targetPosition = centerHit.point;
             stepNormal = centerHit.normal;
-            _raycastHt = true;
+            _hit = true;
         }
 
 
-        return _raycastHt;
+        return _hit;
     }
     
     public bool OtherLegsMoving()
@@ -221,7 +234,7 @@ public class ProceduralAnimationScript : MonoBehaviour
 
     public bool Grounded()
     {
-        return _raycastHt;
+        return _hit;
     }
 
     public Vector3 GetOldPosition()
@@ -233,4 +246,26 @@ public class ProceduralAnimationScript : MonoBehaviour
     {
         return _targetPosition;
     }
+
+    // private Material getMaterial()
+    // {
+    //     MeshCollider collider = _raycastHit.collider as MeshCollider;
+    //     // Remember to handle case where collider is null because you hit a non-mesh primitive...
+    //
+    //     Mesh mesh = collider.sharedMesh;
+    //
+    //     // There are 3 indices stored per triangle
+    //     int limit = _raycastHit.triangleIndex * 3;
+    //     int submesh;
+    //     for(submesh = 0; submesh < mesh.subMeshCount; submesh++)
+    //     {
+    //         int numIndices = mesh.GetTriangles(submesh).Length;
+    //         if(numIndices > limit)
+    //             break;
+    //
+    //         limit -= numIndices;   
+    //     }
+    //     
+    //     return collider.GetComponent<MeshRenderer>().sharedMaterials[submesh];
+    // }
 }
