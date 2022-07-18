@@ -99,7 +99,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BlendSharpness: 2
+    - _BlendSharpness: 0.08
     - _EmissionStre: 1
     - _Metalness: 0
     - _QueueControl: 0
@@ -117,8 +117,8 @@ Material:
     - _isSmoothFlipped: 1
     - _isSmoothTextured: 1
     - _noiseEmissive: 0
-    - _noisePresence: 0.22
-    - _noiseSmooth: 0.455
+    - _noisePresence: 1.2
+    - _noiseSmooth: -0
     - _noiseTiling: 1
     - _texOffset: 0
     - _texRot: 0

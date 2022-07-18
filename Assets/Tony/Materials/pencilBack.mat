@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-2471042607587751293
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -7,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: penMuji
+  m_Name: pencilBack
   m_Shader: {fileID: -6465566751694194690, guid: fb8e33682548fdb4b9430d095867a18f,
     type: 3}
   m_ValidKeywords: []
@@ -69,12 +82,8 @@ Material:
         m_Texture: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _texMask:
-        m_Texture: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _texMet:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _texNormal:
@@ -101,48 +110,33 @@ Material:
     m_Floats:
     - _BlendSharpness: 1
     - _EmissionStre: 1
-    - _Metalness: 1
+    - _Metalness: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Smoothness: 0.564
+    - _Smoothness: 1
     - _dustGeneralSharp: 1
-    - _dustPresence: 0.22
+    - _dustPresence: 0.94
     - _dustTiling: 10
     - _isAOTextured: 0
     - _isColorTextured: 0
     - _isEmissiveTextured: 0
-    - _isMetalTextured: 0
     - _isNormFlipped: 0
     - _isNormalTextured: 0
     - _isSmoothFlipped: 0
     - _isSmoothTextured: 0
     - _noiseEmissive: 0
-    - _noisePresence: 0.9
-    - _noiseSmooth: 0.114
-    - _noiseTiling: 10.07
+    - _noisePresence: 0.95
+    - _noiseSmooth: 0.086
+    - _noiseTiling: 100
     - _texOffset: 0
     - _texRot: 0
     - _textiling: 1
     m_Colors:
-    - _Blend_Sharpness_Dust: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 0.895, g: 0.895, b: 0.895, a: 0}
+    - _Color: {r: 0.09433961, g: 0.09433961, b: 0.09433961, a: 0}
     - _Emissive: {r: 0, g: 0, b: 0, a: 0}
-    - _dustBlend: {r: 1, g: 1, b: 1, a: 0}
-    - _dustColor: {r: 0, g: 0, b: 0, a: 0}
-    - _noiseColor: {r: 0.092, g: 0.092, b: 0.092, a: 1}
+    - _dustBlend: {r: 0.1, g: 1, b: 0.1, a: 0}
+    - _dustColor: {r: 0.2735849, g: 0.2735849, b: 0.2735849, a: 0}
+    - _noiseColor: {r: 0.34905657, g: 0.34905657, b: 0.34905657, a: 1}
     - _tesOffsetPrecise: {r: 0, g: 0, b: 0, a: 0}
     - _texTilingPrecise: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &924168802685600750
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 5
