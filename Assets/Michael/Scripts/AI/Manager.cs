@@ -35,6 +35,8 @@ public class Manager : MonoBehaviour
     public float expandSizePerSecond;
     public float maxSize;
     public float phermoneTimer;
+    public float phermoneResetTimer = 5.0f;
+    float reset;
 
     [Header("Spot Settings")]
     public float barSize;
@@ -74,9 +76,14 @@ public class Manager : MonoBehaviour
             spotbar.mediumSpotValue = midRangeBarIncrease;
             spotbar.farSpotValue = longRangeBarIncrease;
             // Perhaps add an addition to decide what long, mid and short range is? Currently those values are > 1/2 long, > 1/4 && < 1/2 mid, < 1/4 short
-            
-
         }
+
+        reset = phermoneResetTimer;
+    }
+
+    private void Update()
+    {
+        phermoneResetTimer -= Time.deltaTime;
     }
 
     public void changeMusic()
@@ -111,5 +118,19 @@ public class Manager : MonoBehaviour
                 uiManager.updateIndicator(1);
             }
         }
+    }
+
+    public bool checkPhermones()
+    {
+        bool releasePhermones = true;
+
+        if (enemies.Any(enemy => enemy.isPhermoned()) || phermoneResetTimer > 0)
+        {
+            releasePhermones = false;
+        }
+
+        phermoneResetTimer = reset;
+
+        return releasePhermones;
     }
 }

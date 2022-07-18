@@ -162,7 +162,11 @@ public class AI : MonoBehaviour
                 {
                     state = State.Chasing;
                     agent.isStopped = false;
-                    phermone.ReleasePhermones();
+
+                    if (manager.checkPhermones())
+                    {
+                        phermone.ReleasePhermones();
+                    }
 
                     manager.changeMusic();
                 }
@@ -262,6 +266,18 @@ public class AI : MonoBehaviour
     public bool isSpotting()
     {
         if (state == State.Spotting)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public bool isPhermoned()
+    {
+        if (state == State.Phermone)
         {
             return true;
         }
