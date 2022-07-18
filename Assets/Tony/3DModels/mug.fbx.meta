@@ -3,7 +3,17 @@ guid: 086aa524fe1a182478e0a834af855e31
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Decoration
+    second: {fileID: 2100000, guid: f4499f3f4353d80448ef1c04ef0319cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mug
+    second: {fileID: 2100000, guid: 9fe2551ad55564845922334de5d74a0b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -88,7 +98,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1.3
+    globalScale: 130
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

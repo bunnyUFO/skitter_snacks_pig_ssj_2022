@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: book cover
+    second: {fileID: 2100000, guid: 752e95926800f4b4f84eb9e68edf1c1a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: book pages
     second: {fileID: 2100000, guid: e677fbdadcd80b540a5f68a28369bf38, type: 2}
   materials:
