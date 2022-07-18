@@ -668,7 +668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6564e1b456983224ca7e79d3d900931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   FOV: 120
   Range: 10
   debugLOS: 0
@@ -692,7 +692,7 @@ MonoBehaviour:
   - {fileID: 830649953}
   - {fileID: 1121403700}
   state: 0
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   v_phermoneVector: {x: 0, y: 0, z: 0}
   pointRange: 1
   timer: 5
@@ -3263,7 +3263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6564e1b456983224ca7e79d3d900931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   FOV: 120
   Range: 10
   debugLOS: 0
@@ -3288,7 +3288,7 @@ MonoBehaviour:
   - {fileID: 1343363129}
   - {fileID: 1935544207}
   state: 0
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   v_phermoneVector: {x: 0, y: 0, z: 0}
   pointRange: 1
   timer: 5
@@ -3724,12 +3724,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 290871196}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &302041330 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5473928967305372193, guid: 16e775afadee6ac42a263e5900537651,
-    type: 3}
-  m_PrefabInstance: {fileID: 1151251997}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &304633601
 GameObject:
   m_ObjectHideFlags: 0
@@ -3971,7 +3965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6564e1b456983224ca7e79d3d900931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   FOV: 120
   Range: 10
   debugLOS: 0
@@ -3996,7 +3990,7 @@ MonoBehaviour:
   - {fileID: 723296557}
   - {fileID: 96317408}
   state: 0
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   v_phermoneVector: {x: 0, y: 0, z: 0}
   pointRange: 1
   timer: 5
@@ -4176,7 +4170,7 @@ MonoBehaviour:
   - {fileID: 1854167293}
   - {fileID: 572429930}
   state: 0
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   v_phermoneVector: {x: 0, y: 0, z: 0}
   pointRange: 1
   timer: 5
@@ -4199,7 +4193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6564e1b456983224ca7e79d3d900931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   FOV: 120
   Range: 10
   debugLOS: 0
@@ -6071,7 +6065,7 @@ MonoBehaviour:
   - {fileID: 1427906430}
   - {fileID: 1862688554}
   state: 0
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   v_phermoneVector: {x: 0, y: 0, z: 0}
   pointRange: 1
   timer: 5
@@ -6094,7 +6088,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6564e1b456983224ca7e79d3d900931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   FOV: 120
   Range: 10
   debugLOS: 0
@@ -6231,12 +6225,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!82 &415845209 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 415845209, guid: 16e775afadee6ac42a263e5900537651,
-    type: 3}
-  m_PrefabInstance: {fileID: 1151251997}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &417925805 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 41ef465bf80bd3e4aa2ca1608b615669,
@@ -6431,7 +6419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6564e1b456983224ca7e79d3d900931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   FOV: 120
   Range: 10
   debugLOS: 0
@@ -6456,7 +6444,7 @@ MonoBehaviour:
   - {fileID: 866500991}
   - {fileID: 564295421}
   state: 0
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   v_phermoneVector: {x: 0, y: 0, z: 0}
   pointRange: 1
   timer: 5
@@ -6722,7 +6710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6564e1b456983224ca7e79d3d900931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   FOV: 120
   Range: 10
   debugLOS: 0
@@ -6747,7 +6735,7 @@ MonoBehaviour:
   - {fileID: 1908146441}
   - {fileID: 1366873588}
   state: 0
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   v_phermoneVector: {x: 0, y: 0, z: 0}
   pointRange: 1
   timer: 5
@@ -7074,7 +7062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6564e1b456983224ca7e79d3d900931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   FOV: 120
   Range: 10
   debugLOS: 0
@@ -7098,7 +7086,7 @@ MonoBehaviour:
   - {fileID: 112346110}
   - {fileID: 2132729371}
   state: 0
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   v_phermoneVector: {x: 0, y: 0, z: 0}
   pointRange: 1
   timer: 5
@@ -10365,7 +10353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6564e1b456983224ca7e79d3d900931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   FOV: 120
   Range: 10
   debugLOS: 0
@@ -10390,7 +10378,7 @@ MonoBehaviour:
   - {fileID: 535278753}
   - {fileID: 1353621853}
   state: 0
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   v_phermoneVector: {x: 0, y: 0, z: 0}
   pointRange: 1
   timer: 5
@@ -10567,7 +10555,7 @@ MonoBehaviour:
   - {fileID: 96317408}
   - {fileID: 872690788}
   state: 0
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   v_phermoneVector: {x: 0, y: 0, z: 0}
   pointRange: 1
   timer: 5
@@ -10590,7 +10578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6564e1b456983224ca7e79d3d900931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   FOV: 120
   Range: 10
   debugLOS: 0
@@ -11062,7 +11050,7 @@ MonoBehaviour:
   - {fileID: 620440099}
   - {fileID: 556235054}
   state: 0
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   v_phermoneVector: {x: 0, y: 0, z: 0}
   pointRange: 1
   timer: 5
@@ -11085,7 +11073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6564e1b456983224ca7e79d3d900931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   FOV: 120
   Range: 10
   debugLOS: 0
@@ -11497,7 +11485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6564e1b456983224ca7e79d3d900931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   FOV: 120
   Range: 10
   debugLOS: 0
@@ -11525,7 +11513,7 @@ MonoBehaviour:
   - {fileID: 870185367}
   - {fileID: 1328763594}
   state: 0
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   v_phermoneVector: {x: 0, y: 0, z: 0}
   pointRange: 1
   timer: 5
@@ -12445,7 +12433,7 @@ MonoBehaviour:
   - {fileID: 231901075}
   - {fileID: 1164261965}
   state: 0
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   v_phermoneVector: {x: 0, y: 0, z: 0}
   pointRange: 1
   timer: 5
@@ -12468,7 +12456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6564e1b456983224ca7e79d3d900931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   FOV: 120
   Range: 10
   debugLOS: 0
@@ -13515,7 +13503,7 @@ MonoBehaviour:
   - {fileID: 1324301813}
   - {fileID: 2056316312}
   state: 0
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   v_phermoneVector: {x: 0, y: 0, z: 0}
   pointRange: 1
   timer: 5
@@ -13538,7 +13526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6564e1b456983224ca7e79d3d900931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   FOV: 120
   Range: 10
   debugLOS: 0
@@ -13830,7 +13818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6564e1b456983224ca7e79d3d900931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   FOV: 120
   Range: 10
   debugLOS: 0
@@ -13855,7 +13843,7 @@ MonoBehaviour:
   - {fileID: 419371892}
   - {fileID: 1527544519}
   state: 0
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   v_phermoneVector: {x: 0, y: 0, z: 0}
   pointRange: 1
   timer: 5
@@ -13998,7 +13986,7 @@ MonoBehaviour:
   - {fileID: 1368185820}
   - {fileID: 992651208}
   state: 0
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   v_phermoneVector: {x: 0, y: 0, z: 0}
   pointRange: 1
   timer: 5
@@ -14021,7 +14009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6564e1b456983224ca7e79d3d900931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   FOV: 120
   Range: 10
   debugLOS: 0
@@ -14476,7 +14464,7 @@ MonoBehaviour:
   - {fileID: 1222914118}
   - {fileID: 1497679192}
   state: 0
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   v_phermoneVector: {x: 0, y: 0, z: 0}
   pointRange: 1
   timer: 5
@@ -14499,7 +14487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6564e1b456983224ca7e79d3d900931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   FOV: 120
   Range: 10
   debugLOS: 0
@@ -15798,7 +15786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6564e1b456983224ca7e79d3d900931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   FOV: 120
   Range: 10
   debugLOS: 0
@@ -15823,7 +15811,7 @@ MonoBehaviour:
   - {fileID: 39736415}
   - {fileID: 1061727157}
   state: 0
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   v_phermoneVector: {x: 0, y: 0, z: 0}
   pointRange: 1
   timer: 5
@@ -15930,12 +15918,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!82 &1039947367 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 484349963595421525, guid: 16e775afadee6ac42a263e5900537651,
-    type: 3}
-  m_PrefabInstance: {fileID: 1151251997}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1041339709
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16478,7 +16460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6564e1b456983224ca7e79d3d900931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   FOV: 120
   Range: 10
   debugLOS: 0
@@ -16506,7 +16488,7 @@ MonoBehaviour:
   - {fileID: 854683759}
   - {fileID: 1678298395}
   state: 0
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   v_phermoneVector: {x: 0, y: 0, z: 0}
   pointRange: 1
   timer: 5
@@ -16702,7 +16684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6564e1b456983224ca7e79d3d900931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   FOV: 120
   Range: 10
   debugLOS: 0
@@ -16730,7 +16712,7 @@ MonoBehaviour:
   - {fileID: 1998929836}
   - {fileID: 1179792525}
   state: 0
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   v_phermoneVector: {x: 0, y: 0, z: 0}
   pointRange: 1
   timer: 5
@@ -16895,7 +16877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6564e1b456983224ca7e79d3d900931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   FOV: 120
   Range: 10
   debugLOS: 0
@@ -16922,7 +16904,7 @@ MonoBehaviour:
   - {fileID: 1461295918}
   - {fileID: 1854167293}
   state: 0
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   v_phermoneVector: {x: 0, y: 0, z: 0}
   pointRange: 1
   timer: 5
@@ -17083,7 +17065,7 @@ MonoBehaviour:
   - {fileID: 1287669754}
   - {fileID: 400429326}
   state: 0
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   v_phermoneVector: {x: 0, y: 0, z: 0}
   pointRange: 1
   timer: 5
@@ -17106,7 +17088,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6564e1b456983224ca7e79d3d900931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   FOV: 120
   Range: 10
   debugLOS: 0
@@ -17554,109 +17536,6 @@ MonoBehaviour:
   m_Bidirectional: 1
   m_AutoUpdatePosition: 0
   m_Area: 0
---- !u!1001 &1151251997
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 223669296, guid: 16e775afadee6ac42a263e5900537651, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.59585464
-      objectReference: {fileID: 0}
-    - target: {fileID: 223669296, guid: 16e775afadee6ac42a263e5900537651, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.041519627
-      objectReference: {fileID: 0}
-    - target: {fileID: 223669296, guid: 16e775afadee6ac42a263e5900537651, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.80007833
-      objectReference: {fileID: 0}
-    - target: {fileID: 223669296, guid: 16e775afadee6ac42a263e5900537651, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.055750094
-      objectReference: {fileID: 0}
-    - target: {fileID: 854216795, guid: 16e775afadee6ac42a263e5900537651, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 2.3286756e-24
-      objectReference: {fileID: 0}
-    - target: {fileID: 854216795, guid: 16e775afadee6ac42a263e5900537651, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 8.617659e-25
-      objectReference: {fileID: 0}
-    - target: {fileID: 2994140288900936781, guid: 16e775afadee6ac42a263e5900537651,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2994140288900936781, guid: 16e775afadee6ac42a263e5900537651,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 236.197
-      objectReference: {fileID: 0}
-    - target: {fileID: 2994140288900936781, guid: 16e775afadee6ac42a263e5900537651,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.723
-      objectReference: {fileID: 0}
-    - target: {fileID: 2994140288900936781, guid: 16e775afadee6ac42a263e5900537651,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -131.035
-      objectReference: {fileID: 0}
-    - target: {fileID: 2994140288900936781, guid: 16e775afadee6ac42a263e5900537651,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.82952523
-      objectReference: {fileID: 0}
-    - target: {fileID: 2994140288900936781, guid: 16e775afadee6ac42a263e5900537651,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2994140288900936781, guid: 16e775afadee6ac42a263e5900537651,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.55846936
-      objectReference: {fileID: 0}
-    - target: {fileID: 2994140288900936781, guid: 16e775afadee6ac42a263e5900537651,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2994140288900936781, guid: 16e775afadee6ac42a263e5900537651,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2994140288900936781, guid: 16e775afadee6ac42a263e5900537651,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -67.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2994140288900936781, guid: 16e775afadee6ac42a263e5900537651,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2994140288900936782, guid: 16e775afadee6ac42a263e5900537651,
-        type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 2994140288900936782, guid: 16e775afadee6ac42a263e5900537651,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5815588227169869734, guid: 16e775afadee6ac42a263e5900537651,
-        type: 3}
-      propertyPath: obstaclesParents.Array.data[0]
-      value: 
-      objectReference: {fileID: 380635166}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 16e775afadee6ac42a263e5900537651, type: 3}
 --- !u!1001 &1151538270
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19997,7 +19876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6564e1b456983224ca7e79d3d900931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   FOV: 120
   Range: 10
   debugLOS: 0
@@ -20025,7 +19904,7 @@ MonoBehaviour:
   - {fileID: 685040294}
   - {fileID: 287283938}
   state: 0
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   v_phermoneVector: {x: 0, y: 0, z: 0}
   pointRange: 1
   timer: 5
@@ -20579,7 +20458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6564e1b456983224ca7e79d3d900931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   FOV: 120
   Range: 10
   debugLOS: 0
@@ -20604,7 +20483,7 @@ MonoBehaviour:
   - {fileID: 564295421}
   - {fileID: 535278753}
   state: 0
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   v_phermoneVector: {x: 0, y: 0, z: 0}
   pointRange: 1
   timer: 5
@@ -21583,7 +21462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6564e1b456983224ca7e79d3d900931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   FOV: 120
   Range: 10
   debugLOS: 0
@@ -21608,7 +21487,7 @@ MonoBehaviour:
   - {fileID: 1012584942}
   - {fileID: 361329785}
   state: 0
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   v_phermoneVector: {x: 0, y: 0, z: 0}
   pointRange: 1
   timer: 5
@@ -23010,7 +22889,7 @@ MonoBehaviour:
   - {fileID: 177242873}
   - {fileID: 1904907851}
   state: 0
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   v_phermoneVector: {x: 0, y: 0, z: 0}
   pointRange: 1
   timer: 5
@@ -23033,7 +22912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6564e1b456983224ca7e79d3d900931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   FOV: 120
   Range: 10
   debugLOS: 0
@@ -23574,6 +23453,12 @@ Transform:
   m_Father: {fileID: 277627934}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1549270340 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8744490161709658610, guid: 16e775afadee6ac42a263e5900537651,
+    type: 3}
+  m_PrefabInstance: {fileID: 8744490160974843062}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1558562542 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8251162474038256666, guid: 1f1df4eb089cb6d47ad0fa37a064b3e5,
@@ -23607,7 +23492,7 @@ MonoBehaviour:
   - {fileID: 1678298395}
   - {fileID: 1263990939}
   state: 0
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   v_phermoneVector: {x: 0, y: 0, z: 0}
   pointRange: 1
   timer: 5
@@ -23630,7 +23515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6564e1b456983224ca7e79d3d900931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   FOV: 120
   Range: 10
   debugLOS: 0
@@ -23797,7 +23682,7 @@ MonoBehaviour:
   - {fileID: 1061727157}
   - {fileID: 1604226837}
   state: 0
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   v_phermoneVector: {x: 0, y: 0, z: 0}
   pointRange: 1
   timer: 5
@@ -23820,7 +23705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6564e1b456983224ca7e79d3d900931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   FOV: 120
   Range: 10
   debugLOS: 0
@@ -24198,7 +24083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6564e1b456983224ca7e79d3d900931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   FOV: 120
   Range: 10
   debugLOS: 0
@@ -24223,7 +24108,7 @@ MonoBehaviour:
   - {fileID: 322489813}
   - {fileID: 1331283217}
   state: 0
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   v_phermoneVector: {x: 0, y: 0, z: 0}
   pointRange: 1
   timer: 5
@@ -26784,7 +26669,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6564e1b456983224ca7e79d3d900931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   FOV: 120
   Range: 10
   debugLOS: 0
@@ -26811,7 +26696,7 @@ MonoBehaviour:
   - {fileID: 517236735}
   - {fileID: 1838595787}
   state: 0
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   v_phermoneVector: {x: 0, y: 0, z: 0}
   pointRange: 1
   timer: 5
@@ -28935,7 +28820,7 @@ MonoBehaviour:
   - {fileID: 866500991}
   - {fileID: 564295421}
   state: 0
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   v_phermoneVector: {x: 0, y: 0, z: 0}
   pointRange: 1
   timer: 5
@@ -28958,7 +28843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6564e1b456983224ca7e79d3d900931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   FOV: 120
   Range: 10
   debugLOS: 0
@@ -29689,7 +29574,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6564e1b456983224ca7e79d3d900931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   FOV: 120
   Range: 10
   debugLOS: 0
@@ -29714,7 +29599,7 @@ MonoBehaviour:
   - {fileID: 2122856470}
   - {fileID: 1793392297}
   state: 0
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   v_phermoneVector: {x: 0, y: 0, z: 0}
   pointRange: 1
   timer: 5
@@ -30176,7 +30061,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6564e1b456983224ca7e79d3d900931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   FOV: 120
   Range: 10
   debugLOS: 0
@@ -30203,7 +30088,7 @@ MonoBehaviour:
   - {fileID: 17451195}
   - {fileID: 1184778922}
   state: 0
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   v_phermoneVector: {x: 0, y: 0, z: 0}
   pointRange: 1
   timer: 5
@@ -30668,7 +30553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6564e1b456983224ca7e79d3d900931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   FOV: 120
   Range: 10
   debugLOS: 0
@@ -30695,7 +30580,7 @@ MonoBehaviour:
   - {fileID: 1394734442}
   - {fileID: 1238698871}
   state: 0
-  player: {fileID: 302041330}
+  player: {fileID: 5473928966155506748}
   v_phermoneVector: {x: 0, y: 0, z: 0}
   pointRange: 1
   timer: 5
@@ -31658,6 +31543,12 @@ Transform:
   m_Father: {fileID: 794525133}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &484349962462339400 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 9215045165138800126, guid: 16e775afadee6ac42a263e5900537651,
+    type: 3}
+  m_PrefabInstance: {fileID: 8744490160974843062}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &927315263105965559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31749,12 +31640,12 @@ PrefabInstance:
         type: 3}
       propertyPath: songSrc
       value: 
-      objectReference: {fileID: 415845209}
+      objectReference: {fileID: 1549270340}
     - target: {fileID: 927315264906889000, guid: 0f75c1a9c4a607645a2d7e327041330d,
         type: 3}
       propertyPath: songSrc2
       value: 
-      objectReference: {fileID: 1039947367}
+      objectReference: {fileID: 484349962462339400}
     - target: {fileID: 927315264906889000, guid: 0f75c1a9c4a607645a2d7e327041330d,
         type: 3}
       propertyPath: SoundEffectSource
@@ -31787,3 +31678,208 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f75c1a9c4a607645a2d7e327041330d, type: 3}
+--- !u!4 &5473928966155506748 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3651827881264699530, guid: 16e775afadee6ac42a263e5900537651,
+    type: 3}
+  m_PrefabInstance: {fileID: 8744490160974843062}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8744490160974843062
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1827593241178743848, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: near clip plane
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3021833809847133453, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: obstaclesParents.Array.data[0]
+      value: 
+      objectReference: {fileID: 380635166}
+    - target: {fileID: 3153009468890013488, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.004528314
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153009468890013488, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.8251757
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153009468890013488, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.3854133
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153009468890013488, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9728286
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153009468890013488, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.23152056
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153009468890013488, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.0015898047
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153009468890013488, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.00037841493
+      objectReference: {fileID: 0}
+    - target: {fileID: 5002085434819244291, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: near clip plane
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825399256691986149, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825399256691986150, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825399256691986150, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 236.197
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825399256691986150, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.723
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825399256691986150, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -131.035
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825399256691986150, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.82952523
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825399256691986150, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825399256691986150, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.55846936
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825399256691986150, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825399256691986150, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825399256691986150, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -67.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825399256691986150, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916611158450770325, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8744490161509391658, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8744490161509391663, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8744490161918154395, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.59585464
+      objectReference: {fileID: 0}
+    - target: {fileID: 8744490161918154395, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.041519627
+      objectReference: {fileID: 0}
+    - target: {fileID: 8744490161918154395, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.80007833
+      objectReference: {fileID: 0}
+    - target: {fileID: 8744490161918154395, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.055750094
+      objectReference: {fileID: 0}
+    - target: {fileID: 8744490162349222640, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -2.51072e-40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8744490162349222640, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -2.39922e-40
+      objectReference: {fileID: 0}
+    - target: {fileID: 9215566572148650190, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.004528314
+      objectReference: {fileID: 0}
+    - target: {fileID: 9215566572148650190, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.8251757
+      objectReference: {fileID: 0}
+    - target: {fileID: 9215566572148650190, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.3854133
+      objectReference: {fileID: 0}
+    - target: {fileID: 9215566572148650190, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9728286
+      objectReference: {fileID: 0}
+    - target: {fileID: 9215566572148650190, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.23152056
+      objectReference: {fileID: 0}
+    - target: {fileID: 9215566572148650190, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.0015898047
+      objectReference: {fileID: 0}
+    - target: {fileID: 9215566572148650190, guid: 16e775afadee6ac42a263e5900537651,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.00037841493
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 16e775afadee6ac42a263e5900537651, type: 3}

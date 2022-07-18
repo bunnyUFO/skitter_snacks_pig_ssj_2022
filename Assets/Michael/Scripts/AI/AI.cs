@@ -75,7 +75,10 @@ public class AI : MonoBehaviour
         {
             case State.Patroling:
 
-                spotbar.decreaseSpot();
+                if (spotbar)
+                {
+                    spotbar.decreaseSpot();
+                }
 
                 v_targetVector = Patrol_Points[tPN].transform.position - this.transform.position;
 
