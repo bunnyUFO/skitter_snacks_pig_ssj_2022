@@ -10,7 +10,6 @@ public class Manager : MonoBehaviour
     INFO info;
     Phermone phermone;
     Spotbar spotbar;
-    AI ai;
     AudioManager audioManager;
     UIManager uiManager;
 
@@ -45,6 +44,10 @@ public class Manager : MonoBehaviour
     public float midRangeBarIncrease;
     public float longRangeBarIncrease;
 
+    [Header("Teleport Settings")]
+    public float loadTimer = 1.0f;
+    public bool allowWarp = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -77,7 +80,6 @@ public class Manager : MonoBehaviour
                 spotbar.shortSpotValue = shortRangeBarIncrease;
                 spotbar.mediumSpotValue = midRangeBarIncrease;
                 spotbar.farSpotValue = longRangeBarIncrease;
-                
             }
             
             // Perhaps add an addition to decide what long, mid and short range is? Currently those values are > 1/2 long, > 1/4 && < 1/2 mid, < 1/4 short
@@ -88,6 +90,13 @@ public class Manager : MonoBehaviour
 
     private void Update()
     {
+        loadTimer -= Time.deltaTime;
+
+        if(loadTimer < 0)
+        {
+            allowWarp = true;
+        }
+
         phermoneResetTimer -= Time.deltaTime;
     }
 

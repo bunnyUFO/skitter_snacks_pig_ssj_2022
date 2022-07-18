@@ -8,12 +8,14 @@ public class INFO : MonoBehaviour
     NavMeshAgent agent;
     AI ai;
     AIFOV aifov;
+    TeleportToStart teleport;
 
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         ai = GetComponent<AI>();
         aifov = GetComponent<AIFOV>();
+        teleport = GetComponent<TeleportToStart>();
     }
 
     public void changeSpeed(float _speed, float _angularSpeed, float _acceleration)
@@ -39,4 +41,5 @@ public class INFO : MonoBehaviour
         ai.range = _range;
         aifov.layermask = _layermask;
     }
+    
 }

@@ -26,7 +26,7 @@ public class AI : MonoBehaviour
     public float reset;
     public float phermoneTimerReset;
     public float range;
-    int tPN = 0;
+    public int tPN = 0;
 
     public bool debug = false;
 
@@ -52,25 +52,11 @@ public class AI : MonoBehaviour
         {
             agent.destination = Patrol_Points[tPN].transform.position;
         }
-
-        
     }
 
 
     void Update()
     {
-        // Testing currently played song/sound effect works
-        /*
-        if (audioManager.currentlyPlayingSong("Idle"))
-        {
-            playingSong = true;
-        }
-        else
-        {
-            playingSong = false;
-        }
-        */
-
         switch (state)
         {
             case State.Patroling:

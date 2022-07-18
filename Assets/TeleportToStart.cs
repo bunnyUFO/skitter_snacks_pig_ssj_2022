@@ -6,37 +6,57 @@ using UnityEngine.AI;
 public class TeleportToStart : MonoBehaviour
 {
     Vector3 startPos;
-    float timer = 0.25f;
     NavMeshAgent agent;
-    bool warping = true;
     AI ai;
+    SkinnedMeshRenderer skinnedMeshRenderer;
+    public string spawnPoint;
+    Manager manager;
+    bool warping = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        startPos = this.transform.position;
+        skinnedMeshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
+        //startPos = this.transform.position;
         agent = GetComponent<NavMeshAgent>();
         ai = GetComponent<AI>();
+        manager = GameObject.Find("EnemyManager").GetComponent<Manager>();
+        skinnedMeshRenderer.enabled = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (warping)
+        if (manager.allowWarp && warping)
         {
-            timer -= Time.deltaTime;
-            if (timer < 0)
-            {
-                WarpToPosition();
-            }
+            WarpToSpawn();
         }
     }
 
+    // Update is called once per frame
     void WarpToPosition()
     {
-        warping = false;
         agent.Warp(startPos);
         Debug.Log("Warping");
         agent.SetDestination(ai.Patrol_Points[0].transform.position);
+        skinnedMeshRenderer.enabled = true;
+    }
+
+    void WarpToPatrol()
+    {
+        ai.tPN = 0;
+        agent.Warp(ai.Patrol_Points[0].transform.position);
+        Debug.Log("Warping");
+        skinnedMeshRenderer.enabled = true;
+    }
+
+    public void WarpToSpawn()
+    {
+        ai.tPN = 0;
+        startPos = GameObject.Find(spawnPoint).transform.position;
+        agent.enabled = true;
+        agent.Warp(startPos);
+        agent.SetDestination(ai.Patrol_Points[0].transform.position);
+        skinnedMeshRenderer.enabled = true;
+        warping = false;
     }
 }
