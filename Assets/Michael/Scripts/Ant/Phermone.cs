@@ -52,13 +52,5 @@ public class Phermone : MonoBehaviour
             antAI.v_phermoneVector = touchedObject.transform.position;
             antAI.state = AI.State.Phermone;
         }
-        if (!touchedObject.gameObject.CompareTag("Untagged"))
-        {
-            Debug.Log("Is touching SOMETHING");
-        }
-        if (touchedObject.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("Is touching PLAYER");
-        }
     }
 }
