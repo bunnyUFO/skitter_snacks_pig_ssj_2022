@@ -5,8 +5,6 @@ using UnityEngine;
 public class AIFOV : MonoBehaviour
 {
     AI ai;
-    ManualLinkV4 link;
-
     public Transform player;
     public float FOV = 45;
     public float Range = 5;
@@ -21,7 +19,6 @@ public class AIFOV : MonoBehaviour
     void Awake()
     {
         ai = GetComponent<AI>();
-        link = GetComponent<ManualLinkV4>();
     }
 
     void Update()
@@ -31,7 +28,7 @@ public class AIFOV : MonoBehaviour
 
         Angle = Vector3.Angle(transform.forward, targetDirection);
 
-        if (Mathf.Abs(Angle) < FOV / 2 && Distance < Range && !ai.isChasing() && !link.traversing)
+        if (Mathf.Abs(Angle) < FOV / 2 && Distance < Range && !ai.isChasing())
         {
             if (!Physics.Raycast(this.transform.position, targetDirection, Distance, layermask))
             {

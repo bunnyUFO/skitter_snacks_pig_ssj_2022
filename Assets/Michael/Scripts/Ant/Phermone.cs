@@ -48,7 +48,6 @@ public class Phermone : MonoBehaviour
     {
         if (touchedObject.gameObject.CompareTag("Phermone") && antAI.state != AI.State.Chasing && antAI.state != AI.State.Returning)
         {
-            Debug.Log("Is touching phermone");
             antAI.v_phermoneVector = touchedObject.transform.position;
             antAI.state = AI.State.Phermone;
         }

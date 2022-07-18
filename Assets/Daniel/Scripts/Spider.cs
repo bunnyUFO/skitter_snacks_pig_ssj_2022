@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(CapsuleCollider))]
@@ -53,6 +55,40 @@ public class Spider : MonoBehaviour
         }
 
         CalculateOrientation();
+    }
+    
+    private void Die()
+    {
+        List<GameObject> respawns = GameObject.FindGameObjectsWithTag("Respawn").ToList();
+        float closestDistance = float.MaxValue;
+        bool foundRespawn = false;
+        Vector3 closestSpawnPosition = transform.position;
+        Quaternion closestSpawnRotation = transform.rotation;
+
+        foreach (var respawn in respawns)
+        {
+            Vector3 respawnPostion = respawn.transform.position;
+            float distance = (transform.position - respawnPostion).magnitude;
+            
+            if (distance < closestDistance)
+            {
+                foundRespawn = true;
+                closestDistance = distance;
+                closestSpawnPosition = respawnPostion;
+                closestSpawnRotation = respawn.transform.rotation;
+
+            }
+        }
+
+        if (foundRespawn)
+        {
+            transform.position = closestSpawnPosition;
+            transform.rotation = closestSpawnRotation;
+            
+        }
+
+        
+        print("Oh no I'm dying!!");
     }
 
     private void CalculateOrientation()

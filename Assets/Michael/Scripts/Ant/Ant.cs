@@ -77,4 +77,12 @@ public class Ant : MonoBehaviour
             transform.Translate(0, -(-avgSurfaceDist + -offsetY) * 0.5f * yScaleFactor, 0, Space.Self);
         }
     }
+    
+    private void OnTriggerEnter(Collider touchedObject)
+    {
+        if (touchedObject.gameObject.CompareTag("Player"))
+        {
+            touchedObject.SendMessage("Die");
+        }
+    }
 }
