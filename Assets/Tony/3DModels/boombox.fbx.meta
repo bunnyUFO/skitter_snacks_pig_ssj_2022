@@ -32,6 +32,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Radio Sticker
+    second: {fileID: 2100000, guid: 2caee3ce5c5a0e947829b9e151429691, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Radio Sticker+ autostop sticker
     second: {fileID: 2100000, guid: c0cb512a81565174ab6fdb5ea6a10b2e, type: 2}
   - first:
@@ -54,6 +59,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Woofer
     second: {fileID: 2100000, guid: 80b49ca0e0905e04a80a711f4d34d5ba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tape sticker
+    second: {fileID: 2100000, guid: b2be277127aa95a4dbc92c5cf377f21a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
