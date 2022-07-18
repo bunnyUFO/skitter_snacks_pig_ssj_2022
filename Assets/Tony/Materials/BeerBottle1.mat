@@ -138,8 +138,8 @@ Material:
     - _noiseMask: 1
     - _noisePresence: 1
     - _noiseSmooth: 0.2
-    - _noiseTiling: 15
-    - _textiling: 500
+    - _noiseTiling: 5
+    - _textiling: 1
     m_Colors:
     - _Blend_Sharpness_Dust: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 0.119814344, g: 0.4745098, b: 0, a: 0}

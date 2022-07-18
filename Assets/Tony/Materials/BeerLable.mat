@@ -175,19 +175,19 @@ Material:
     - _ZWrite: 1
     - _dustGeneralSharp: 1
     - _dustPresence: 0
-    - _dustTiling: 32.1
+    - _dustTiling: 5
     - _isAOTextured: 0
     - _isColorTextured: 1
     - _isEmissiveTextured: 0
     - _isMetalTextured: 0
     - _isNormFlipped: 0
-    - _isNormalTextured: 1
+    - _isNormalTextured: 0
     - _isSmoothFlipped: 0
     - _isSmoothTextured: 0
     - _noiseEmissive: 0
     - _noisePresence: 0.8
     - _noiseSmooth: 0.2
-    - _noiseTiling: 22.34
+    - _noiseTiling: 5
     - _texOffset: 0
     - _texRot: 0
     - _textiling: 1
