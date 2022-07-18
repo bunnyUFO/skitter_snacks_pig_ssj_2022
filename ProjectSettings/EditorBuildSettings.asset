@@ -5,12 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Daniel/SpiderWalkTest.unity
-    guid: 4d6babd932902ba48bd6bb1eaac1b7e5
-  - enabled: 0
-    path: Assets/Tony/FinalScene/FinalScene 2.unity
-    guid: b2fbb94088d4ea646ab169b645da9c52
+  - enabled: 1
+    path: Assets/Scenes/TitleScreen.unity
+    guid: 8a3c540b3533755469def6cb9eac4816
   - enabled: 1
     path: Assets/Scenes/FinalScene.unity
     guid: e357d42162721c640815264ad6526e91

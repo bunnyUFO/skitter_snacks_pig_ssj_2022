@@ -86,9 +86,8 @@ public class Spider : MonoBehaviour
             transform.rotation = closestSpawnRotation;
             
         }
-
         
-        print("Oh no I'm dying!!");
+        transform.SendMessage("PlaySound", "death");
     }
 
     private void CalculateOrientation()

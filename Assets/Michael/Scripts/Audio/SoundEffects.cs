@@ -21,12 +21,12 @@ public class SoundEffects
     }
     
     
-    public void playSound(string soundName)
+    public void PlaySound(string soundName)
     {
         int soundIndex = soundNames.IndexOf(soundName);
         if (soundIndex > -1)
         {
-            playSound(soundIndex);
+            PlaySound(soundIndex);
         }
     }
 
@@ -41,7 +41,7 @@ public class SoundEffects
         return false;
     }
 
-    public void playSound(int soundIndex)
+    public void PlaySound(int soundIndex)
     {
         _effectSource.PlayOneShot(sounds[soundIndex]);
     }

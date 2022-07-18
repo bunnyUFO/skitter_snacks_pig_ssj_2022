@@ -109,7 +109,7 @@ public class ProceduralAnimationScript : MonoBehaviour
             if (!_stepFinished)
             {
                 // print(getMaterial().name);
-                BroadcastMessage("playSound", "soft step");
+                BroadcastMessage("PlaySound", "soft step");
             }
 
             _stepFinished = true;
