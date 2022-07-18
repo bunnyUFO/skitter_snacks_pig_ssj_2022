@@ -63,7 +63,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _dustAO:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 8aada387dfa4ec343a59802727bd4a98, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _dustNorm:
@@ -117,7 +117,7 @@ Material:
     - _Smoothness: 0.99
     - _dustGeneralSharp: 1
     - _dustMask: 1
-    - _dustPresence: 0.25
+    - _dustPresence: 0.27
     - _dustTiling: 10
     - _isAOTextured: 0
     - _isColorTextured: 0
@@ -136,7 +136,7 @@ Material:
     - _Blend_Sharpness_Dust: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 0.119814344, g: 0.4745098, b: 0, a: 0}
     - _Emissive: {r: 0, g: 0, b: 0, a: 0}
-    - _dustBlend: {r: -0.48, g: 0.58, b: 1, a: 0}
-    - _dustColor: {r: 0, g: 0, b: 0, a: 0}
+    - _dustBlend: {r: 0.11, g: 0.11, b: 2, a: 0}
+    - _dustColor: {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 0}
     - _noiseColor: {r: 0.34905657, g: 0.34905657, b: 0.34905657, a: 1}
   m_BuildTextureStacks: []

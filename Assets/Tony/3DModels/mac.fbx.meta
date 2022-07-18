@@ -3,7 +3,22 @@ guid: 8f67d17d4bcc80a49bb969abfccd6947
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mac board
+    second: {fileID: 2100000, guid: 0771fd28c6016684fb2b55a19c4d30bc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mac keys
+    second: {fileID: 2100000, guid: 05ee7d71ef69c7049914cf42ae62d92f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mac screen
+    second: {fileID: 2100000, guid: 11f511342a137c8488cbe042eab61e7e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -88,7 +103,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1.3
+    globalScale: 130
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
