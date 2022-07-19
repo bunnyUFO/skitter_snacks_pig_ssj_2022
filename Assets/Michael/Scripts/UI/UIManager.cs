@@ -34,6 +34,7 @@ public class UIManager : MonoBehaviour
         Doritos.Add(GameObject.Find("Slot4"));
         Doritos.Add(GameObject.Find("Slot5"));
         Doritos.Add(GameObject.Find("Slot6"));
+        Doritos.Add(GameObject.Find("Slot7"));
     }
 
     public void updateFood()
@@ -46,5 +47,17 @@ public class UIManager : MonoBehaviour
     public void updateIndicator(int state)
     {
         GameObject.Find("Indicator").GetComponent<IndicatorUI>().updateState(state);
+    }
+
+    public bool hasWon()
+    {
+        if (foodCollected == 7)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
