@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Pool;
+using UnityEngine.UIElements;
 
 /* Note: animations are called via the controller for both the character and capsule using animator null checks
  */
@@ -41,6 +42,10 @@ namespace StarterAssets
         [SerializeField] 
         private Camera thirddPersonCamera;
         [SerializeField] 
+        private Camera topCamera;
+        [SerializeField] 
+        private float topCameraHeight = 120f;
+        [SerializeField] 
         private Camera jumpCamera;
         [SerializeField] 
         private float jumpCameraOffsetX = 15f;
@@ -72,7 +77,8 @@ namespace StarterAssets
             if (!_rigidbody.useGravity)
             {
                 Rotate(Time.deltaTime);
-                Move();;
+                Move();
+                ToggleView();
             }
             StaggerLegs();
             Jump(Time.deltaTime);
@@ -208,6 +214,16 @@ namespace StarterAssets
             }
 
             return false;
+        }
+        private void ToggleView()
+        {
+            topCamera.transform.position = _spiderTransform.position + Vector3.up * topCameraHeight;
+            if (Keyboard.current.mKey.wasPressedThisFrame && !Keyboard.current.spaceKey.isPressed && ! _rigidbody.useGravity)
+            {
+                thirddPersonView.enabled = !thirddPersonView.enabled;
+                thirddPersonCamera.enabled = !thirddPersonCamera.enabled;
+                topCamera.enabled = !topCamera.enabled;
+            }
         }
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 // To add more doritos to UI, first create a gameobject called Food6
@@ -19,10 +20,12 @@ public class UIManager : MonoBehaviour
 
     GameObject fullFood;
     GameObject emptyFood;
+    private SceneLoader _sceneLoader;
 
 
     void Start()
     {
+        _sceneLoader = GetComponent<SceneLoader>(); 
         foreach (GameObject food in GameObject.FindGameObjectsWithTag("Food"))
         {
             foodList.Add(food.GetComponent<Food>());
@@ -42,6 +45,11 @@ public class UIManager : MonoBehaviour
         foodCollected++;
         Doritos[foodCollected-1].GetComponent<FoodUI>().foodActive();
         Debug.Log("Collecting Food " + foodCollected);
+        
+        if (hasWon())
+        {
+            _sceneLoader.LoadWinScreen();
+        }
     }
 
     public void updateIndicator(int state)

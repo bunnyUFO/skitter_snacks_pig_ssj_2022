@@ -9,6 +9,11 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
     
+    public void LoadWinScreen()
+    {
+        SceneManager.LoadScene("WinScreen");
+    }
+    
     public void QuitGame()
     {
         Application.Quit();
