@@ -18,7 +18,9 @@ public class Food : MonoBehaviour
         {
             Collected = true;
             GetComponent<MeshRenderer>().enabled = false;
+            GetComponentInChildren<ParticleSystem>().Stop();
             uiManager.updateFood();
+            touchedObject.gameObject.SendMessage("PlaySound","eat");
         }
     }
 }
