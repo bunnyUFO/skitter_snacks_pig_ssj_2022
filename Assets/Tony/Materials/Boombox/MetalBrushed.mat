@@ -141,14 +141,21 @@ Material:
     - _isAOTextured: 0
     - _isAlpha: 0
     - _isColorTextured: 1
+    - _isDustTilable: 0
     - _isEmissiveTextured: 0
     - _isMetalTextured: 0
+    - _isNoiseTilable: 0
+    - _isNormFlipped: 0
     - _isNormalTextured: 0
+    - _isSmoothFlipped: 0
     - _isSmoothTextured: 0
     - _isVerticalOnly: 1
+    - _noiseEmissive: 0
     - _noisePresence: 0.538
     - _noiseSmooth: 0
     - _noiseTiling: 10
+    - _texOffset: 0
+    - _texRot: 0
     - _textiling: 100
     m_Colors:
     - _Blend_Sharpness_Dust: {r: 50, g: 50, b: 50, a: 0}
@@ -159,4 +166,6 @@ Material:
     - _dustColor: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 0}
     - _dustoColor: {r: 0, g: 0, b: 0, a: 0}
     - _noiseColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+    - _tesOffsetPrecise: {r: 0, g: 0, b: 0, a: 0}
+    - _texTilingPrecise: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

@@ -117,22 +117,24 @@ Material:
     - _Metalness: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Smoothness: 0.63
+    - _Smoothness: 0.695
     - _dustGeneralSharp: 1
-    - _dustPresence: 1
+    - _dustPresence: 0
     - _dustTiling: 100
     - _isAOTextured: 0
     - _isColorTextured: 1
+    - _isDustTilable: 1
     - _isEmissiveTextured: 0
     - _isMetalTextured: 1
+    - _isNoiseTilable: 1
     - _isNormFlipped: 0
     - _isNormalTextured: 0
     - _isSmoothFlipped: 0
     - _isSmoothTextured: 0
     - _noiseEmissive: 0
-    - _noisePresence: 0.78
+    - _noisePresence: 1
     - _noiseSmooth: 0.2
-    - _noiseTiling: 15
+    - _noiseTiling: 5.49
     - _texOffset: 0
     - _texRot: 0
     - _textiling: 0
