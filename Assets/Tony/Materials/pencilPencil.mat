@@ -113,30 +113,32 @@ Material:
     - _Metalness: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Smoothness: 0.611
+    - _Smoothness: 0.886
     - _dustGeneralSharp: 1
-    - _dustPresence: 0.94
-    - _dustTiling: 10
+    - _dustPresence: 0.3
+    - _dustTiling: 455.2
     - _isAOTextured: 0
     - _isColorTextured: 0
+    - _isDustTilable: 1
     - _isEmissiveTextured: 0
+    - _isNoiseTilable: 1
     - _isNormFlipped: 0
     - _isNormalTextured: 0
     - _isSmoothFlipped: 0
     - _isSmoothTextured: 0
     - _noiseEmissive: 0
-    - _noisePresence: 0.95
+    - _noisePresence: 0.5
     - _noiseSmooth: 0.086
-    - _noiseTiling: 100
+    - _noiseTiling: 3.2
     - _texOffset: 0
     - _texRot: 0
     - _textiling: 1
     m_Colors:
-    - _Color: {r: 0.047104497, g: 0.52599996, b: 0, a: 0}
+    - _Color: {r: 0.09789958, g: 0.265, b: 0.08135499, a: 0}
     - _Emissive: {r: 0, g: 0, b: 0, a: 0}
-    - _dustBlend: {r: 0.1, g: 1, b: 0.1, a: 0}
-    - _dustColor: {r: 0.2735849, g: 0.2735849, b: 0.2735849, a: 0}
-    - _noiseColor: {r: 0.34905657, g: 0.34905657, b: 0.34905657, a: 1}
+    - _dustBlend: {r: 0.75, g: -0.61, b: 0, a: 0}
+    - _dustColor: {r: 0.375, g: 0.375, b: 0.375, a: 0}
+    - _noiseColor: {r: 0.304, g: 0.304, b: 0.304, a: 1}
     - _tesOffsetPrecise: {r: 0, g: 0, b: 0, a: 0}
     - _texTilingPrecise: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
