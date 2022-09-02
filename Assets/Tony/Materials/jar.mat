@@ -105,7 +105,7 @@ Material:
     m_Floats:
     - _BlendSharpness: 3
     - _EmissionStre: 1
-    - _Mask: 0
+    - _Mask: 0.75
     - _Metalness: 0
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -119,11 +119,11 @@ Material:
     - _isEmissiveTextured: 0
     - _isMaskTextured: 0
     - _isMetalTextured: 0
-    - _isNoiseMask: 1
+    - _isNoiseMask: 0
     - _isNormalTextured: 0
     - _isSmoothTextured: 0
     - _noiseMask: 1
-    - _noisePresence: 1.65
+    - _noisePresence: 1.27
     - _noiseSmooth: 0.102
     - _noiseTiling: 15
     - _textiling: 500
@@ -132,8 +132,9 @@ Material:
     - _Color: {r: 0, g: 0, b: 0, a: 0}
     - _Emissive: {r: 0, g: 0, b: 0, a: 0}
     - _dustBlend: {r: 0.19, g: 0.19, b: 1, a: 0}
-    - _dustColor: {r: 0, g: 0, b: 0, a: 0}
-    - _noiseColor: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
+    - _dustColor: {r: 0.1792453, g: 0.1792453, b: 0.1792453, a: 0}
+    - _noiseColor: {r: 0, g: 0, b: 0, a: 1}
+    - _textureoffset: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &7572421893038293421
 MonoBehaviour:
