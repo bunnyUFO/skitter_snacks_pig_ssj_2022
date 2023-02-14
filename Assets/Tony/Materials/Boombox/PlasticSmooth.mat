@@ -158,7 +158,7 @@ Material:
     - _isTriplanar: 1
     - _isVerticalOnly: 0
     - _noiseEmissive: 0
-    - _noisePresence: 0.1
+    - _noisePresence: 0.3
     - _noiseSmooth: 0.068
     - _noiseTiling: 6.5
     - _texOffset: 0
@@ -166,7 +166,7 @@ Material:
     - _textiling: 100
     m_Colors:
     - _Blend_Sharpness_Dust: {r: 50, g: 50, b: 50, a: 0}
-    - _Color: {r: 0, g: 0, b: 0, a: 0}
+    - _Color: {r: 0.25, g: 0.25, b: 0.25, a: 0}
     - _Emission: {r: 0, g: 0, b: 0, a: 0}
     - _Emissive: {r: 0, g: 0, b: 0, a: 0}
     - _dustBlend: {r: -1.21, g: 0.41, b: 2, a: 0}

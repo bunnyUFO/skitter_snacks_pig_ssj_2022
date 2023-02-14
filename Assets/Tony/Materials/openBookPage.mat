@@ -110,8 +110,10 @@ Material:
     - _dustTiling: 50
     - _isAOTextured: 0
     - _isColorTextured: 1
+    - _isDustTilable: 0
     - _isEmissiveTextured: 0
     - _isMetalTextured: 0
+    - _isNoiseTilable: 0
     - _isNormFlipped: 0
     - _isNormalTextured: 0
     - _isSmoothFlipped: 0
@@ -128,7 +130,7 @@ Material:
     - _Color: {r: 0.75471693, g: 0.45726252, b: 0, a: 0}
     - _Emissive: {r: 0, g: 0, b: 0, a: 0}
     - _dustBlend: {r: 0.2, g: 1, b: 0.2, a: 0}
-    - _dustColor: {r: 0.49056602, g: 0.49056602, b: 0.49056602, a: 0}
+    - _dustColor: {r: 0.709, g: 0.709, b: 0.709, a: 0}
     - _noiseColor: {r: 0, g: 0, b: 0, a: 1}
     - _tesOffsetPrecise: {r: 0, g: 0, b: 0, a: 0}
     - _texTilingPrecise: {r: 0, g: 0, b: 0, a: 0}

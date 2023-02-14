@@ -118,15 +118,15 @@ Material:
     m_Floats:
     - _BlendSharpness: 1.2
     - _EmissionStre: 1
-    - _Mask: 0.9
-    - _Metalness: 0.084
+    - _Mask: 0.64
+    - _Metalness: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Smoothness: 0.99
+    - _Smoothness: 1
     - _dustGeneralSharp: 1
     - _dustMask: 1
-    - _dustPresence: 0.27
-    - _dustTiling: 10
+    - _dustPresence: 0.1
+    - _dustTiling: 30
     - _isAOTextured: 0
     - _isColorTextured: 0
     - _isEmissiveTextured: 0
@@ -138,13 +138,14 @@ Material:
     - _noiseMask: 1
     - _noisePresence: 1
     - _noiseSmooth: 0.2
-    - _noiseTiling: 5
+    - _noiseTiling: 10
     - _textiling: 1
     m_Colors:
     - _Blend_Sharpness_Dust: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 0.119814344, g: 0.4745098, b: 0, a: 0}
+    - _Color: {r: 0.015686275, g: 0.5882353, b: 0.21568629, a: 0}
     - _Emissive: {r: 0, g: 0, b: 0, a: 0}
     - _dustBlend: {r: 0.11, g: 0.11, b: 2, a: 0}
     - _dustColor: {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 0}
     - _noiseColor: {r: 0.34905657, g: 0.34905657, b: 0.34905657, a: 1}
+    - _textureoffset: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

@@ -106,23 +106,25 @@ Material:
     - _QueueOffset: 0
     - _Smoothness: 0
     - _dustGeneralSharp: 0
-    - _dustPresence: 0.74
+    - _dustPresence: 0
     - _dustTiling: 10
     - _isAOTextured: 1
     - _isColorTextured: 1
+    - _isDustTilable: 0
     - _isEmissiveTextured: 0
     - _isMetalTextured: 0
+    - _isNoiseTilable: 0
     - _isNormFlipped: 0
     - _isNormalTextured: 1
-    - _isSmoothFlipped: 1
+    - _isSmoothFlipped: 0
     - _isSmoothTextured: 1
     - _noiseEmissive: 0
-    - _noisePresence: 1.2
+    - _noisePresence: 0
     - _noiseSmooth: -0
     - _noiseTiling: 1
     - _texOffset: 0
     - _texRot: 0
-    - _textiling: 10
+    - _textiling: 4.9
     m_Colors:
     - _Blend_Sharpness_Dust: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 0.75471693, g: 0.45726252, b: 0, a: 0}

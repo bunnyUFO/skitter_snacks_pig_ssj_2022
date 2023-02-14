@@ -123,8 +123,10 @@ Material:
     - _dustTiling: 10
     - _isAOTextured: 0
     - _isColorTextured: 0
+    - _isDustTilable: 1
     - _isEmissiveTextured: 0
     - _isMetalTextured: 0
+    - _isNoiseTilable: 1
     - _isNormFlipped: 0
     - _isNormalTextured: 0
     - _isSmoothFlipped: 0

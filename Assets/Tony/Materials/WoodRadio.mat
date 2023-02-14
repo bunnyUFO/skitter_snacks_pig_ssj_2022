@@ -85,9 +85,9 @@ Material:
     m_Ints: []
     m_Floats:
     - _DustBlending: 1
-    - _DustPresence: 0.05
+    - _DustPresence: 0.1
     - _DustSharpness: 1
-    - _DustSmoothness: 0.27
+    - _DustSmoothness: 0.1
     - _DustTiling: 14.26
     - _MaskSmoothness: 0.1
     - _MaskStrenghth: 2.19
@@ -107,9 +107,9 @@ Material:
     - _isSmoothnessFlipped: 0
     m_Colors:
     - _DustBlend: {r: 1, g: 1, b: 1, a: 0}
-    - _DustColor: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 0}
+    - _DustColor: {r: 0.65882355, g: 0.42352942, b: 0, a: 0}
     - _MaskColor: {r: 0.60784316, g: 0.5019608, b: 0.3137255, a: 0}
-    - _NoiseColor: {r: 0, g: 0, b: 0, a: 0}
+    - _NoiseColor: {r: 0.043, g: 0.043, b: 0.043, a: 0}
     - _WoodColor1: {r: 0.48235297, g: 0.29411766, b: 0, a: 0}
     - _WoodColor2: {r: 0.65800005, g: 0.42371213, b: 0, a: 1}
     - _WoodMaskOffsetPrecise: {r: 0, g: 0, b: 0, a: 0}

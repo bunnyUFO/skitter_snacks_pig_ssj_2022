@@ -142,7 +142,7 @@ Material:
     - _textiling: 55
     m_Colors:
     - _Blend_Sharpness_Dust: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 0, g: 0, b: 0, a: 0}
+    - _Color: {r: 0.15, g: 0.15, b: 0.15, a: 0}
     - _Emissive: {r: 0, g: 0, b: 0, a: 0}
     - _dustBlend: {r: 0.04, g: 0.15, b: 0.34, a: 0}
     - _dustColor: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 0}

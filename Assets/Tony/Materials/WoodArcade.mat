@@ -89,17 +89,17 @@ Material:
     - _DustSharpness: 1
     - _DustSmoothness: 0.27
     - _DustTiling: 14.26
-    - _MaskSmoothness: 0.1
-    - _MaskStrenghth: 2
+    - _MaskSmoothness: 0.2
+    - _MaskStrenghth: 1
     - _NoiseBlend: 1
     - _NoisePresence: 0.57
     - _NoiseSmoothness: 0.62
     - _NoiseTiling: 5
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _WoodMaskOffset: -1.27
+    - _WoodMaskOffset: -3.85
     - _WoodMaskRotation: 25
-    - _WoodMaskTiling: 4
+    - _WoodMaskTiling: 1
     - _WoodOffset: 0
     - _WoodRotation: 90
     - _WoodTiling: 10
@@ -108,12 +108,12 @@ Material:
     m_Colors:
     - _DustBlend: {r: 1, g: 1, b: 1, a: 0}
     - _DustColor: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 0}
-    - _MaskColor: {r: 0.219, g: 0.14016001, b: 0, a: 1}
+    - _MaskColor: {r: 0.823, g: 0.6025536, b: 0.20575, a: 1}
     - _NoiseColor: {r: 0.665, g: 0.5215687, b: 0, a: 0}
     - _WoodColor1: {r: 0.942, g: 0.6875151, b: 0.528462, a: 0}
-    - _WoodColor2: {r: 0.83800006, g: 0.68343097, b: 0.29246205, a: 1}
+    - _WoodColor2: {r: 0.8392157, g: 0.52124184, b: 0.29411763, a: 1}
     - _WoodMaskOffsetPrecise: {r: 0, g: 0, b: 0, a: 0}
-    - _WoodMaskTilingPrecise: {r: 0, g: 0, b: 0, a: 0}
+    - _WoodMaskTilingPrecise: {r: 0.87, g: 0, b: 0, a: 0}
     - _WoodOffsetPrecise: {r: 0, g: 0, b: 0, a: 0}
     - _WoodTilingPrecise: {r: 30, g: 3, b: 0, a: 0}
   m_BuildTextureStacks: []
